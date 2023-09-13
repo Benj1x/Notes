@@ -83,7 +83,48 @@ new <Call-to-Class-Constructor>;
 new Human();
 ```
 
+When wanting to store a specific instance of the class 'Human', we would do something like this:
+
 ```Java
 Human Jack;
 ```
-This will create a variable called "Jack" of the type 'Human'
+
+This will create a variable called "Jack" of the type 'Human'. After which, we can do this:
+
+```Java
+Jack = new Human();
+```
+
+However, the way you'd probably do this 90% of the time, would be:
+
+```Java
+Human jack = new Human();
+```
+
+## Null reference
+
+`null`  is a valid value for ALL non-primitive types, `null` simply... nothing. An example of valid use of `null`  would be:
+
+```Java
+// Assign null to john
+Human john = null; // john is not referring to any object
+john = new Human(); // Now, john is referring to a valid Human object
+```
+
+`null` is of course a valid thing to use in comparisons, so we could do something like this:
+
+```Java
+if (john == null) {
+ // john is referring to null. Cannot use john for anything
+} else {
+ // Do something with john
+}
+```
+
+If you try to perform an operation on `null` it Java will throw a 'NullPointerException'. An example of this would be
+```Java
+Human john = null;
+// The following statement throws a NullPointerException because john is null and you
+// cannot use any operation on a null reference variable
+String name = john.name;
+```
