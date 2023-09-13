@@ -69,6 +69,7 @@ With two fields, name and gender (Where both are uninitialized), the declaration
 class Human {
  String name;
  String gender;
+ Static long count
 }
 ```
 
@@ -98,7 +99,7 @@ Jack = new Human();
 However, the way you'd probably do this 90% of the time, would be:
 
 ```Java
-Human jack = new Human();
+Human Jack = new Human();
 ```
 
 ## Null reference
@@ -122,9 +123,50 @@ if (john == null) {
 ```
 
 If you try to perform an operation on `null` it Java will throw a 'NullPointerException'. An example of this would be
+
 ```Java
-Human john = null;
-// The following statement throws a NullPointerException because john is null and you
-// cannot use any operation on a null reference variable
-String name = john.name;
+Human john = null;// The following statement throws a NullPointerException because john is null and you// cannot use any operation on a null reference variableString name = john.name;
 ```
+
+Trying to assign `null` to a primitive type or compare a primitive type to `null`, would give us the following errors:
+
+```Java
+// A compile-time error. A reference type value, null, cannot be assigned to
+// a primitive type variable num
+int num = null;
+
+int num = 0;
+// A compile-time error. Cannot compare a primitive type to a reference type
+if (num == null) {
+}
+```
+
+## Accessing fields of a class
+
+When reading or writing to instances of a class, we use the dot notation. The general form of the dot notation syntax is as follows:
+
+```
+<reference-variable-name>.<instance-variable-name>
+````
+
+For example, if we want to write to the name of 'Jack' from earlier, it would look like this:
+
+```Java
+Jack.name = "Jack Parker";
+```
+
+And if we want to read from the name field, it would look like this:
+
+```Java
+String aName = jack.name;
+```
+
+You can also use the dot notation to read or write to/from static class variables, this can both be on instance like 'Jack' or directly on the class, this would look something like:
+```Java
+Human.count = 101;
+long population = Human.count;
+
+jack.count = 101;
+long population = jack.count;
+```
+Both of these statements assume that jack is a reference variable of Human type and that it refers to a valid Human instance.
