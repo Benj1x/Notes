@@ -344,9 +344,8 @@ If a class member is declared as protected using the `protected` keyword, it can
 
 # Constructors
 
-
-
 Unlike a method, a constructor does not have a return type. You cannot even specify void as a return type for a constructor. You can however still use `return` inside the constructor, to exit it earlier. Consider the following declaration of a class Test2:
+
 ```Java
 public class Test2 {
  // Below is a method, not a constructor.
@@ -355,9 +354,11 @@ public class Test2 {
  }
 }
 ```
+
 This however, is a constructor:
+
 ```Java
-/ Cat.java
+// Cat.java
 package com.jdojo.cls;
 public class Cat {
  public Cat() {
@@ -365,5 +366,6 @@ public class Cat {
  }
 }
 ```
+
 The purpose of a constructor is to initialize the instance variables of the newly created object. 
-Inside a constructor, you should restrict yourself only to writing code that initializes instance variables of the object. An object is not fully created when a constructor is called. The object is still in the process of creation. 
+Inside a constructor, you should restrict yourself only to writing code that initializes instance variables of the object. An object is not fully created when a constructor is called. The object is still in the process of creation.
