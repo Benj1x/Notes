@@ -63,4 +63,47 @@ Buxton continues by identifying that
 (to show movement or to highlight particular areas of the sketch) and notes about issues 
 that the designer has yet to resolve.
 
-![image]()
+![Interface Sketch](imgs/DEB/InterfaceSketch.png)
+
+Storyboarding is a technique taken from filmmaking – using a simple cartoon-like structure, key moments from the interactive experience are represented. The advantage of storyboarding is that it allows you to get a feel for the ‘flow’ of an experience. It is also a very economical way of representing the design – a single page can hold 6–8 ‘scenes’. It is often helpful to sketch out a storyboard based around a concrete scenario. The two together are very helpful in working through design ideas with customers. 
+
+Three main types of storyboarding are commonly found in UX design:
+* Traditional storyboarding. A storyboard for a film would usually have some notes 
+attached to each scene expanding on what will happen – this helps overcome the 
+limitations of representing a dynamic experience in a static medium. In UX design, 
+notes below each sketch usually contain the relevant steps from a scenario, and the 
+sketches themselves. 
+* Scored storyboards. If the application has a lot of motion graphics the storyboard can 
+be annotated – a sketch is annotated with appropriate notation and notes about, for 
+example, type, colours, images, sound and other issues are attached underneath. 
+* Text-only storyboards. These are useful if the application has a lot of complex 
+sequences. You can specify what images appear, what text accompanies them, any 
+accompanying media, general notes about tone, flow, etc.
+
+
+### Visualizing look and feel
+
+Designers need ways to envision the various touchpoints, service moments and user journeys so that they can establish a common ‘look and feel’ for the whole UX. The look (how things are represented) and feel (how things behave) should have some consistency across the different channels and should reflect the overall brand that the UX is aiming to establish
+
+Designers should aim to evoke particular meanings in their users. They should aim to bring about those key aspects of experience design – identity, adaptivity, narrative, immersion and flow – along with the characteristics of evoking the different 
+types of pleasure and characteristics of product attachment. Designers need to establish the aesthetics of the product or service they are developing. To do this, designers need to find some way to envision the feelings and sense of 
+presence that users will have when they experience a service or product.
+
+### Mood boards
+
+
+Mood boards are widely used in advertising and interior design. Quite simply designers gather visual stimuli that capture something of the feeling about the design. Photographs and other images, colours, textures, shapes, headlines from newspapers or magazines, quotations from people, pieces of fabric can all be used to contribute to this.
+
+Lucero (2012) argues that mood boards are useful for ‘framing, aligning, paradoxing, abstracting, and directing’ designers in their work on the look and feel of a product or service. 
+
+The rule with mood boards is that ‘anything goes’. The point of the board is not to 
+formally represent some aspect of the design but simply to act as inspiration – perhaps 
+promoting a particular line of thought, or providing inspiration for a colour scheme. 
+One technique is to get the client to create a mood board. This can give you an insight 
+into the kinds of aesthetics that are likely to appeal to them.
+
+
+### Descriptive adjectives
+
+
+As a variation on the mood board concept, writing down adjectives that describe some aspect of the system can be useful. You can envision the look of a service by writing down what emotions you want it to evoke in the users. For example, you want users to feel that this is a serious app, providing content that has been well researched and well written but that retains some sense of adventure and intrigue. Listing descriptive adjectives for a project will lead to a set of semantic scales that subsequently can be used for evaluation through semantic differentials.
