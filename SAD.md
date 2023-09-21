@@ -67,7 +67,7 @@ As an aid to our analysis, we will discuss different types of functions. Each fu
 
 *Update* functions are activated by a problem-domain event and result in a change in the model's state.
 
-*Signal* functions are activated by a change in the model's state and result in a reaction in the context; this reaction might be a display to the actors in the application domain, or a direct intervention in the problem domain.
+*Signal* functions are activated by a change in the model's state and result in a reaction in the context; this reaction might be a display to the actors in the application domain, or a direct intervention in the problem domain.
 
 *Read* functions are activated by a need for information in an actor's work task and result in the system displaying relevant parts of the model.
 
@@ -81,7 +81,7 @@ character, and lets us use the function types as tools in our application-domain
 
 ### Analyzing Functions
 
-The purpose of this activity is to determine the system's information processing capabilities by constructing a complete list of functions, as well as a detailed specification of the complex parts. Describing functions is not particularly difficult; the greater challenge is to choose which functions to include.
+The purpose of this activity is to determine the system's information processing capabilities by constructing a complete list of functions, as well as a detailed specification of the complex parts. Describing functions is not particularly difficult; the greater challenge is to choose which functions to include.
 
 ![Function Specification](imgs/SAD/Functions.png)
 
@@ -89,7 +89,7 @@ The central criterion for system-functionality analysis is that analysis ends wi
 
 **Principle:** *Identify all functions.*
 
-For some functions, you must describe their content in detail to understand what they do. However, you should give detailed descriptions for only the most complex and incomprehensible functions. The second principle for the function-analysis activity is:
+For some functions, you must describe their content in detail to understand what they do. However, you should give detailed descriptions for only the most complex and incomprehensible functions. The second principle for the function-analysis activity is:
 
 **Principle:** *Specify only complex functions.*
 
@@ -97,7 +97,7 @@ For some functions, you must describe their content in detail to understand what
 
 **Principle:** *Check consistency with use cases and the model*
 
-Function analysis consists of thi·ee subactivities: find functions, specify 
+Function analysis consists of three subactivities: find functions, specify 
 complex functions, and evaluate critically. The relations between subactivities, preconditions, and results are shown in the first figure of this lecure.
 
 ### Find functions
