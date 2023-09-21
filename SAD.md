@@ -177,3 +177,17 @@ Besides these guidelines for developing good designs, we should acknowledge that
 there are interaction patterns aimed at duping users, or aimed at getting them to do 
 things that they did not intend to do. These so-called dark patterns aim to get users to 
 sign up to full-price services, post items on their social media, frighten users into making some choice or do a host of other things. There is a comprehensive list at [www.darkpatterns.org](www.darkpatterns.org)
+
+## LECTURE FOUR NOT DONE
+
+## Lecture Five - Usage
+
+
+### Application Domain Analysis
+Application-domain analysis focuses on a question: How will the target system be used? The purpose in asking it is to define requirements for the system's functions and interfaces
+
+
+In most projects, deciding the order of these two main activities is a strategic question. If you begin by analyzing the application domain, your focus is on the users' work, and you might specify many detailed requirements. From this, you can abstract the underlying concepts, which you can then model as classes, events, and structures in the problem-domain model. 
+If you begin by analyzing the problem domain, yow· focus will be on what the business is really about, rather than on interfaces and functions
+
+#

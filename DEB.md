@@ -179,13 +179,15 @@ things that they did not intend to do. These so-called dark patterns aim to get 
 sign up to full-price services, post items on their social media, frighten users into making some choice or do a host of other things. There is a comprehensive list at [www.darkpatterns.org](www.darkpatterns.org)
 
 ### Summary
+
 Good design is about usability. It is about ensuring that systems are accessible to all and 
 that designs are acceptable for the people and contexts in which they will be used. 
 Designers need to evaluate their designs with people and involve people in the design 
 process. Paying attention to design principles can help sensitize the designer to key 
-aspects of good design. 
+aspects of good design.
+
 * Access to interactive systems for all people is an important right. 
 * Usability is concerned with balancing the PACT elements in a domain. 
 * Acceptability is concerned with ensuring that designs are appropriate to contexts of use. 
 * Twelve design principles are particularly important. They can be grouped into three 
-main design issues of learnability, effectiveness and accommodation. 
+main design issues of learnability, effectiveness and accommodation.
