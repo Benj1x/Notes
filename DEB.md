@@ -191,3 +191,14 @@ aspects of good design.
 * Acceptability is concerned with ensuring that designs are appropriate to contexts of use. 
 * Twelve design principles are particularly important. They can be grouped into three 
 main design issues of learnability, effectiveness and accommodation.
+
+## Lecture Five
+
+After this lecture you should be able to:
+
+* Describe the importance of memory and attention and their major 
+components and processes
+* Understand attention and awareness; situation awareness, 
+attracting and holding attention
+* Understand the characteristics of human error and mental 
+workload and how they are measured.
