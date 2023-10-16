@@ -51,7 +51,24 @@ The behavioral pattern describes behavior common to all objects of the class. To
 
 ## Lecture Five - Usage
 ![ApplicationDomainAnalysisPurpose](imgs/SAD/ApplicationDomainAnalysisPurpose.png)
+To be usable, a system must fit the application domain. In this lecture we look at how we can determine this fit. We do this by describing actors and use cases based on an understanding of application-domain activities. The use cases provide an overview of the system requirements from the users' perspective and provide a foundation for defining and evaluating the more basic function and interface requirements.
 
+### Use Cases 
+Analyzing an existing application domain can create a huge amount of detailed information that has little value to the development process. For efficiency, you must maintain a relevant level of abstraction and focus on the interaction between users and the system. Use cases can help you achieve a relevant focus and abstraction level. In this activity ti;he key concepts are: 
+
+**Actor:** *An abstraction of users or other systems that interact with the target system.* 
+**Use case:** *A pattern for interaction between the system and actors in the application domain.* 
+
+Actors are an abstraction of people and other systems that activate a target system's functions. Of course, in a use-case description, we should indicate 
+whether the actor is mechanical or human. A specific person or system can appear in different roJes. 
+A use case is an abstraction of an interaction with the target system. It determines a delimited use of a part of the system. A use case can be initiated by an actor or by the target system. The complete set of use cases determines all uses of the target system within the application domain. The main principle in determining system usage is:
+
+*Principle: Determine the application domain with use cases.*
+
+Determining use cases is a multi-faceted activity. First, it demands cooperation between users and developers: users formulate needs and contribute 
+application-domain insights, and developers formulate use cases and contribute technical knowledge. 
+
+![ApplicationDomainAnalysisPurpose](imgs/SAD/SubactivitiesOfUsage.png)
 
 ## Lecture Six - Functions
 
