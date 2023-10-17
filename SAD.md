@@ -50,14 +50,46 @@ The behavioral pattern describes behavior common to all objects of the class. To
 ### Event traces
 
 ## Lecture Five - Usage
+
 ![ApplicationDomainAnalysisPurpose](imgs/SAD/ApplicationDomainAnalysisPurpose.png)
+
+Application-domain analysis focuses on a question: How will the target system be used? The purpose in asking it is to define requirements for the system's functions and interfaces. Application-domain analysis interacts with problem-domain analysis, which we discussed in Lecture Two. There, the question was: What is the target system about? The purpose of problem-domain analysis was to define requfrements for the system's model, which provides our vocabulary for defining the function and interface requirements. 
+In most projects, deciding the order of these two main activities is a strategic question. If you begin by analyzing the application domain, your focus is on th e users' work, and you might specify many detailed requirements. From this, you can abstract the underlying concepts, which you can then model as classes, events, and structures in the problem-domain model. If you begin by analyzing the problem domain, your focus will be on what the business is really about, rather than on interfaces and functions. 
+
 To be usable, a system must fit the application domain. In this lecture we look at how we can determine this fit. We do this by describing actors and use cases based on an understanding of application-domain activities. The use cases provide an overview of the system requirements from the users' perspective and provide a foundation for defining and evaluating the more basic function and interface requirements.
 
-### Use Cases 
-Analyzing an existing application domain can create a huge amount of detailed information that has little value to the development process. For efficiency, you must maintain a relevant level of abstraction and focus on the interaction between users and the system. Use cases can help you achieve a relevant focus and abstraction level. In this activity ti;he key concepts are: 
+Although starting with application-domain analysis is easier, starting with problem-domain analysis can yield a better object-oriented description. Many traditional methods and use-case-driven object-oriented methods recommend the first approach; some recommend that you let your situation determine whether to start your analysis with the application or problem domain. On some projects, you can even combine them, pursuing both activities in parallel.
+
+Why distinguish between application and problem domains at all. Why not just model the target system straight away? The answer lies in the difference in stability of the target 
+system's properties. As the following figure shows illustrates, a system's model is more stable; its functions and interfaces, more transient. When you change the model, you must change the functions and interfaces. However, you can change functions without changing the model (though you must change the interfaces) and you can change the interface, such as switching from text to graphics, without changing the functions or the model. In short, function and interface requirements change more often, while the system model 
+rarely changes. Focusing on the different domains lets you design a more robust and flexible architecture. 
+
+![The relative stability of different system properties ](imgs/SAD/RelativeStability.png)
+
+Requirements determination is based on two fundamental principles. 
+The first principle is:
+**Principle:** *Determine the application domain with use cases.*
+Use cases offer an elegant solution to the classic problem in application-domain analysis: focusing on users' work yields too much information in too much detail. Use cases help concentrate the analysis on the interaction between users and the target system. 
+
+The second principle is: 
+**Principle:** *Collaborate with users.*
+Specifying requirements is not a one-way street. Users may not understand the technical options well enough to simply write down the optimal requirements. Cooperation between developers and users is needed. The requirements for usage, functions, and interfaces must be evaluated. You also need 
+to reduce the uncertainty inherent in requirements definition. Because requirement formulations are abstract, it is difficult to know whether everything has been considered. To validate requirements, you should conduct experiments in cooperation with users.
+Defining requirements is an iterative activity alternating between usage, 
+functions, and interfaces. However, for pedagogical reasons, in requirements analysis we focus on each activity in turn, as the following figure shows.
+![Application-domain analysis](imgs/SAD/AppDomainAnalysis.png)
+
+The goal is to create a coherent and consistent result. The following figure gives an overview of the activities in application-domain analysis. 
+In the next section, "Usage", we discuss how you can determine target-system use in the application domain by identifying and structuring actors and use cases. 
+![Activities in application-domain analysis](imgs/SAD/AccAppDomainAnalysis.png)
+
+
+### Usage
+!["Usage" purpose](imgs/SAD/UsagePurpose.png)
+Analyzing an existing application domain can create a huge amount of detailed information that has little value to the development process. For efficiency, you must maintain a relevant level of abstraction and focus on the interaction between users and the system. Use cases can help you achieve a relevant focus and abstraction level. In this activity ti;he key concepts are:
 
 **Actor:** *An abstraction of users or other systems that interact with the target system.* 
-**Use case:** *A pattern for interaction between the system and actors in the application domain.* 
+**Use case:** *A pattern for interaction between the system and actors in the application domain.*
 
 Actors are an abstraction of people and other systems that activate a target system's functions. Of course, in a use-case description, we should indicate 
 whether the actor is mechanical or human. A specific person or system can appear in different roJes. 
@@ -66,7 +98,7 @@ A use case is an abstraction of an interaction with the target system. It determ
 *Principle: Determine the application domain with use cases.*
 
 Determining use cases is a multi-faceted activity. First, it demands cooperation between users and developers: users formulate needs and contribute 
-application-domain insights, and developers formulate use cases and contribute technical knowledge. 
+application-domain insights, and developers formulate use cases and contribute technical knowledge.
 
 ![ApplicationDomainAnalysisPurpose](imgs/SAD/SubactivitiesOfUsage.png)
 
@@ -206,7 +238,7 @@ Third, you can compare the function list with the system definition and the mode
 The general definition of the system functionality in the system definition should be in accordance with your final list of functions. If the system definition says it is a payroll system, then no invoicing functions should be included. Differences between the general definition and the list of functions may give rise to a revision of both the system definition and the functions. 
 Finally, you must compare the function list with the model. The model must include precisely that information about the objects that the functions need; no more, no less. That is, if the model contains objects, structures, or events that are never used by any of the functions, then either the model contains too much or some functions are missing.
 
-## Lecture Seven - 
+## Lecture Seven -
 
 ## Lecture Eight - Architectural Design, Criteria and Components
 
