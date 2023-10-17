@@ -86,6 +86,8 @@ In the next section, "Usage", we discuss how you can determine target-system use
 
 ### Usage
 !["Usage" purpose](imgs/SAD/UsagePurpose.png)
+
+#### Use Cases
 Analyzing an existing application domain can create a huge amount of detailed information that has little value to the development process. For efficiency, you must maintain a relevant level of abstraction and focus on the interaction between users and the system. Use cases can help you achieve a relevant focus and abstraction level. In this activity ti;he key concepts are:
 
 **Actor:** *An abstraction of users or other systems that interact with the target system.* 
@@ -95,12 +97,72 @@ Actors are an abstraction of people and other systems that activate a target sys
 whether the actor is mechanical or human. A specific person or system can appear in different roJes. 
 A use case is an abstraction of an interaction with the target system. It determines a delimited use of a part of the system. A use case can be initiated by an actor or by the target system. The complete set of use cases determines all uses of the target system within the application domain. The main principle in determining system usage is:
 
-*Principle: Determine the application domain with use cases.*
+**Principle:** *Determine the application domain with use cases.*
 
 Determining use cases is a multi-faceted activity. First, it demands cooperation between users and developers: users formulate needs and contribute 
 application-domain insights, and developers formulate use cases and contribute technical knowledge.
 
+Second, determining use cases is an analytical as well as a creative activity. Use cases originate from needs and conditions in the application domain, but a use case is itself an expression of a solution. 
+Third, determining use cases is both a descriptive and experimental activity. You cannot fully evaluate the target system's use by sitting at a desk 
+studying use cases. A truly critical evaluation must include the user. Some users can be both critical and constructive with a description of the use cases. However, in order to really involve the user, you must present use cases through prototypes. This is a central principle:
+**Principle:** *Evaluate use cases in collaboration with users.* 
+
+Fourth, use cases define both the target system and its application domain. 
+Changes to a company's computerized systems affect the company's organization and way of working. It is important to evaluate these changes in order to avoid negative side effects. (OOAD&D does not cover this) At a minimum, you should evaluate the target system's effect on the organizational context, as expressed in the following principle:
+**Principle:** *Assess social changes in the application domain.* 
+
 ![ApplicationDomainAnalysisPurpose](imgs/SAD/SubactivitiesOfUsage.png)
+The above figure offers a summary of usage analysis activities: Actors and usecases are defined, often using patterns as inspiration. The activity results 
+in a description of all use cases and actors. These descriptions should be systematically evaluated. 
+
+#### 6.2 Example: An Automated Payment System 
+A basic automated payment system has four actors: account owners, who use the system for payment and cash withdrawals; creditors, who have customers that pay via the 
+system; administrators, who work with the system; and lquidity monitors, who use the system to monitor the bank's liquidity.
+An actor table, as shown in the figure below, provides an overview of the interaction. 
+![An actor table](imgs/SAD/ActorTable.png)
+
+The figure below shows the same information graphically in a use-case diagram. You can illustrate the relation between actors and use cases using either an actor table or a use-case diagram. Most prefer the actor table, as it consumes less space (it's probably less confusing too); UML recommends the use-case diagram.
+![A use case diagram](imgs/SAD/UseCaseDiagram.png)
+
+The account owner is involved in four use cases: payment, cash withdrawal, money transfer, and account information. Credit card payments always occur through the creditor-an interactive process involving both actors. Cash withdrawals occur at publicly accessible ATM machines, which are robust and easy to use. Transfers of money to the account can occur either electronically or by check. Although account information is sent by mail to the account owner on a monthly basis, the owner can also call the 
+administrator to receive special account information. 
+
+The creditor participates in three use cases: payment, money transfer, and credit information. The payments should occur without trouble so that it does not distract the customer and delay the service. The system therefore offers different technical possibilities. The credit card can be read directly by a cash register. Alternatively, the cash register can be fitted with a removable, portable card reader with a keyboard. This card reader is especially used by creditors in places such as restaurants, where the payment does not necessarily occur at a cash register. Transferring money from the system to the creditor occurs electronically or by check. Credit information is given with variable speed and frequency. The creditor can therefore choose between an advanced cash register, which is directly linked to the system; indirect transfer of credit information in electronic form; or sending 
+account balances through conventional mail. 
+
+Administrators participate in six use cases: registration, monitoring, error correction, money transfer, account information, and credit information. The account owner and the cr editor should be able to contact an administrator with all types of needs, and in principle, the inctividual administrator should perform all tasks related to the payment system. It is important that an administrator has a system overview and is able to switch quickly and efficiently between the system's different functions. 
+
+Liquidity monitors participate in only one use case: account information. A liquidity monitor compares information about all the accounts to see 
+if the liquidity rules are being followed. A liquidity monitor activates the system to obtain information about the accounts in the payment system; in 
+our example, the monitor is another computerized system with access to accounts. 
+
+The payment system illustrates the important differences and variations in actors and use cases. Account owners, creditors, administrators, 
+and liquidity monitors all use the system in different ways and situations. 
+The requirements as to what should be accessible and in what form this access should take place vary widely and must be thoroughly analyzed and 
+defined. You may not notice great differences or variations in some systems, but they are there nonetheless. You must understand these differences to design a system that is well adapted to the technical and organizational context
+
+#### Actors and Classes, Use Cases, and Events - A side note
+An actor table looks similar to the event table discussed in Chapter 3. This raises the question: Is there any difference between actors with use cases and classes with events? The answer is yes. The main difference is that the phenomena occur in different domains.
+A class describes something that the target system should manage, such as a customer. An actor describes someone or something that interacts physically with the system, such as a clerk. An event describes an incident the system must be aware of, such as when a customer orders certain goods. A use case describes the interaction between an actor and the system, such as a clerk entering an order.
+An event is something we want the system to remember. A use case is a way of using the system, such as to enter information. The event can occur at a different time and place than the related use case. For example, the ordering could happen in a store and the related use case could be performed later on in a back office.
+
+Of course, there are similarities between actor tables and event tables. They both view their domains- the application domain 
+and problem domain, respectively-in static and dynamic aspects. Actors and classes describe static aspects, while use cases and events describe dynamic aspects. Events are structured into behavioral patterns. Similarly, use cases can be viewed as another type of behavioral pattern, albeit in another domain.
+We can imagine cases in which the application domain and the problem domain overlap. If a customer enters an order over the Web, then "Customer" is both a class and an actor, and "ordering" is both a use case and the event that occurs when the order is accepted. Thus, the denotation of the concepts can overlap, but the descriptions of actors and classes, and use cases and events, will differ.
+
+#### Find Actors and Use Cases
+The central questions about the target system's usage are: Who will use the system? How will it be used? You can answer these questions in terms of actors and uses cases.
+
+#### Identify Actors 
+To identify actors, you must determine the division oflabor and the task-related roles in the target system's context. 
+In the payment system, the four actors are easy to identify because their reasons for using the system are very different. The account owner, the creditor, and the administrator reflect three different organizational roles. 
+It might be possible to further specialize these roles. For example, can the account owners be divided into different types? The answer depends on the business policy. In this case, a simple system is preferred. 
+We separate the liquidity monitor from the administrator, because the liquidity monitor can be another system, whereas the administrator is always a person. 
+The criterion for determining different actors is the dissimilarity of roles, as expressed by the use cases in which actors are involved. This corresponds to the criterion for having two different classes in the problem domain: their objects' behavioral patterns differ. 
+
+#### Describe Actors 
+We describe the target system's actors in actor specifications, as shown in the below figure. An actor specification consists of three parts: goal, characteristics, and examples. The goal describes-as precisely as possible-the actor's role in relation to the target system. The characteristics describe important aspects of actors' use of the system. When the actor is another system, the characteristics could include the technical interface. The general characteristics can be supplemented with concrete examples.
+![Account Owner Specification](imgs/SAD/AccountOwnerSpec.png)
 
 ## Lecture Six - Functions
 
