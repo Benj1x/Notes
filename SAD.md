@@ -1,7 +1,44 @@
 # Systems Development/System Analysis and Design
 
 ## Lecture one
+### Objects and Classes 
 
+In OOA&D, the basic building block is an object. During analysis, we use 
+objects to organize our understanding of the system's context. During design, we use objects to understand and describe the system itself. In each 
+case, the definition is the same:
+
+***Object:*** *An entity with identity, state, and behavior.* 
+
+In analysis, an object is an abstraction of a phenomenon in the system's context, such as a customer. The object expresses the users' view of reality: Certain people are customers, and they are treated as single entities with a specific identity, state, and behavior. In design, an object is part of the system. A customer can also be a design object. In design, the customer object would represent parts of a specific person's history and state within the system and make operations available for oth er system objects.
+
+Typically, we describe objects in terms of classes, rather than individually. For example, a system's customer class might contain specific customer objects, such as the user's mother or neighbor, but the same class will also contain many other customers, each with their unique identity, state, and behavior. Classes are useful for understanding objects and vitally important for describing them. Instead of describing each particular object, we develop a shared object description for all objects in the same class.
+
+***Class:*** *A description of a collection of objects sharing structure, behavioral pattern, and attributes.* 
+
+### Analysis and Design Objects 
+Analysis and design often share objects and classes, although the object's meaning changes. 
+An analysis object's identity expresses how the user differentiates it from the other objects in the context. 
+A design object's identity expresses how other objects in the system can recognize it, and thereby gain access to it. Design also gives rise to new classes. Such classes do not reflect the system's context, but they are important for implementing the system on the technical platform.
+
+Object behavior is the decisive difference between analysis and design objects. In analysis, we express an object's behavior by the events it performs or experiences. Customer objects are, for example, involved in ordering and shipping goods. Such events (order and ship) occur at definite points in time, and involve one or more classes of objects (customers and goods). The events help us understand how and when to change a system's representation of an object. 
+
+In design, we express an object's behavior by the operations it can carry out and make available to other objects in the system. Customer objects, for example, can represent information about real-world customers. Such objects have operations, such as "add order'' and "remove order," which let the system update the customer object's state as the real world changes. A design object encapsulates the internal representation of its state. The representation is hidden so other objects can only access the object's state (which 
+goods are ordered) through its operations (add order and remove order) An operation is defined as a process capability in a class and activated through the class' objects. 
+
+Analysis and design objects describe two clearly different matters. 
+Analysis objects describe phenomena outside the system, such as people and things, which are typically independent. Although we cannot always command them, we must register the events they perform or experience. 
+Design objects describe phenomena within the system that we can control. We describe their behavior as operations for the computer to carry out
+
+### Advantages of Object-Orientation 
+Objects, state, and behavior, are more general concepts and are suitable for describing most phenomena that can be expressed in natural language. Objects are similar to nouns, designating things such as people or inventory. Object attributes or states, like adjectives, characterize object traits. Object behavior, like verbs, describe actions or influences
+For example:
+"The house looked nice after Bob painted it." This closely parallels the object-oriented way of thinking. 
+There are two objects (the house and Bob), a common event (painting the house), and one of the objects has changed state (the house has become nice)
+
+Here we touch upon a primary strength of object-orientation: It provides clear information about the system's context. Traditional methods were very effective at modeling early systems, whose purpose was to automate labor-intensive information processing tasks
+
+OOA&D, Chapter 1
+OOA&D, Chapter 2
 ### FACTOR
 
 The factor criterion consists of six elements: <br>
