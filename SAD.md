@@ -1,46 +1,108 @@
 # Systems Development/System Analysis and Design
 
-This class, has a lot of sections where everything in it seems important to me, sometime just for some context. Therefore, this class will probably just have a lot of what seems like copy pasting instead of just 'this part of this section seems important'  kind of notes.
+This class, has a lot of sections where everything in it seems important to me, sometime just for some context. Therefore, this class will probably just have a lot of what seems like copy pasting instead of just 'this part of this section seems important' kind of notes.
+
+Sections marked with <span style="color:Red">red</span> are extremly important for this subject, and should therefore be read and understood.
 
 ## Lecture one
-### Objects and Classes 
+
+### Objects and Classes
 
 In OOA&D, the basic building block is an object. During analysis, we use 
 objects to organize our understanding of the system's context. During design, we use objects to understand and describe the system itself. In each 
 case, the definition is the same:
 
-***Object:*** *An entity with identity, state, and behavior.* 
+***Object:*** *An entity with identity, state, and behavior.*
 
 In analysis, an object is an abstraction of a phenomenon in the system's context, such as a customer. The object expresses the users' view of reality: Certain people are customers, and they are treated as single entities with a specific identity, state, and behavior. In design, an object is part of the system. A customer can also be a design object. In design, the customer object would represent parts of a specific person's history and state within the system and make operations available for oth er system objects.
 
 Typically, we describe objects in terms of classes, rather than individually. For example, a system's customer class might contain specific customer objects, such as the user's mother or neighbor, but the same class will also contain many other customers, each with their unique identity, state, and behavior. Classes are useful for understanding objects and vitally important for describing them. Instead of describing each particular object, we develop a shared object description for all objects in the same class.
 
-***Class:*** *A description of a collection of objects sharing structure, behavioral pattern, and attributes.* 
+***Class:*** *A description of a collection of objects sharing structure, behavioral pattern, and attributes.*
 
-### Analysis and Design Objects 
+### Analysis and Design Objects
+
 Analysis and design often share objects and classes, although the object's meaning changes. 
 An analysis object's identity expresses how the user differentiates it from the other objects in the context. 
 A design object's identity expresses how other objects in the system can recognize it, and thereby gain access to it. Design also gives rise to new classes. Such classes do not reflect the system's context, but they are important for implementing the system on the technical platform.
 
-Object behavior is the decisive difference between analysis and design objects. In analysis, we express an object's behavior by the events it performs or experiences. Customer objects are, for example, involved in ordering and shipping goods. Such events (order and ship) occur at definite points in time, and involve one or more classes of objects (customers and goods). The events help us understand how and when to change a system's representation of an object. 
+Object behavior is the decisive difference between analysis and design objects. In analysis, we express an object's behavior by the events it performs or experiences. Customer objects are, for example, involved in ordering and shipping goods. Such events (order and ship) occur at definite points in time, and involve one or more classes of objects (customers and goods). The events help us understand how and when to change a system's representation of an object.
 
 In design, we express an object's behavior by the operations it can carry out and make available to other objects in the system. Customer objects, for example, can represent information about real-world customers. Such objects have operations, such as "add order'' and "remove order," which let the system update the customer object's state as the real world changes. A design object encapsulates the internal representation of its state. The representation is hidden so other objects can only access the object's state (which 
-goods are ordered) through its operations (add order and remove order) An operation is defined as a process capability in a class and activated through the class' objects. 
+goods are ordered) through its operations (add order and remove order) An operation is defined as a process capability in a class and activated through the class' objects.
 
 Analysis and design objects describe two clearly different matters. 
 Analysis objects describe phenomena outside the system, such as people and things, which are typically independent. Although we cannot always command them, we must register the events they perform or experience. 
 Design objects describe phenomena within the system that we can control. We describe their behavior as operations for the computer to carry out
 
-### Advantages of Object-Orientation 
+### Advantages of Object-Orientation
+
 Objects, state, and behavior, are more general concepts and are suitable for describing most phenomena that can be expressed in natural language. Objects are similar to nouns, designating things such as people or inventory. Object attributes or states, like adjectives, characterize object traits. Object behavior, like verbs, describe actions or influences
 For example:
 "The house looked nice after Bob painted it." This closely parallels the object-oriented way of thinking. 
 There are two objects (the house and Bob), a common event (painting the house), and one of the objects has changed state (the house has become nice)
 
-Here we touch upon a primary strength of object-orientation: It provides clear information about the system's context. Traditional methods were very effective at modeling early systems, whose purpose was to automate labor-intensive information processing tasks
+Here we touch upon a primary strength of object-orientation: It provides clear information about the system's context.Good at distributing specialized data throughout a system.
 
+Another strength of object-oriented methods is the close connection between object-oriented analysis, object-oriented design, object-oriented user interfaces, and object-oriented programming. Objects can model social, economic, and organizational conditions, as well as the system's interfaces, functions, processes, and components.
+
+And lastly; Objects provide material coherence to the system's structure. They also provide mental coherence: Objects offer developers a natural way of thinking about problems that support abstraction without forcing a one-sided, technical point of view.
+
+### <span style="color:Red">Model the Context</span>.
+
+Success in system development greatly depends on the developer's understanding of the system's practical application. As the figure below shows, the system's context can be viewed from two complementary perspectives: the system models something (the problem domain) and it is operated by users (the application domain).
+
+![The system context](imgs/SAD/SystemContext.png)
+
+We define these two different, but strongly related context perspectives as follows:
+
+***Problem domain:*** *That part of a context that is administrated, monitored or controlled by a system.*
+
+***Application domain:*** *The organization that administrates, monitors, or controls a problem domain.*
+
+The problem domain describes the system's purpose, as well as the parts of reality that the system should help administrate, monitor, or control. The application domain is a part of the user organization. A system's success (or failure) depends on how well it links the application and problem domains together into a functioning whole.
+
+A few examples of the problem domain and application domain would be:
+For a payroll system, the application domain includes the personnel office, while the problem domain includes the employees, their contracts, and 
+their work schedules. 
+For an air traffic control system, the application domain is a part of the air traffic controllers' job, while the problem domain includes planes, flight departures, flight corridors, runways, flight positions, and movements. 
+For a device for measuring telephone signals, the application domain is part of the technicians' job, and the problem domain includes signals, protocols, lines, transmitters, and receivers.
+
+A key task in analysis and design is to model what the system will administrate, monitor, or control. For example, in an air traffic control system, this includes airplanes, flight departures, flight corridors, and positions. The air traffic controllers' job consists of monitoring and controlling the air traffic using the system's information about these objects. Controllers use this information, rather than direct observation of aircraft movement, as a basis for decision making. Their understanding of air traffic consists of both the actual situation in the air, and the way they think and talk about the traffic in technical terms.
+Because the controllers' understanding of the problem domain is both created and maintained through the system, the problem domain and the system's model of the problem domain must agree completely. This is a crucial quality requirement. It is also crucial that the system's model is organized in agreement with the air traffic controller's structural understanding. Thus, in this and all cases, system developers should analyze the problem domain, both to understand the system's context and to learn how to 
+usefully representing it to the system's users.
+A second key task in analysis and design is to model how the system will interact with users in the application domain. This includes identifying 
+all user groups and understanding both what they will use the system for and how each group will interact with the system in different situations.
+If we continue with the air traffic control example,  we would study how traffic controllers, pilots, and ground personnel would interact with the system to ensure a smooth and effective operation once the system is deployed.
+
+### Emphasize the Architecture
+
+Understanding the context is important, but it is equally important to understand the system itself. We view the system as an entity adapted to solve identified needs for a specific technical platform:
+***System:*** *A collection of components that implement modeling requirements, functions, and interfaces.*
+
+During analysis and design, it is essential to develop an overall understanding of the system. OOA&D therefore emphasizes the system architecture as a key challenge, focusing on ease of understanding, flexibility, and usefulness.
+The system architecture should be easy to understand because it serves as the basis for decisions and as a communication and work tool in the development work ahead. It should be 
+flexible because system development takes place in a turbulent environment. Finally, the architecture sh ould be useful because the system's success depends on the role it will play in the user organization.
+However, these general criteria do not specify when a design job is finished. The main purpose of OOA&D is to design a system without significant uncertainties.
+
+A reasonable architecture gives us an overview of the system. Even small systems contain so many classes and objects that the system easily becomes unwieldy. As a tool for handling system complexity, OOA&D uses components, which are groups of classes and objects. 
+Identifying the relevant components in a concrete system is a crucial issue in object-oriented design. The choice of architecture will always reflect the concrete situation, and selecting one is a highly iterative process. In OOA&D, we start with a very basic architecture with three components: a model component, a function component, and an interface component.
+
+### Reuse Patterns
+
+A fundamental way of ensuring quality and efficiency in analysis and design is to reuse ideas that have been tested and used in other situations. OOA&D inspires reuse in two ways: by using objects and components, and, more generally, by using analysis and design patterns. A pattern is a generalized description of a problem and a related solution.
+A pattern is expressed as a configuration of objects or components that can be used as inspiration for analysis and design efforts. A pattern is simplified and abstract, and must 
+be adapted to the particulars of a given situation. In essence, it is a template that points at possible, often partial, solutions that must be further developed and supplemented to fit particular needs.
+
+For example, we can use the role pattern during analysis to model different roles that people play over time. Given a system containing information about both employees and customers, we can choose a straightforward model in which people are modeled as employees or customers. However, if a customer is later hired, we would have to model this by having both a customer object and an employee object with similar attributes.
+The alternative is to design a dynamic role model, as shown in the below figure. This is a little more complicated, but better reflects reality. In this model, a person at any point in time has zero or one employee and zero or one customer roles, and maybe several over time. Thus, when a customer is hired, we would simply add an employee role to the existing customer role. The role pattern captures a general way to model objects with dynamically changing roles using a shared repertoire of possible roles. 
+
+![A simple role pattern](imgs/SAD/RolePattern.png)
+
+OOA&D, Part 1
 OOA&D, Chapter 1
 OOA&D, Chapter 2
+
 ### FACTOR
 
 The factor criterion consists of six elements: <br>
