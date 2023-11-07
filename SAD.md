@@ -68,11 +68,10 @@ their work schedules.
 For an air traffic control system, the application domain is a part of the air traffic controllers' job, while the problem domain includes planes, flight departures, flight corridors, runways, flight positions, and movements. 
 For a device for measuring telephone signals, the application domain is part of the technicians' job, and the problem domain includes signals, protocols, lines, transmitters, and receivers.
 
-A key task in analysis and design is to model what the system will administrate, monitor, or control. For example, in an air traffic control system, this includes airplanes, flight departures, flight corridors, and positions. The air traffic controllers' job consists of monitoring and controlling the air traffic using the system's information about these objects. Controllers use this information, rather than direct observation of aircraft movement, as a basis for decision making. Their understanding of air traffic consists of both the actual situation in the air, and the way they think and talk about the traffic in technical terms.
+A key task in analysis and design is to model what the system will administrate, monitor, or control. For example, in an air traffic control system, this includes airplanes, flight departures, flight corridors, and positions. The air traffic controllers' job consists of monitoring and controlling the air traffic using the system's information about these objects. Controllers use this information, rather than direct observation of aircraft movement, as a basis for decision making. Their understanding of air traffic consists of both the actual situation in the air, and the way they think and talk about the traffic in technical terms.<br>
 Because the controllers' understanding of the problem domain is both created and maintained through the system, the problem domain and the system's model of the problem domain must agree completely. This is a crucial quality requirement. It is also crucial that the system's model is organized in agreement with the air traffic controller's structural understanding. Thus, in this and all cases, system developers should analyze the problem domain, both to understand the system's context and to learn how to 
-usefully representing it to the system's users.
-A second key task in analysis and design is to model how the system will interact with users in the application domain. This includes identifying 
-all user groups and understanding both what they will use the system for and how each group will interact with the system in different situations.
+usefully representing it to the system's users.<br>
+A second key task in analysis and design is to model how the system will interact with users in the application domain. This includes identifying all user groups and understanding both what they will use the system for and how each group will interact with the system in different situations.<br>
 If we continue with the air traffic control example,  we would study how traffic controllers, pilots, and ground personnel would interact with the system to ensure a smooth and effective operation once the system is deployed.
 
 ### Emphasize the Architecture
@@ -80,28 +79,70 @@ If we continue with the air traffic control example,  we would study how traffic
 Understanding the context is important, but it is equally important to understand the system itself. We view the system as an entity adapted to solve identified needs for a specific technical platform:
 ***System:*** *A collection of components that implement modeling requirements, functions, and interfaces.*
 
-During analysis and design, it is essential to develop an overall understanding of the system. OOA&D therefore emphasizes the system architecture as a key challenge, focusing on ease of understanding, flexibility, and usefulness.
+During analysis and design, it is essential to develop an overall understanding of the system. OOA&D therefore emphasizes the system architecture as a key challenge, focusing on ease of understanding, flexibility, and usefulness.<br>
 The system architecture should be easy to understand because it serves as the basis for decisions and as a communication and work tool in the development work ahead. It should be 
-flexible because system development takes place in a turbulent environment. Finally, the architecture sh ould be useful because the system's success depends on the role it will play in the user organization.
+flexible because system development takes place in a turbulent environment. Finally, the architecture sh ould be useful because the system's success depends on the role it will play in the user organization.<br>
 However, these general criteria do not specify when a design job is finished. The main purpose of OOA&D is to design a system without significant uncertainties.
 
-A reasonable architecture gives us an overview of the system. Even small systems contain so many classes and objects that the system easily becomes unwieldy. As a tool for handling system complexity, OOA&D uses components, which are groups of classes and objects. 
+A reasonable architecture gives us an overview of the system. Even small systems contain so many classes and objects that the system easily becomes unwieldy. As a tool for handling system complexity, OOA&D uses components, which are groups of classes and objects. <br>
 Identifying the relevant components in a concrete system is a crucial issue in object-oriented design. The choice of architecture will always reflect the concrete situation, and selecting one is a highly iterative process. In OOA&D, we start with a very basic architecture with three components: a model component, a function component, and an interface component.
 
 ### Reuse Patterns
 
-A fundamental way of ensuring quality and efficiency in analysis and design is to reuse ideas that have been tested and used in other situations. OOA&D inspires reuse in two ways: by using objects and components, and, more generally, by using analysis and design patterns. A pattern is a generalized description of a problem and a related solution.
+A fundamental way of ensuring quality and efficiency in analysis and design is to reuse ideas that have been tested and used in other situations. OOA&D inspires reuse in two ways: by using objects and components, and, more generally, by using analysis and design patterns. A pattern is a generalized description of a problem and a related solution.<br>
 A pattern is expressed as a configuration of objects or components that can be used as inspiration for analysis and design efforts. A pattern is simplified and abstract, and must 
 be adapted to the particulars of a given situation. In essence, it is a template that points at possible, often partial, solutions that must be further developed and supplemented to fit particular needs.
 
-For example, we can use the role pattern during analysis to model different roles that people play over time. Given a system containing information about both employees and customers, we can choose a straightforward model in which people are modeled as employees or customers. However, if a customer is later hired, we would have to model this by having both a customer object and an employee object with similar attributes.
-The alternative is to design a dynamic role model, as shown in the below figure. This is a little more complicated, but better reflects reality. In this model, a person at any point in time has zero or one employee and zero or one customer roles, and maybe several over time. Thus, when a customer is hired, we would simply add an employee role to the existing customer role. The role pattern captures a general way to model objects with dynamically changing roles using a shared repertoire of possible roles. 
+For example, we can use the role pattern during analysis to model different roles that people play over time. Given a system containing information about both employees and customers, we can choose a straightforward model in which people are modeled as employees or customers. However, if a customer is later hired, we would have to model this by having both a customer object and an employee object with similar attributes.<br>
+The alternative is to design a dynamic role model, as shown in the below figure. This is a little more complicated, but better reflects reality. In this model, a person at any point in time has zero or one employee and zero or one customer roles, and maybe several over time. Thus, when a customer is hired, we would simply add an employee role to the existing customer role. The role pattern captures a general way to model objects with dynamically changing roles using a shared repertoire of possible roles.
 
 ![A simple role pattern](imgs/SAD/RolePattern.png)
+
+### Tailor the method
+
+OOA&D reflects four central perspectives on a system and its context:
+
+* The system's information contents 
+* How the system will be used
+* The system as a whole 
+* The system's components
+
+The perspectives are connected to OOA&D's main activities:
+
+* Problem-Domain analysis
+* Application-Domain analysis
+* Architectural design 
+* Component design
+
+Each activity leads to specific results, which are subsequently included in the analysis and design documentation. 
+How you organize and document these activities will depend on how you tailor OOA&D to the needs of your project.
+
+
+### Four methods
+First understand the system from an information perspective: *The system must offer a useful model of the problem domain.*<br> 
+It should contain a model of the relevant problem-domain. This information perspective is predomiant during analysis. But the perspective is also important during design 
+since the system should make the model available in an efficient and useful manner.
+
+The system is next understood from the user's viewpoint: The system must be integrated in the application domain. We must understand the people, devices, and other systems that the target system will interact with, and which functions to offer these actors. 
+Relations such as how, how quickly, how often, and in what pattern different actors should interact with the system are crucial for system usability. A well-functioning system is integrated with other systems and adapted to the organization and the traditions in the application domain. 
+
+The third perspective is the architectural perspective: 
+The system must run on a specific technical platform. How should the system be divided into components? Important considerations include the physical processes, units, and connections that make up the technical platform. How should the system use this platform? An architecture emphasis helps you determine how best to take advantage of a platform's possibilities and overcome its limitations.
+
+Finally, the system should be understood as a whole: The system should be a well-functioning unit of cooperating parts. The individual components and their mutual interfaces and interactions should be designed to serve as a basis for system implementation.
+
+### Four Main Activities  
+OOA&D covers the four perspectives through four main activities, shown in the below figure.
+![The activities and results in OOA&D](imgs/SAD/FourMainActivities.png)
+Analysis and design are always strongly iterative, wherein considerations based on one perspective give rise to new considerations based upon another perspective. The four activities' relative importance and sequence changes from project to project. In some projects, the application-domain analysis is characterized by great uncertainty. The project might, for example, be based on a new interface technology that is unfamiliar to both users and developers.<br>
+In other projects, the architecture is characterized by great uncertainty, perhaps because the system is to be implemented on a recently distributed platform. Therefore, the priority and organization of OOA&D's main activities depends on the situation.
+
+The system should be in balance with its context. But how can you achieve this? The obvious place to start is with the most important perspective. Thus, you must assess the actual situation and decide which perspectives you should emphasize. In practice, an activity's order and importance are controlled by a strategy that reflects the concrete goals and circumstances for analysis and design. How to develop such a strategy for particular projects will be discussed in Chapter 15. (TODO:) 
 
 OOA&D, Part 1
 OOA&D, Chapter 1
 OOA&D, Chapter 2
+
 
 ### FACTOR
 
