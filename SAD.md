@@ -134,15 +134,30 @@ Finally, the system should be understood as a whole: The system should be a well
 ### Four Main Activities
 
 OOA&D covers the four perspectives through four main activities, shown in the below figure.
-![The activities and results in OOA&D](imgs/SAD/FourMainActivities.png)
+![The activities and results in OOA&D](\imgs\SAD\FourMainActivities.png)
 Analysis and design are always strongly iterative, wherein considerations based on one perspective give rise to new considerations based upon another perspective. The four activities' relative importance and sequence changes from project to project. In some projects, the application-domain analysis is characterized by great uncertainty. The project might, for example, be based on a new interface technology that is unfamiliar to both users and developers.<br>
 In other projects, the architecture is characterized by great uncertainty, perhaps because the system is to be implemented on a recently distributed platform. Therefore, the priority and organization of OOA&D's main activities depends on the situation.<br><br>
 
 The system should be in balance with its context. But how can you achieve this? The obvious place to start is with the most important perspective. Thus, you must assess the actual situation and decide which perspectives you should emphasize. In practice, an activity's order and importance are controlled by a strategy that reflects the concrete goals and circumstances for analysis and design. How to develop such a strategy for particular projects will be discussed in Lecture 7, or chapter 15 of "Mathiassen, L., Munk-Madsen, A., Nielsen, P. A., & Stage, J. (2000). Object-Oriented Analysis and Design. Marko."
 <br><br>
 OOA&D's four main activities are abstract tasks that you can perform together with other tasks in a practical system development project. How you organize these tasks depends on strategy, which differs from project to project. <br>
-Figure 1.5 shows a traditional, top-down approach based on OOA&D; Figure 1.6 shows a use-case-driven approach, also based on OOA&D.
+Figure 1.5 shows a traditional, top-down approach based on OOA&D; Figure 1.6 shows a use-case-driven approach, also based on OOA&D. OOA&D offers a systematic and complete approach to object-oriented analysis and design. Principles constitute OOA&D's central and unchangeable parts, while techniques and notation act as their concrete realization. The method was designed so that you can easily adapt it to local traditions. 
+and supplement it with elements from other methods;  
+![A traditional top down approach based on OOA&D 1.5](TraditionalTopDownApproach.png)
 
+### Results
+The tangible result of analysis and design is documentation, which helps 
+you practically manage the actual analysis and design activities. Documentation provides a reference tool for the developers, and a place to store and organize intermediate results. It also contains agreements between the project participants. Documentation helps create continuity during system development, and thus must be of high quality. At the same time, it should be clear and concise. It requires significant effort to create high quality documentation and an overly detailed design document will not inspire creativity and effectiveness in programmers.<br><br>
+Whether or not documentation is contained in one document or two is less important in the OOA&D approach. OOA&D produces both an analysis and a design 
+document. In Chapter 16, of "Mathiassen, L., Munk-Madsen, A., Nielsen, P. A., & Stage, J. (2000). Object-Oriented Analysis and Design. Marko." a detailed template for each is provided, which you can use as inspiration for designing the documentation for your own projects.
+### Unified Process and Notation 
+OOA&D clearly differ entiates between guidelines for process and those for notation. This separation lets you use the approach regardless of the object-oriented notation you choose. OOA&D also differentiate between general principles and concrete techniques. It's primary emphasis is on principles; OOA&D uses techniques to illustrate how to implement the principles. Classical methods have often given directions that were too detailed and not always valid; they also tend to disregard equally usable alternatives. The advantage of a 
+principle-based presentation is that you can substitute your own techniques when the task or terms dictate it.<br>
+<br>
+The choice of UML yields two important advantages. First, UML, like OOA&D, builds on a division between process and notation, so there are no built-in process guidelines in UML to consider. Second, UML's broad support gives you access to a large market of UML-compatible development tools. <br>
+The Unified Software Development Process is related to, but independent of, UML. The unified process represents one way to organize object-oriented projects that is use-case driven, architecture-centric, iterative, and incremental. A use case is a particular technique for application-domain analysis. Lecture 5 Chapter 6, it will be discussed that OOA&D builds on similar, but more general principles. <br>
+Figure 1.6 shows a use-case-driven, architecture-centric, and incremental approach based on OOA&D. As compared with the traditional, top-down approach in figure 1.5, we see differences and similarities.
+![Alt text](../Notes/imgs/SAD/UseCaseDrivenApproach.png)
 OOA&D, Chapter 1
 OOA&D, Chapter 2
 
