@@ -5,7 +5,8 @@ This class, has a lot of sections where everything in it seems important to me, 
 Sections marked with <span style="color:Red">red</span> are extremly important for this subject, and should therefore be read and understood.
 
 # Lecture one
-## Method 
+
+## Method
 
 ### Objects and Classes
 
@@ -147,11 +148,14 @@ and supplement it with elements from other methods;
 ![A traditional top down approach based on OOA&D 1.5](TraditionalTopDownApproach.png)
 
 ### Results
+
 The tangible result of analysis and design is documentation, which helps 
 you practically manage the actual analysis and design activities. Documentation provides a reference tool for the developers, and a place to store and organize intermediate results. It also contains agreements between the project participants. Documentation helps create continuity during system development, and thus must be of high quality. At the same time, it should be clear and concise. It requires significant effort to create high quality documentation and an overly detailed design document will not inspire creativity and effectiveness in programmers.<br><br>
 Whether or not documentation is contained in one document or two is less important in the OOA&D approach. OOA&D produces both an analysis and a design 
 document. In Chapter 16, of "Mathiassen, L., Munk-Madsen, A., Nielsen, P. A., & Stage, J. (2000). Object-Oriented Analysis and Design. Marko." a detailed template for each is provided, which you can use as inspiration for designing the documentation for your own projects.
-### Unified Process and Notation 
+
+### Unified Process and Notation
+
 OOA&D clearly differ entiates between guidelines for process and those for notation. This separation lets you use the approach regardless of the object-oriented notation you choose. OOA&D also differentiate between general principles and concrete techniques. It's primary emphasis is on principles; OOA&D uses techniques to illustrate how to implement the principles. Classical methods have often given directions that were too detailed and not always valid; they also tend to disregard equally usable alternatives. The advantage of a 
 principle-based presentation is that you can substitute your own techniques when the task or terms dictate it.<br>
 <br>
@@ -163,15 +167,17 @@ Figure 1.6 shows a use-case-driven, architecture-centric, and incremental approa
 The traditional approach is driven primarily by problem-domain analysis, whereas the unified approach is driven primarily by application-domain analysis (that is, 
 by use cases). The traditional approach emphasizes analysis, design, and programming of the entire system, whereas the unified approach is incremental, focusing on analysis, design, and programming of one system part at a time. Both approaches however are iterative and stress architectural concerns. <br> <br>
 
-Ultimately, you must identify the uncertainties you face and organize the process accordingly. Sometimes, this will lead you to take a highly incremental approach; other times, a more traditional one. Also, some projects require more focus on application-domain knowledge, while others require an emphasis on the problem domain. 
+Ultimately, you must identify the uncertainties you face and organize the process accordingly. Sometimes, this will lead you to take a highly incremental approach; other times, a more traditional one. Also, some projects require more focus on application-domain knowledge, while others require an emphasis on the problem domain.
 
-## System Choice 
+## System Choice
+
 As you might know development projects often begin with a collection of different ideas about the desired system. It might start with a thorough preliminary analysis or with a list of decisions that h ave already been made. It is the system developers' job and responsibility to take a step back and consider the main questions. <br>
 What are the problems we are going to solve? Is the planned system a useful solution? What if we developed an entirely different system? <br>
 In this section, it will be explained how you can take this step back. It will describe how to systematically examine project challenges and options, and 
 how to obtain relevant and precise information as a basis for analysis and design. Techniques that can help you create different alternatives are also introduced. These techniques can help your development team thoroughly consider a project situation and arrive at a short and precise definition of the planned system. Although the development team should always analyze, formulate, and evaluate possible solutions, in the end customers and users are responsible for choosing the system.
 
 ### System Definition
+
 In order for us developers to design solutions for many of the challenges we will stumple upon during project development we must understand the structures, relations and details of the user organization, and evaluate and manage relevant technologies in a proffesional manner. We should also know how to operate in constantly changing situations with new requirements, ideas and possiblities.
 Some development projects arise from problems that needs to be solved, some of these problems, might have been defined and desribed perfectly, while some have just been vaguely identified. So at the begining of development projects we must try to 'find. define and analyse in detail' (see: explicate) the most important challenges in the project. To do so, we explicate can explicate and debate alternative system definitions.
 <br>
@@ -183,7 +189,9 @@ The intention of such a definition is to explicate different interpretations and
 
 A system definition should be breif, precise, and contain the most fundamental decisions about the system. Creating breif system definitions, provides an overview and makes it easier to compare alternaties. Longs definitions makes this harder.
 In this lecture we will also be introduced to the FACTOR criterion for system definitions. Each letter refers to a key element in the system definition.
-### FACTOR
+
+#### FACTOR
+
 The factor criterion consists of six elements: <br>
 *Functionality:* The system functions that support the application-do-main tasks.<br><br>
 *Application domain:* Those parts of an organization that administrate, monitor, or control a problem domain. <br><br>
@@ -194,7 +202,81 @@ The factor criterion consists of six elements: <br>
 These elements describe, in a coherent manner, the most fundamental decisions involved in creating a sound computerized solution.
 The FACTOR criterion can be used in two ways. You can use it to support system-definition development, carefully considering how each of the six elements should be formulated.  Or you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. "In principle either starting point works" -Jan
 ![Subactivities in choosing a system](/imgs/SAD/SubactivitiesChoosingSystem.png)
+### Choosing the system
 As Figure 2.1 shows, system choice is based on three subactivities.
+The first subactivity focuses on challenges: we attempt to get an overview of both the situation and the different ways people interpret it.<br>
+The second subactivity creates and evaluates ideas for system design. This method offers a series of techniques to support creativity and introduce new ways of thinking.<br> 
+In the third subactivity, we formulate and choose the system definition, discussing and evaluating alternative system definitions in relation to our particular situation.<br><br>
+
+We produce a system definition by iterating through the three subactivities. In this process, an interaction occurs between our situational understanding and the generation of innovative ideas. An idea's relevance is intrinsically tied to the project situation. Conversely, describing the situation typically gives rise to new ideas. The process of composing and choosing system definitions also affects the other subactivities, revealing circumstances that we must closely examine and ideas we must further explore.
+<br> <br>
+Choosing which system to develop is a demanding activity. It requires imagination, good ideas, constructive abihties, and a critical sense. To succeed, we must start out from the users' situation and thoroughly understand its challenges. This demands close cooperation with customers and users. Without this foundation, it is difficult to propose relevant solutions. At the same time, we must reflect critically on users' requirements and ideas, particularly if they point toward one specific solution. The users' 
+knowledge and experience with computers, the organization's structure, and the existing computerized systems are factors that can complicate a project.
+
+### Describe the Situation
+Our understanding of the users' situation must be rich and abundant. To achieve this, we must be open and disposed toward discussion. Thus, we emphasize the following principle:
+
+**Principle:** *Appreciate the situation.*
+
+By working with "rich pictures," we can explicate important user views of a situation, facilitate debate, and get an overview of the situation quickly. The purpose here is to obtain an overview. 
+
+### Rich Pictures 
+A rich picture is an informal drawing that presents the illustrator's understanding of a situation. Figure 2.2 shows an example of a rich picture from a hospital's system development project. The rich picture describes a change from six autonomous wards to a new structure in which the wards become part of a larger unit. The purpose of this organizational change is to improve coordination and resource sharing among the wards. <br>
+A rich picture focuses on important aspects of the situation, which are determined by the illustrator. However, the rich picture should give a broad description of the situation that enables several alternative interpretations. For example, Figure 2.2 shows the increased efficiency that reorganization could bring. It also lets us look at the individual ward: Does it continue to be an efficient entity, or will responsibility become more difficult to assign among the six wards? We can also consider the impact on employees. How will the expected decline in ward-affiliation affect their work? <br>
+Finally, we can focus on changes in managerial forms. The crossed swords in the figure indicate conflicts between the old and new organization, and are relevant in each of the four perspectives. <br> <br>
+![Figure 2.2: Example of a rich picture with focus on change](imgs/SAD/RichPictureExample.png)<br>
+System development changes are typically not as radical as in the hospital case. Given this, it can be practical to differentiate between rich pictures that focus on stability and those that focus on change. In the former case, a rich picture might describe, in greater detail, a situation that remains stable. An example of this is the way in which an emergency vehicle is dispatched; a rich picture of this is shown in Figure 2.3. The second category describes a transformation between two situations: something exists and something is coming. 
+![Figure 2.3: Example of a rich picture which focuses on stability](imgs/SAD/StableRichPictureExample.png)<br>
+Coming up with good symbols for drawing rich pictures can be difficult. Figure 2.4 contains some options. The lower part shows symbols you can use to describe things and people; the upper part, symbols you can use for processes and structures. In principle, there are no limits to the types of symbols and icons you can use. The biggest problem for the novice is lack of imagination. Figure 2.4 can be used as inspiration- but the best way to learn how to make rich pictures is to try it and to learn from others.<br>
+![Figure 2.4: Ideas for symbols for rich pictures](imgs/SAD/IdeasForRichPictures.png)
+
+### Practical Advice
+To be a useful part of system definition, rich pictures should: 
+• contain a lot of information and be open to interpretation; <br>
+• present processes and structures in a coherent, well-balanced way; <br>
+• show at least one problematic area; <br>
+• point at several relevant computerized systems; <br>
+• be rich, but not chaotic; <br>
+• illuminate key aspects of a situation in a way that promotes understanding at many levels<br>
+• avoid representing data and data processing. <br>
+<br>
+Pre-analysis should help create and integrate different ideas for computerized solutions. The rich pictures can thus enable participants to get ideas and bring creativity into the project. Rich pictures should also provide an overview, rather than show too many elements and thus become chaotic. It is better to draw several pictures, especially if the situation is very complex. Finally, it is important to remember that rich pictures are personal. <br>
+The illustrator of the rich picture decides what is relevant to draw. Different viewpoints lead to new pictures.<br>
+
+### Create ideas
+A solid understanding of the existing situation is a good starting point for a development project,. However, it is just as important to bring forth new 
+ideas and ways of thinking, which is the second subaclivity in system definition. Good systems ar e created in the tension between tradition and creativity. OOA&D therefore stress the following principle:
+
+**Principle:** *Cultivate new ideas.*
+
+The result of this subactivity is a collection of ideas. The ideas describe parts of a computerized solution that can be summarized in one or more system definitions. The activity of cultivating ideas can only be systematically planned to a certain extent. Many ideas surface because some people are full of ideas. Other ideas come about as a result of coincidence or abstract thinking. We recommend being open to all new ideas. Too often, ideas are discarded without being properly evaluated. <br>
+The goal is to attempt a balance between creating new ideas and reusing well-established ones. New ideas should be cultivated in close cooperation with future users, 
+who know both the application domain and their organization's traditions and culture. Without a thorough understanding of the user's context, ideas are likely to be general and abstract.
+To generate and evaluate ideas in cooperation with the users, it is suggested to use: <br>
+• exemplars <br>
+• metaphors<br>
+• experiments. <br> 
+Exemplars provide a concrete way of creating new ideas. By studying similar systems, you can explore specific ideas that apply to your situation. Metaphors increase your understanding by presenting the user organization in new terms. This can bring entirely different ideas and experiences to the situation. Finally, you can use experiments, in cooperation with users, to assess possible solutions
+
+#### Exemplars
+When you develop a new system, OOA&D advises you to look at existing solutions that resemble the one that users desire. If you need a new accounting system, it's a good idea io study an existing system's design and use. You can do this by visiting another organization or by studying standard systems on the market. For every existing solution, try to answer the following questions:<br>
+• Which ideas lay the groundwork for the system?<br>
+• Do the ideas seem useful? Why?<br>
+• Will the ideas work in your context? Why?<br> 
+• Can the ideas be adapted to your system? How?<br> 
+
+#### Metaphors
+In metaphorical design, we view a user organization or a computerized system through a new lens. For example, we might look at a library system through the lens of an inventory control system. To do so is an easy way to break down habitual thinking. You do not need to develop prototypes or organize visits to other organizations-this is a purely intellectual exercise that you can do at the desk or at a project meeting. <br>
+Metaphors help transfer ideas and experience from other areas. An inventory system typically keeps track of three things: receipt of goods, location of goods, and shipment of goods. How does this relate to a library? By trying to answer this question, you can expand and enrich your understanding of the library system's potential properties.
+OOA&D recommend working with several metaphors. For example, you might view a library as a warehouse, a store, a school, and a meeting place. 
+Each of these metaphors will give rise to a richer understanding of the library by emphasizing different features of the library. This will give rise to many different ideas for computer support. The difficult part of metaphorical design is to find the metaphors. Once you find them, we suggest following three simple steps: 
+1. Create a long list of aspects related to the metaphor. 
+2. Transfer these aspects to your target system. 
+3. Determine which of the aspects might be useful.
+
+#### Experiments
+ 
+
 ## Lecture two
 
 ## Lecture three
