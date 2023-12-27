@@ -190,7 +190,7 @@ The intention of such a definition is to explicate different interpretations and
 A system definition should be breif, precise, and contain the most fundamental decisions about the system. Creating breif system definitions, provides an overview and makes it easier to compare alternaties. Longs definitions makes this harder.
 In this lecture we will also be introduced to the FACTOR criterion for system definitions. Each letter refers to a key element in the system definition.
 
-#### FACTOR
+#### <span style="color:Red">FACTOR</span>
 
 The factor criterion consists of six elements: <br>
 *Functionality:* The system functions that support the application-do-main tasks.<br><br>
@@ -267,15 +267,53 @@ When you develop a new system, OOA&D advises you to look at existing solutions t
 
 #### Metaphors
 In metaphorical design, we view a user organization or a computerized system through a new lens. For example, we might look at a library system through the lens of an inventory control system. To do so is an easy way to break down habitual thinking. You do not need to develop prototypes or organize visits to other organizations-this is a purely intellectual exercise that you can do at the desk or at a project meeting. <br>
-Metaphors help transfer ideas and experience from other areas. An inventory system typically keeps track of three things: receipt of goods, location of goods, and shipment of goods. How does this relate to a library? By trying to answer this question, you can expand and enrich your understanding of the library system's potential properties.
-OOA&D recommend working with several metaphors. For example, you might view a library as a warehouse, a store, a school, and a meeting place. 
-Each of these metaphors will give rise to a richer understanding of the library by emphasizing different features of the library. This will give rise to many different ideas for computer support. The difficult part of metaphorical design is to find the metaphors. Once you find them, we suggest following three simple steps: 
+Metaphors help transfer ideas and experience from other areas. An inventory system typically keeps track of three things: receipt of goods, location of goods, and shipment of goods. How does this relate to a library? By trying to answer this question, you can expand and enrich your understanding of the library system's potential properties. <br>
+OOA&D recommend working with several metaphors. For example, you might view a library as a warehouse, a store, a school, and a meeting place. <br>
+Each of these metaphors will give rise to a richer understanding of the library by emphasizing different features of the library. This will give rise to many different ideas for computer support. The difficult part of metaphorical design is to find the metaphors. Once you find them, we suggest following three simple steps: <br>
 1. Create a long list of aspects related to the metaphor. 
 2. Transfer these aspects to your target system. 
 3. Determine which of the aspects might be useful.
 
 #### Experiments
- 
+An experiment is a planned examination of the target solution's properties. 
+The experiment more or less resembles the users' daily work. OOA&D proposes an experiment based on prototypes. The fundamental requirement of the prototype is that it be easy to implement and modify. <br>
+These requirements are easily met with prototypes that are not computer based. For example, you can draw a screen on a piece of paper and use a sequence of screen pictures to illustrate system use. You can draw screen pictures on transparencies and display them. These prototypes can also be supplemented with cardboard boxes representing terminals, printers, and other artifacts.<br>
+One problem with these kind of prototypes is that they do not function on their own; you have to simulate system processes. Thus, if it is technically or economically viable, OOA&D recommends working with computer-based prototypes.
+
+#### Preparation
+The purpose of developing a prototype is to test it. You should therefore carefully prepare your tests. To make exploratory experiments realistic, future users should carry them out. A realistic test requires a concrete understanding of, and exhaustive experience with, the work that the prototype is to support. Only potential users have this concrete understanding. <br>
+During prototype preparations, you must make decisions about: <br>
+• cooperation, <br>
+• realism, and <br>
+• selection. <br>
+
+Determine how users and developers will work together. Your tests can be based on observation, where developers watch while users try out the prototype. Alternatively, you can conduct the test as a discussion between users and developers. Next, you should decide how realistic the test will be. It can be detached from the users' daily work or integrated, so that users actually use the prototype while they work. You can then decide which users should participate and who they represent.
+
+#### Test
+The test consists of using the prototype in the chosen surroundings. Once you begin the evaluation, there are very few possibilities to intervene and change the process or the prototype. In many situations, it is difficult to repeat a test. Therefore, you should be sure everything is ready for conducting the test, and for documenting the test. <br>
+For documenting the test the user can write a diary based on themes and subjects, this is great when a developer is the tester, but not as good when it isn't, since 'ordinary' people not always understands what the developers want to learn. It can also be recorded, but it might contain too much irrelevant data.
+
+### Define Systems
+The purpose of the third and final subactivity is to choose the actual system 
+to develop. You do this by systematically clarifying interpretations, possibilities, and consequences of several alternative solutions. Hence, the following principle: 
+<br><br>
+
+**Principle:** *Define alternative systems.*
+<br><br>
+The two previous subactivities should give you as many interpretations and 
+possibilities as the situation allows, creating an array of new ideas for solutions it can be difficult to maintain an overview of all alternatives and make consistent choices about which ideas to pursue.  <br>
+It is recommended precisely summarizing the general properties of potential target systems by formulating the properties into system definitions, which are brief, precise descriptions of solutions expressed in everyday language. 
+<br>
+"Systems Are Holistic Views"
+A system definition expresses a perspective on something. A single computer application can be viewed in several different ways, depending on how it is used. Designers understand an inventory system in a certain way; they might emphasize, for example, how the system relates to users' jobs. The database administrator might have a third view, emphasizing data and its relation to other parts of the database. 
+<br>
+Every system definition represents a specific perception of the real world filtered through the ideas, conceptions, educations, and backgrounds of the people involved.<br>
+A system definition describes a totality, or a whole. It is an overall systems view, which focuses on how all the parts and components interact. A system definition will ther efore express emergent, system-focused properties, rather than detailed, component-oriented properties. User friendliness is an example of an emergent property. It makes sense only when looking at the system as a whole; no part of the system has this property in itself. <br>
+A system definition also reflects specific limitations. We limit some aspects by placing them outside the system, and limit some details by focusing on others. <br>
+Before choosing a system, you should work with several different ones. 
+If you consider alternatives and include different interpretations and beliefs, you give everyone involved a fair chance of making a useful choice. <br>
+The quality of the system you finally decide on can then be evaluated relative to the other systems you've considered. <br>
+
 
 ## Lecture two
 
