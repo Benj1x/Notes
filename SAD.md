@@ -314,6 +314,74 @@ Before choosing a system, you should work with several different ones.
 If you consider alternatives and include different interpretations and beliefs, you give everyone involved a fair chance of making a useful choice. <br>
 The quality of the system you finally decide on can then be evaluated relative to the other systems you've considered. <br>
 
+### Lecture one TL:DR;
+A system definition describes a computerized solution in context. Using the 
+Conference Planning System, the following definition was formulated: <br>
+**System definition 1:** A computerized system used to prepare and plan an IFIP conference, with emphasis on administration of participants, articles, and the program itself. The system should primarily be an administrative tool, but secondarily serve as a communication medium for the program committee, the organizing committee, and the local administrative personnel to help them manage the conference. The system should be based on a cheap PC with current tools. The system should also be able to function in different types of environments, including use by volunteers who have great enthusiasm and greatly variable administrative experience. 
+
+When writing your system definition, it is important to be both brief and precise. In the above example, it is no accident that it states "used to prepare and plan"; it would be a different system if only planning, which is a primarily intellectual activity, had been emphasized. Preparation includes all the practical tasks related to hosting a conference. Given this, we might consider other relevant system definitions, such as: <br>
+**System definition 2:** A computerized system used to control an IFIP conference by registering participants and their payments to organizers using invoicing and other reporting methods. Controlling should be easy to learn, as IFIP conferences use unpaid and untrained labor. The two definitions relate to the same situation but are extremely different.<br> 
+The first emphasizes preparation and planning, while the second focuses on 
+the economic exchange between conference organizers and participants. 
+<br><br>
+The following tips can help create useful system definitions: 
+• Use general terms and focus on emergent properties. 
+• Focus on ideas rather than describing the situation as it is. 
+• Make the definition brief and precise. 
+• Experiment with several system definitions. 
+• Go beyond habitual ways of thinking. 
+• Use the selection process to discover additional relevant properties. 
+Users have a hard time relating abstractly to information-technology use, and system developers often focus on familiar solutions. Concrete experience from using exemplars, metaphors, and experiments with prototypes can help everyone generate new ideas. To evaluate the relevance of the system definition, you must discuss the system's pros and cons.
+<br><br>
+The FACTOR criterion consists of six elements: <br>
+**Functionality:** The system functions that support the application-domain tasks. 
+**Application domain:** Those parts of an organization that administrate, 
+monitor, or control a problem domain. 
+**Conditions:** The conditions under which the system will be developed 
+and used. 
+**Technology:** Both the technology used to develop the system and the 
+technology on which the system will run. 
+**Objects:** The main objects in the problem domain.
+**Responsibility:** The system's overall responsibility in relation to its context. 
+The FACTOR criterion can be used in two ways. You can use it to support system-definition developmen t, carefully considering how each of the six elements should be formulated. Or, you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. In principle, either starting point works. <br>
+As Figure 2.7 shows, formulating a system definition is a highly iterative process. For example, you might formulate the system definition, check it against the FACTOR criteria, and then reformulate it, continuing this process until the system definition is consistent with FACTOR. If you choose to structure the initial definition using FACTOR, you can then continue to iterate a textual definition. 
+Using the system definitions above, we might compare the first with the FACTOR criteria as follows:
+
+
+**System definition 1:**
+**F:** Support for program design. AuLomate participant registration. 
+**A:** Administration of speakers and participants. Control of conference 
+papers. Program design. Participant registration. 
+**C:** Volunteer labor has widely varying administrative experience. Development to proceed despite contradictory and missing requirements. 
+**T:** Cheap PC platform with current tools. 
+**O:** Speakers and participants. Conference papers and program. 
+**R:** Administrative tool and communication meilium. 
+You can formulate the individual elements in a system definition in different ways. For example, we can describe the administrative system's functionality in at least two ways: <br><br>
+**Functionality 1:** Register information about participants and produce a complete participant list. <br>
+**Functionality 2:** Register general participants as well as those with an 
+active role such as author, speaker, or reviewer. Support the administration of finances and invitations. Support development of conference programs, including registration, paper acceptance, and session 
+ilivisions. <br>
+Functionality describes what a system should be able to do. Functionality 1 describes a smaller system that can only be used for registering conference 
+participants. Functionality 2 describes a larger system with several major functions. 
+The responsibility criterion describes how the system interacts with its 
+tasks. In this, there is a broad spectrum of possibilities. A system can resemble a toolbox, for example, and offer many functions that users can apply in a flexible way. Or, a system can more or less automatically produce the results and impose a specific structure on the work process. The users' most important task is then to deliver input for system calculations. These 
+two examples of responsibility can be expressed as follows: <br>
+**Responsibility 1:** Support program design by producing overviews and allowing users to add comments and save different versions. Support 
+confer ence operations by emphasizing potential problems at regular intervals. <br>
+**Responsibility 2:** Automatic conference-planning program. Generate program from suggested sessions and incoming paper reviews. <br>
+Small differences in how you formulate inilividual elements in a system 
+definition can produce considerable system differences. Deliberate variation in the elements can, therefore, contribute to a systematic iliscussion of possibilities and choices. You can use the FACTOR criterion in developing and evaluating each definition. However, systematic evaluation of system definitions must never overtake the original goal, which is to get the customer and the users to answer the question: Is this the system you want? <br>
+**Principles** 
+The activities and techniques that are tied to pre-analysis can be summarized in three fundamental principles for system selection. <br>
+**Appreciate the situation.** The customer's or users' understanding of the task is an important starting point. But you should also look behind 
+their formulations and understand the situation in which the new system will be used. Rich pictures provide a quick overview of complex and ambiguous situations. They are a good basis for cliscussion 
+and give us a way to express different interpretations of the same situation. <br>
+**Cultivate new ideas.** Every development project is an opportunity to 
+take a critical look at established traditions and think in new and different ways. Exemplars, metaphors, and exploratory experiments 
+are cheap and effective techniques to bring new ideas into play. <br>
+**Define alternative systems.** The customer and users are responsible for 
+choosing the solution. System definitions are brief and concise descriptions of possible alternatives that can serve as a basis for their 
+evalua tion of possibilities and their choice of a satisfactory solution. 
 
 ## Lecture two
 
