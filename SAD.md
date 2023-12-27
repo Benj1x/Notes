@@ -314,6 +314,20 @@ Before choosing a system, you should work with several different ones.
 If you consider alternatives and include different interpretations and beliefs, you give everyone involved a fair chance of making a useful choice. <br>
 The quality of the system you finally decide on can then be evaluated relative to the other systems you've considered. <br>
 
+## Problem-Domain Analysis
+Problem-domain analysis focuses on a key question: What information should the system deal with? The problem-domain model provides a language for expressing requirements to the system. During design, the model is transformed into a component that represents the problem domain's present state and previous history. 
+Users employ a system to process, store, retrieve, and transfer information. They use the system to change the problem domain in order to accomplish their tasks. In doing so, they develop and use mental models. If we 
+want to design usable systems, we must analyze and understand prospective users' mental models. This is emphasized in the first principle of this activity: 
+**Principle:** *Model the real world as future users will see it.*
+![Activities in problem-domain modeling](imgs/SAD/ActivitiesInProblemDomain.png)
+The task, then, is to inquire into the problem domain and the users' understanding of it. In this process, you need not worry about existing systems, nor think about technical problems with storage and data transfer from other systems. Your focus should be on the future users' understanding of the problem domain. Once you have a good model, you can use it to design and implement a system that can process, communicate, and present information about the prolblem domain in an appropriate and usable manner. The aim of problem-domain analysis is to develop such a model. To this end, we employ an object-oriented focus on the key concepts that users apply to describe the phenomena they administrate, monitor, or control The description delineates the problem domain in more detail, and emphasizes 
+both static and dynamic aspects. To create a useful model, we must consider the second principle: 
+**Principle:** Get an overview first, then supply details.
+As you model the problem domain, it is important to bring in as many possibilities, alternatives, and concrete circumstances as possible. However, you should test and evaluate all suggestions critically so that you include only the necessary elements. Your model should be at a reasonably high level of abstraction. The goal is to quickly build a model that briefly and precisely 
+gives a r elevant overview. <br>
+Problem-domain analysis is clivided into three activities, as Figure II.1 shows. First, you select the objects, classes, and events that will be the elements of the problem-domain model. Next, you build the model by focusing on structural relations between the selected classes and objects. This represents a movement from the object to the model level. Finally, you focus on the objects' dynamic properties, representing a movement back to the object level. 
+In this way, our problem-domain analysis involves a movement from the parts to the whole and back to the parts again. This is the opposite of a top-down method, where you start with the whole and then continuously break it down into smaller and smaller fragments by describing parts and their properties.
+The primary starting point for problem-domain analysis is a system definition. The "objects" element of the system definition provides the basic criterion for selecting objects, classes, and events. 
 ### Lecture one TL:DR;
 A system definition describes a computerized solution in context. Using the 
 Conference Planning System, the following definition was formulated: <br>
@@ -347,7 +361,6 @@ The FACTOR criterion can be used in two ways. You can use it to support system-d
 As Figure 2.7 shows, formulating a system definition is a highly iterative process. For example, you might formulate the system definition, check it against the FACTOR criteria, and then reformulate it, continuing this process until the system definition is consistent with FACTOR. If you choose to structure the initial definition using FACTOR, you can then continue to iterate a textual definition. 
 Using the system definitions above, we might compare the first with the FACTOR criteria as follows:
 
-
 **System definition 1:**
 **F:** Support for program design. AuLomate participant registration. 
 **A:** Administration of speakers and participants. Control of conference 
@@ -380,8 +393,7 @@ and give us a way to express different interpretations of the same situation. <b
 take a critical look at established traditions and think in new and different ways. Exemplars, metaphors, and exploratory experiments 
 are cheap and effective techniques to bring new ideas into play. <br>
 **Define alternative systems.** The customer and users are responsible for 
-choosing the solution. System definitions are brief and concise descriptions of possible alternatives that can serve as a basis for their 
-evalua tion of possibilities and their choice of a satisfactory solution. 
+choosing the solution. System definitions are brief and concise descriptions of possible alternatives that can serve as a basis for their evaluation of possibilities and their choice of a satisfactory solution. 
 
 ## Lecture two
 
