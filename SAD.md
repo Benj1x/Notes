@@ -314,20 +314,6 @@ Before choosing a system, you should work with several different ones.
 If you consider alternatives and include different interpretations and beliefs, you give everyone involved a fair chance of making a useful choice. <br>
 The quality of the system you finally decide on can then be evaluated relative to the other systems you've considered. <br>
 
-## Problem-Domain Analysis
-Problem-domain analysis focuses on a key question: What information should the system deal with? The problem-domain model provides a language for expressing requirements to the system. During design, the model is transformed into a component that represents the problem domain's present state and previous history. 
-Users employ a system to process, store, retrieve, and transfer information. They use the system to change the problem domain in order to accomplish their tasks. In doing so, they develop and use mental models. If we 
-want to design usable systems, we must analyze and understand prospective users' mental models. This is emphasized in the first principle of this activity: 
-**Principle:** *Model the real world as future users will see it.*
-![Activities in problem-domain modeling](imgs/SAD/ActivitiesInProblemDomain.png)
-The task, then, is to inquire into the problem domain and the users' understanding of it. In this process, you need not worry about existing systems, nor think about technical problems with storage and data transfer from other systems. Your focus should be on the future users' understanding of the problem domain. Once you have a good model, you can use it to design and implement a system that can process, communicate, and present information about the prolblem domain in an appropriate and usable manner. The aim of problem-domain analysis is to develop such a model. To this end, we employ an object-oriented focus on the key concepts that users apply to describe the phenomena they administrate, monitor, or control The description delineates the problem domain in more detail, and emphasizes 
-both static and dynamic aspects. To create a useful model, we must consider the second principle: 
-**Principle:** Get an overview first, then supply details.
-As you model the problem domain, it is important to bring in as many possibilities, alternatives, and concrete circumstances as possible. However, you should test and evaluate all suggestions critically so that you include only the necessary elements. Your model should be at a reasonably high level of abstraction. The goal is to quickly build a model that briefly and precisely 
-gives a r elevant overview. <br>
-Problem-domain analysis is clivided into three activities, as Figure II.1 shows. First, you select the objects, classes, and events that will be the elements of the problem-domain model. Next, you build the model by focusing on structural relations between the selected classes and objects. This represents a movement from the object to the model level. Finally, you focus on the objects' dynamic properties, representing a movement back to the object level. 
-In this way, our problem-domain analysis involves a movement from the parts to the whole and back to the parts again. This is the opposite of a top-down method, where you start with the whole and then continuously break it down into smaller and smaller fragments by describing parts and their properties.
-The primary starting point for problem-domain analysis is a system definition. The "objects" element of the system definition provides the basic criterion for selecting objects, classes, and events. 
 ### Lecture one TL:DR;
 A system definition describes a computerized solution in context. Using the 
 Conference Planning System, the following definition was formulated: <br>
@@ -396,11 +382,77 @@ are cheap and effective techniques to bring new ideas into play. <br>
 choosing the solution. System definitions are brief and concise descriptions of possible alternatives that can serve as a basis for their evaluation of possibilities and their choice of a satisfactory solution. 
 
 ## Lecture two
+## Problem-Domain Analysis
+Problem-domain analysis focuses on a key question: What information should the system deal with? The problem-domain model provides a language for expressing requirements to the system. During design, the model is transformed into a component that represents the problem domain's present state and previous history. 
+Users employ a system to process, store, retrieve, and transfer information. They use the system to change the problem domain in order to accomplish their tasks. In doing so, they develop and use mental models. If we 
+want to design usable systems, we must analyze and understand prospective users' mental models. This is emphasized in the first principle of this activity: 
+**Principle:** *Model the real world as future users will see it.*
+![Activities in problem-domain modeling](imgs/SAD/ActivitiesInProblemDomain.png)
+The task, then, is to inquire into the problem domain and the users' understanding of it. In this process, you need not worry about existing systems, nor think about technical problems with storage and data transfer from other systems. Your focus should be on the future users' understanding of the problem domain. Once you have a good model, you can use it to design and implement a system that can process, communicate, and present information about the prolblem domain in an appropriate and usable manner. The aim of problem-domain analysis is to develop such a model. To this end, we employ an object-oriented focus on the key concepts that users apply to describe the phenomena they administrate, monitor, or control The description delineates the problem domain in more detail, and emphasizes 
+both static and dynamic aspects. To create a useful model, we must consider the second principle: 
+**Principle:** Get an overview first, then supply details.
+As you model the problem domain, it is important to bring in as many possibilities, alternatives, and concrete circumstances as possible. However, you should test and evaluate all suggestions critically so that you include only the necessary elements. Your model should be at a reasonably high level of abstraction. The goal is to quickly build a model that briefly and precisely 
+gives a r elevant overview. <br>
+Problem-domain analysis is clivided into three activities, as Figure II.1 shows. First, you select the objects, classes, and events that will be the elements of the problem-domain model. Next, you build the model by focusing on structural relations between the selected classes and objects. This represents a movement from the object to the model level. Finally, you focus on the objects' dynamic properties, representing a movement back to the object level. 
+In this way, our problem-domain analysis involves a movement from the parts to the whole and back to the parts again. This is the opposite of a top-down method, where you start with the whole and then continuously break it down into smaller and smaller fragments by describing parts and their properties.
+The primary starting point for problem-domain analysis is a system definition. The "objects" element of the system definition provides the basic criterion for selecting objects, classes, and events. 
 
+### Classes
+![Purpose of this part](imgs/SAD/ClassesPurpose.png)
+To model the problem domain, we start with the class activity and its fundamental question: Which objects and events should we include in the model and which should we leave out? <br>
+This is figured out by studying the problem domain and talking with users to gain insight into how they understand it. Through this process, it is determined which phenomena are important in the concrete context of the project. The system definition helps us do this.<br>
+Abstraction, classification, and selection are the primary tasks in the class activity. We abstract problem-domain phenomena by seeing them as objects and events. We then classify objects and events, and select which classes and events the system will maintain information on. Classes are the 
+first means to define and limit a problem domain. We characterize each class by a specific set of events.
+The class activity produces an event table (see Figure 3.1). The horizontal dimension contains the selected classes. The vertical dimension contains the selected events.
+![Event table for a Hair Salon System](imgs/SAD/EvenTable.png)
+#### Classification of Objects and Events
+
+**Principle:** *Classify objects in the problem domain.*
+During analysis, and especially in problem-domain modeling, the classification challenges become manifest. One challenge relates to tr aditions for using problem-domain concepts. We can, for example, be forced to further formalize existing concepts. An educational center might use the concept 
+"course" to loosely describe several different things. When developing a system for education management, we must create more precise rules for what a course is-as opposed to, say, a seminar because we'll need to unambiguously couple these concepts to specific types of exams and resource-allocation rules. <br>
+Another challenge is tied to how different users interpret shared concepts. In a manufacturing business, people in accounting, production, and sales do not necessarily understand an "order" concept in the same way, even though they use the same term. In some cases, we solve this problem by defining a single concept. In other cases, we must model the problem domain to permit different descriptions of the same phenomenon.<br> 
+The aim in system development is to change the user organization by improving its products and services. Therefore, we should not just model the problem domain "as is." When developing an education management system, we should not simply model h ow the users plan and conduct exams. Instead, we should describe how the process will ideally be administered once the system is deployed. <br>
+Creating good classifications is a challenge for all analysis methods. What distinguish the methods are their classification concepts and principles. In OOA&D, we use the concepts object and event to understand phenomena in the problem domain. What we see when we look at the problem domain are objects and events; not processes, entities, or anything else. 
+
+##### Object
+The object concept is the focus of the class activity. In Chapter 1, we defined this concept generally as: <br>
+
+**Object:** *An entity with identity, state, and behavior.*
+
+During problem-domain analysis, an object is an abstraction of a phenomenon in that problem domain. Figure 3.2 shows different examples of tangible objects in a problem domain: a customer, a clerk, and a contract. An object can, however, be less tangible, such as an organization or a resource. <br>
+The key point is that we can identify and delimit the object as an independent entity. Figure 3.2 also illustrates an event: two partners agree on a contract. We can use such events to describe an important occurrence in the life of the involved objects. This way of using events is emphasized by the  following principle: 
+
+**Principle:** *Characterize objects through their events.* 
+
+**What is an object?**
+We define an object as an entity with identity, state, and behavior. But what does this really mean in problem-domain analysis? 
+**Entity** 
+To call something an object, we must be able to describe it as an entity. With physically tangible objects, this is usually not a problem, but as objects become less tangible, they often become harder to define as clearly delineated entities. For example, it's easier to consider a person an entity than an organization
+<br><br>
+
+**Identity** An object's identity is the property that separates it from all other objects. By definition, all objects must have an identity, so we must define each object in a way that lets us distinguish it from all other objects in the problem domain. For example, in a sand pile, it is impossible to model individual grains of sand as objects because we cannot identify a particular grain as a separate entity from all the other grains. 
+<br><br>
+
+**State** 
+An object's state consists of both its static properties and the dynamic or static values we assign to these properties. For example, static properties of a bank customer object are name, social security number, and the right to make transactions on certain accounts. For a specific customer object, these 
+properties will have corresponding values that can be either static or dynamic. The customer's name can have the value "Jane Smith" and this value can change dynamically, even though we are still talking about the same customer. The customer's social security number, on the other hand, is a property that 
+typically has a static value. Finally, we represent the customer's right to make transactions as connections between the customer object and the relevant account objects. This set of connections changes when the customer opens or closes an account. <br> <br> 
+**Behavior** An object's behavior is the sequence of events that it actively performs and passively expenences during its lifetime. For example, a bank customer's behavior is the specific sequence of opening 
+and closing accounts and making transactions that the customer has performed since entering the bank for the first time.<br>
+##### Event
+Events specify the qualities of problem-domain objects. We generally define an event as: 
+**Event:** *An instantaneous incident involving one or more object*
+An event is an abstraction of a problem-domain activity or process that is performed or experienced by one or more objects. When events are the main characteristics of objects, which events we introduce is critically important. For example, we might define a customer as an object that performs account transactions. In doing so, we characterize customer behavior iin a way that ignores the plethora of other events a customer might engage in, such as applying for loans or buying bonds. If we want to also manage these activities, we must introduce them as events that the customer can perform. 
+![Figure 3.2: Classification of objects and events](imgs/SAD/ClassificationOfObjectsAndEvents.png)
+
+OOA&D, pages pages 385-392 (until the sub-section on Structure)
 ## Lecture three
-
+OOA&D, chapter 4
+OOA&D, chapter 20, pages 392-394 (the sub-sections on Structures and Clusters)
 ## Lecture four
-
+OOA&D, chapter 5
+OOA&D, chapter 19, pages 351-360
+OOA&D, chapter 20, pages 394-396
 ### Behavioral Pattern and Attributes
 
 An object is an entity with identity, state, and behavior. In the class activity, we see behavior simply as the unordered set of events that involve an object. In the behavior activity, we describe behavior more precisely by adding the relative timing of events. An object's behavior is defined by an event 
@@ -562,6 +614,9 @@ A statechart diagram defines the different states of the interaction and the dif
 
 ![Statechart diagram for cash withdrawl](imgs/SAD/StatechartCashWithdrawl.png)
 
+OOA&D, Part III
+OOA&D, Chapter 6
+OOA&D, Chapter 19 (pages 362 - 364)
 ## Lecture Six - Functions
 
 Functions focus on what the system can do to assist actors in their work. When determining requirements for the functions, we ask the following question: What is the system going to do? In the usage activity, our question focused more on how the system would be used. Given that it is difficult to analyze "what" without analyzing "how," the usage and function activities are closely connected.
@@ -698,10 +753,31 @@ Third, you can compare the function list with the system definition and the mode
 The general definition of the system functionality in the system definition should be in accordance with your final list of functions. If the system definition says it is a payroll system, then no invoicing functions should be included. Differences between the general definition and the list of functions may give rise to a revision of both the system definition and the functions. 
 Finally, you must compare the function list with the model. The model must include precisely that information about the objects that the functions need; no more, no less. That is, if the model contains objects, structures, or events that are never used by any of the functions, then either the model contains too much or some functions are missing.
 
+OOA&D, Chapter 7.
+
 ## Lecture Seven -
+OOA&D, Chapter 15
+
+Other things to read (background), (find them on the source indicated):
+Lauesen, S. and Vinter, O. (2001) Preventing Requirement Defects: An Experiment in Process Improvement. Requirements Eng. 6:37–50.
+https://link-springer-com.zorac.aub.aau.dk/article/10.1007/PL00010355
+
+Dahlbom, B. and Mathiassen, L. (1993) Computers in Context: The Philosophy and Practice of Systems Design, Chapter 4 and 5. Blackwell Publishers.
+Can be borrowed through the library (AUB)
+
+ Wirth, N. (1971) Program Development by Stepwise Refinement. Communications of the ACM 14(4):221-227.
+https://dl-acm-org.zorac.aub.aau.dk/ft_gateway.cfm?id=362577&ftid=43866&dwn=1&#URLTOKEN#
+
+Naur, P. (1972) An experiment on program development. BIT 12:347-365.
+https://link-springer-com.zorac.aub.aau.dk/content/pdf/10.1007%2FBF01932307.pdf
+
+Mathiassen, L. and Stage, J. (1992) The Principle of Limited Reduction in Software Design. Information Technology & People 6(2-3):171-185.
+https://www-emeraldinsight-com.zorac.aub.aau.dk/doi/pdfplus/10.1108/EUM0000000003550
 
 ## Lecture Eight - Architectural Design, Criteria and Components
-
+OOA&D, Part IV
+OOA&D, Chapter 9
+OOA&D, Chapter 10
 ![Architectural Design purpose](imgs/SAD/PurposeIV.png)
 
 A vague and unclear architecture 
@@ -713,3 +789,13 @@ Computerized systems are complex and multi-faceted: Are we talking about a syste
 The following figure illustrates the architecture concepts. The component architecture focuses on classes (the stable aspects). It structures the system in related components, and is concerned mainly with logical considerations. 
 The component architecture decomposes the system into identifiable, mutually related components. The process architecture focuses on objects (the dynamic aspects).
 ![Component architecture and process architecture](imgs/SAD/ComArchitectureProcArchitecture.png)
+
+## Lecture Nine
+OOA&D, Part V
+OOA&D, Chapter 12.
+
+## Lecture Ten
+OOA&D, chapter 13.
+
+## Lecture eleven
+OOA&D, chapter 14.
