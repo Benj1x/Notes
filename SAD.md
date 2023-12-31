@@ -202,9 +202,7 @@ The factor criterion consists of six elements: <br>
 These elements describe, in a coherent manner, the most fundamental decisions involved in creating a sound computerized solution.
 The FACTOR criterion can be used in two ways. You can use it to support system-definition development, carefully considering how each of the six elements should be formulated.  Or you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. "In principle either starting point works" -Jan
 ![Subactivities in choosing a system](/imgs/SAD/SubactivitiesChoosingSystem.png)
-
 ### Choosing the system
-
 As Figure 2.1 shows, system choice is based on three subactivities.
 The first subactivity focuses on challenges: we attempt to get an overview of both the situation and the different ways people interpret it.<br>
 The second subactivity creates and evaluates ideas for system design. This method offers a series of techniques to support creativity and introduce new ways of thinking.<br> 
@@ -216,15 +214,13 @@ Choosing which system to develop is a demanding activity. It requires imaginatio
 knowledge and experience with computers, the organization's structure, and the existing computerized systems are factors that can complicate a project.
 
 ### Describe the Situation
-
 Our understanding of the users' situation must be rich and abundant. To achieve this, we must be open and disposed toward discussion. Thus, we emphasize the following principle:
 
 **Principle:** *Appreciate the situation.*
 
-By working with "rich pictures," we can explicate important user views of a situation, facilitate debate, and get an overview of the situation quickly. The purpose here is to obtain an overview.
+By working with "rich pictures," we can explicate important user views of a situation, facilitate debate, and get an overview of the situation quickly. The purpose here is to obtain an overview. 
 
-### Rich Pictures
-
+### Rich Pictures 
 A rich picture is an informal drawing that presents the illustrator's understanding of a situation. Figure 2.2 shows an example of a rich picture from a hospital's system development project. The rich picture describes a change from six autonomous wards to a new structure in which the wards become part of a larger unit. The purpose of this organizational change is to improve coordination and resource sharing among the wards. <br>
 A rich picture focuses on important aspects of the situation, which are determined by the illustrator. However, the rich picture should give a broad description of the situation that enables several alternative interpretations. For example, Figure 2.2 shows the increased efficiency that reorganization could bring. It also lets us look at the individual ward: Does it continue to be an efficient entity, or will responsibility become more difficult to assign among the six wards? We can also consider the impact on employees. How will the expected decline in ward-affiliation affect their work? <br>
 Finally, we can focus on changes in managerial forms. The crossed swords in the figure indicate conflicts between the old and new organization, and are relevant in each of the four perspectives. <br> <br>
@@ -235,7 +231,6 @@ Coming up with good symbols for drawing rich pictures can be difficult. Figure 2
 ![Figure 2.4: Ideas for symbols for rich pictures](imgs/SAD/IdeasForRichPictures.png)
 
 ### Practical Advice
-
 To be a useful part of system definition, rich pictures should: 
 • contain a lot of information and be open to interpretation; <br>
 • present processes and structures in a coherent, well-balanced way; <br>
@@ -249,7 +244,6 @@ Pre-analysis should help create and integrate different ideas for computerized s
 The illustrator of the rich picture decides what is relevant to draw. Different viewpoints lead to new pictures.<br>
 
 ### Create ideas
-
 A solid understanding of the existing situation is a good starting point for a development project,. However, it is just as important to bring forth new 
 ideas and ways of thinking, which is the second subaclivity in system definition. Good systems ar e created in the tension between tradition and creativity. OOA&D therefore stress the following principle:
 
@@ -265,33 +259,28 @@ To generate and evaluate ideas in cooperation with the users, it is suggested to
 Exemplars provide a concrete way of creating new ideas. By studying similar systems, you can explore specific ideas that apply to your situation. Metaphors increase your understanding by presenting the user organization in new terms. This can bring entirely different ideas and experiences to the situation. Finally, you can use experiments, in cooperation with users, to assess possible solutions
 
 #### Exemplars
-
 When you develop a new system, OOA&D advises you to look at existing solutions that resemble the one that users desire. If you need a new accounting system, it's a good idea io study an existing system's design and use. You can do this by visiting another organization or by studying standard systems on the market. For every existing solution, try to answer the following questions:<br>
 • Which ideas lay the groundwork for the system?<br>
 • Do the ideas seem useful? Why?<br>
 • Will the ideas work in your context? Why?<br> 
-• Can the ideas be adapted to your system? How?<br>
+• Can the ideas be adapted to your system? How?<br> 
 
 #### Metaphors
-
 In metaphorical design, we view a user organization or a computerized system through a new lens. For example, we might look at a library system through the lens of an inventory control system. To do so is an easy way to break down habitual thinking. You do not need to develop prototypes or organize visits to other organizations-this is a purely intellectual exercise that you can do at the desk or at a project meeting. <br>
 Metaphors help transfer ideas and experience from other areas. An inventory system typically keeps track of three things: receipt of goods, location of goods, and shipment of goods. How does this relate to a library? By trying to answer this question, you can expand and enrich your understanding of the library system's potential properties. <br>
 OOA&D recommend working with several metaphors. For example, you might view a library as a warehouse, a store, a school, and a meeting place. <br>
 Each of these metaphors will give rise to a richer understanding of the library by emphasizing different features of the library. This will give rise to many different ideas for computer support. The difficult part of metaphorical design is to find the metaphors. Once you find them, we suggest following three simple steps: <br>
-
 1. Create a long list of aspects related to the metaphor. 
 2. Transfer these aspects to your target system. 
 3. Determine which of the aspects might be useful.
 
 #### Experiments
-
 An experiment is a planned examination of the target solution's properties. 
 The experiment more or less resembles the users' daily work. OOA&D proposes an experiment based on prototypes. The fundamental requirement of the prototype is that it be easy to implement and modify. <br>
 These requirements are easily met with prototypes that are not computer based. For example, you can draw a screen on a piece of paper and use a sequence of screen pictures to illustrate system use. You can draw screen pictures on transparencies and display them. These prototypes can also be supplemented with cardboard boxes representing terminals, printers, and other artifacts.<br>
 One problem with these kind of prototypes is that they do not function on their own; you have to simulate system processes. Thus, if it is technically or economically viable, OOA&D recommends working with computer-based prototypes.
 
 #### Preparation
-
 The purpose of developing a prototype is to test it. You should therefore carefully prepare your tests. To make exploratory experiments realistic, future users should carry them out. A realistic test requires a concrete understanding of, and exhaustive experience with, the work that the prototype is to support. Only potential users have this concrete understanding. <br>
 During prototype preparations, you must make decisions about: <br>
 • cooperation, <br>
@@ -301,12 +290,10 @@ During prototype preparations, you must make decisions about: <br>
 Determine how users and developers will work together. Your tests can be based on observation, where developers watch while users try out the prototype. Alternatively, you can conduct the test as a discussion between users and developers. Next, you should decide how realistic the test will be. It can be detached from the users' daily work or integrated, so that users actually use the prototype while they work. You can then decide which users should participate and who they represent.
 
 #### Test
-
 The test consists of using the prototype in the chosen surroundings. Once you begin the evaluation, there are very few possibilities to intervene and change the process or the prototype. In many situations, it is difficult to repeat a test. Therefore, you should be sure everything is ready for conducting the test, and for documenting the test. <br>
 For documenting the test the user can write a diary based on themes and subjects, this is great when a developer is the tester, but not as good when it isn't, since 'ordinary' people not always understands what the developers want to learn. It can also be recorded, but it might contain too much irrelevant data.
 
 ### Define Systems
-
 The purpose of the third and final subactivity is to choose the actual system 
 to develop. You do this by systematically clarifying interpretations, possibilities, and consequences of several alternative solutions. Hence, the following principle: 
 <br><br>
@@ -328,10 +315,9 @@ If you consider alternatives and include different interpretations and beliefs, 
 The quality of the system you finally decide on can then be evaluated relative to the other systems you've considered. <br>
 
 ### Lecture one TL:DR;
-
 A system definition describes a computerized solution in context. Using the 
 Conference Planning System, the following definition was formulated: <br>
-**System definition 1:** A computerized system used to prepare and plan an IFIP conference, with emphasis on administration of participants, articles, and the program itself. The system should primarily be an administrative tool, but secondarily serve as a communication medium for the program committee, the organizing committee, and the local administrative personnel to help them manage the conference. The system should be based on a cheap PC with current tools. The system should also be able to function in different types of environments, including use by volunteers who have great enthusiasm and greatly variable administrative experience.
+**System definition 1:** A computerized system used to prepare and plan an IFIP conference, with emphasis on administration of participants, articles, and the program itself. The system should primarily be an administrative tool, but secondarily serve as a communication medium for the program committee, the organizing committee, and the local administrative personnel to help them manage the conference. The system should be based on a cheap PC with current tools. The system should also be able to function in different types of environments, including use by volunteers who have great enthusiasm and greatly variable administrative experience. 
 
 When writing your system definition, it is important to be both brief and precise. In the above example, it is no accident that it states "used to prepare and plan"; it would be a different system if only planning, which is a primarily intellectual activity, had been emphasized. Preparation includes all the practical tasks related to hosting a conference. Given this, we might consider other relevant system definitions, such as: <br>
 **System definition 2:** A computerized system used to control an IFIP conference by registering participants and their payments to organizers using invoicing and other reporting methods. Controlling should be easy to learn, as IFIP conferences use unpaid and untrained labor. The two definitions relate to the same situation but are extremely different.<br> 
@@ -393,11 +379,10 @@ and give us a way to express different interpretations of the same situation. <b
 take a critical look at established traditions and think in new and different ways. Exemplars, metaphors, and exploratory experiments 
 are cheap and effective techniques to bring new ideas into play. <br>
 **Define alternative systems.** The customer and users are responsible for 
-choosing the solution. System definitions are brief and concise descriptions of possible alternatives that can serve as a basis for their evaluation of possibilities and their choice of a satisfactory solution.
+choosing the solution. System definitions are brief and concise descriptions of possible alternatives that can serve as a basis for their evaluation of possibilities and their choice of a satisfactory solution. 
 
 ## Lecture two
-### Problem-Domain Analysis
-
+## Problem-Domain Analysis
 Problem-domain analysis focuses on a key question: What information should the system deal with? The problem-domain model provides a language for expressing requirements to the system. During design, the model is transformed into a component that represents the problem domain's present state and previous history. 
 Users employ a system to process, store, retrieve, and transfer information. They use the system to change the problem domain in order to accomplish their tasks. In doing so, they develop and use mental models. If we 
 want to design usable systems, we must analyze and understand prospective users' mental models. This is emphasized in the first principle of this activity: 
@@ -410,10 +395,9 @@ As you model the problem domain, it is important to bring in as many possibiliti
 gives a r elevant overview. <br>
 Problem-domain analysis is clivided into three activities, as Figure II.1 shows. First, you select the objects, classes, and events that will be the elements of the problem-domain model. Next, you build the model by focusing on structural relations between the selected classes and objects. This represents a movement from the object to the model level. Finally, you focus on the objects' dynamic properties, representing a movement back to the object level. 
 In this way, our problem-domain analysis involves a movement from the parts to the whole and back to the parts again. This is the opposite of a top-down method, where you start with the whole and then continuously break it down into smaller and smaller fragments by describing parts and their properties.
-The primary starting point for problem-domain analysis is a system definition. The "objects" element of the system definition provides the basic criterion for selecting objects, classes, and events.
+The primary starting point for problem-domain analysis is a system definition. The "objects" element of the system definition provides the basic criterion for selecting objects, classes, and events. 
 
 ### Classes
-
 ![Purpose of this part](imgs/SAD/ClassesPurpose.png)
 To model the problem domain, we start with the class activity and its fundamental question: Which objects and events should we include in the model and which should we leave out? <br>
 This is figured out by studying the problem domain and talking with users to gain insight into how they understand it. Through this process, it is determined which phenomena are important in the concrete context of the project. The system definition helps us do this.<br>
@@ -421,7 +405,6 @@ Abstraction, classification, and selection are the primary tasks in the class ac
 first means to define and limit a problem domain. We characterize each class by a specific set of events.
 The class activity produces an event table (see Figure 3.1). The horizontal dimension contains the selected classes. The vertical dimension contains the selected events.
 ![Event table for a Hair Salon System](imgs/SAD/EvenTable.png)
-
 #### Classification of Objects and Events
 
 **Principle:** *Classify objects in the problem domain.*
@@ -429,18 +412,17 @@ During analysis, and especially in problem-domain modeling, the classification c
 "course" to loosely describe several different things. When developing a system for education management, we must create more precise rules for what a course is-as opposed to, say, a seminar because we'll need to unambiguously couple these concepts to specific types of exams and resource-allocation rules. <br>
 Another challenge is tied to how different users interpret shared concepts. In a manufacturing business, people in accounting, production, and sales do not necessarily understand an "order" concept in the same way, even though they use the same term. In some cases, we solve this problem by defining a single concept. In other cases, we must model the problem domain to permit different descriptions of the same phenomenon.<br> 
 The aim in system development is to change the user organization by improving its products and services. Therefore, we should not just model the problem domain "as is." When developing an education management system, we should not simply model h ow the users plan and conduct exams. Instead, we should describe how the process will ideally be administered once the system is deployed. <br>
-Creating good classifications is a challenge for all analysis methods. What distinguish the methods are their classification concepts and principles. In OOA&D, we use the concepts object and event to understand phenomena in the problem domain. What we see when we look at the problem domain are objects and events; not processes, entities, or anything else.
+Creating good classifications is a challenge for all analysis methods. What distinguish the methods are their classification concepts and principles. In OOA&D, we use the concepts object and event to understand phenomena in the problem domain. What we see when we look at the problem domain are objects and events; not processes, entities, or anything else. 
 
 ##### Object
-
 The object concept is the focus of the class activity. In Chapter 1, we defined this concept generally as: <br>
 
 **Object:** *An entity with identity, state, and behavior.*
 
 During problem-domain analysis, an object is an abstraction of a phenomenon in that problem domain. Figure 3.2 shows different examples of tangible objects in a problem domain: a customer, a clerk, and a contract. An object can, however, be less tangible, such as an organization or a resource. <br>
-The key point is that we can identify and delimit the object as an independent entity. Figure 3.2 also illustrates an event: two partners agree on a contract. We can use such events to describe an important occurrence in the life of the involved objects. This way of using events is emphasized by the  following principle:
+The key point is that we can identify and delimit the object as an independent entity. Figure 3.2 also illustrates an event: two partners agree on a contract. We can use such events to describe an important occurrence in the life of the involved objects. This way of using events is emphasized by the  following principle: 
 
-**Principle:** *Characterize objects through their events.*
+**Principle:** *Characterize objects through their events.* 
 
 **What is an object?**
 We define an object as an entity with identity, state, and behavior. But what does this really mean in problem-domain analysis? 
@@ -457,103 +439,123 @@ properties will have corresponding values that can be either static or dynamic. 
 typically has a static value. Finally, we represent the customer's right to make transactions as connections between the customer object and the relevant account objects. This set of connections changes when the customer opens or closes an account. <br> <br> 
 **Behavior** An object's behavior is the sequence of events that it actively performs and passively expenences during its lifetime. For example, a bank customer's behavior is the specific sequence of opening 
 and closing accounts and making transactions that the customer has performed since entering the bank for the first time.<br>
-
 ##### Event
-
 Events specify the qualities of problem-domain objects. We generally define an event as: 
 **Event:** *An instantaneous incident involving one or more object*
-An event is an abstraction of a problem-domain activity or process that is performed or experienced by one or more objects. When events are the main characteristics of objects, which events we introduce is critically important. For example, we might define a customer as an object that performs account transactions. In doing so, we characterize customer behavior iin a way that ignores the plethora of other events a customer might engage in, such as applying for loans or buying bonds. If we want to also manage these activities, we must introduce them as events that the customer can perform. <br><br>
-
+An event is an abstraction of a problem-domain activity or process that is performed or experienced by one or more objects. When events are the main characteristics of objects, which events we introduce is critically important. For example, we might define a customer as an object that performs account transactions. In doing so, we characterize customer behavior iin a way that ignores the plethora of other events a customer might engage in, such as applying for loans or buying bonds. If we want to also manage these activities, we must introduce them as events that the customer can perform. 
 ![Figure 3.2: Classification of objects and events](imgs/SAD/ClassificationOfObjectsAndEvents.png)
-<br><br>
-When you generate class candidates, take as your departure point knowledge related to the specific problem domain. When this source of inspiration is exhausted, you can use other kinds of knowledge. One approach is to examine similar computerized systems.<br>
-It is often fruitful to take advantage of developers' experiences with similar systems in the same area or field. For example, different inventory systems contain uniform mechanisms and base their models on similar concepts. It can also be both economical and creative to avail yourself of more general knowledge, such as (in this case), warehouse management.
 
-If you are developing a system for monitoring traffic, it is a good idea to read local and international traffic regulations. Likewise, if you are developing a telecommunications system, you should read international telecommunication organizations' standards. The process of writing down many candidates and then evaluating them later might seem like an awful waste of time. However, if you evaluate candidates immediately, the tendency is to reject relevant candidates too soon. In addition, in the early stage, you're missing the overall picture that emerges as your list becomes more complete. By writing all the candidates down and deferring discussion until the list is complete, you'll be more open and creative. 
-The classes you select will become the core of your problem-domain model. Thus, you should name your candidate classes carefully. <br
-Names should be: <br>
-• are simple and readable<br> 
-• originate in the problem domain<br> 
-• indicate a single instance. <br>
-Figure 3.4 shows a sample list of class candidates from an analysis of a Hair Salon System. Some of the candidates represent tangible objects and are quite obvious; others are more abstract.<br><br>
-![Figure 3.4: Class candidates for the Hair Salon System](imgs/SAD/ClassCandidatesForHairSalon.png)
+#### Class
+When, for example, we describe the bank's customers, we are not talking about individual customers and their individual activities; we abstract these further to arrive at the 
+concept "customer." We use this concept to focus on the properties and behavior common to all bank customers. An individual customer's state and behavior are examples of how the abstract concept occurs in the problem domain. <br>
+In the object-oriented approach, abstraction is directly supported by the class concept. The class concept refers to and describes all the objects in a specific class, as expressed in this definition: <br>
+
+**Class:** *A description of a collection of objects sharing structure, behavioral patter, and attributes.*
+
+When we perform the class activity, we are operating in an experimental mode. We start by identifying potentially r elevant candidates to include as classes and events in the problem-domain model. We then systematically evaluate them and select the classes and events that we actually consider 
+to be relevant. This process is summarized in the following principle: <br>
+**Principle:** *Have an open mind, but select critically.*
+<br> 
+Figure 3.3 shows the class activity's subactivities. We start by identifying objects, and, through abstraction and classification, develop a rich list of potentially relevant classes for our problem-domain model In a parallel activity, we identify and develop a similar list of events. We then systematically evaluate the many candidates and select the relatively few classes and events that we'll include in our problem-domain model. Finally, we relate events to classes as shown in Figure 3.1.
 <br>
 
-**Find Events**
-Event selection defines the second set of building blocks for your problem domain model. We base this process on the same fundamental technique as class selection.  
-However, there is a fundamental difference between events and classes. Numerous verbs relate to the way users carry out their jobs. Such verbs do not belong to the problem domain, but rather to the application domain.<br>
-In the process of producing event candidates, it is a good idea to look at similar computerized systems. Carefully analyzing events that other systems model can inspire new ways of thinlcing. Using technical literature, rules, laws, and standards will also give you a better basis for ensuring sustainability of your problem-domain model. When you are generating event candidates, names should be: <br>
-• are simple and readable<br>
-• originate in the problem domain<br> 
-• indicate a single event<br>
-Event names, are ordinarily either: present tense, past tense, and present participle. Figure 3.5 shows a sample list <br><br>
-![Figure 3.5: Candidates for events in a Hair Salon System](imgs/SAD/CandidatesEventsHairSalon.png)
+![Figure 3.3: Subactivities in selecting problem-domain classes and events](imgs/SAD/SubActivitiesClassesAndEvents.png)
 
-#### Evaluate Systematically 
-When we have completed the lists for class and event candidates, we evaluate them systematically using general and specific evaluation criteria. As part of this evaluation, we relate classes and events to each other to produce an event table, which is the outcome of the class activity. 
+<br>
 
-**General Evaluation Criteria**
-A class or event should be included in the problem-domain model if and only if system functions use information about it. This rule is the basis for the following two evaluation criteria: <br> 
-• Is the class or event within the system definition?<br> 
-• Is the class or event relevant for the problem-domain model?<br>
+### Find Classes
+Class selection will define the first and most basic set of building blocks for your problem-domain model. To facilitate this selection process, it's important to write down all potentially relevant classes, without evaluating them in detail. The aim is to generate a candidate list that is as long and varied as possible. <br>
+ou can use your own perception of the problem domain as a starting point. You can also use existing descriptions, including different rich pictures, the system definition, and, perhaps, an applicationdomain description. <br>
+To get a good problem-domain description, you must collaborate with prospective users. You can do this in several ways, such as by interviewing them and observing them at work, as well as by holding workshops and discussions with the users about potential classes.<br>
 
-Every object and event should be registered in the system. The system definition expresses this need by describing the key problem-domain objects. It also contains an overall specification of the system's functionality. Thus, you can use the system definition to determine what the system functions should produce information about, and thereby what the system should register. In this way, the system definition forms an important basis for evaluating class and event candidates.
 
-**Evaluation Criteria for Classes**
-As a rule, when you evaluate a class, you should be able to answer these questions affirmatively: <br>
-• Can you identify objects from the class? <br>
-• Does the class contain unique information? <br>
-• Does the class encompass multiple objects? <br>
-• Does the class have a suitable and manageable number of events?<br> 
-You should always be able to unambiguously identify objects from a class. For example, you might identify objects using a reference, such as a number. If you can't identify objects in some way, you may need to redefine your class. 
 
-Up to this point, we describe classes only by their name. However, this brevity can cause problems for the development team. First, developers may agree on a class name, but later disagree on class properties as development activities lead to more detailed descriptions. Second, you might begin with a detailed class concept, but forget some of these details later in the process. To avoid these problems, you can extend the class activity by specifying responsibilities for each class.
+**Candidates for classes**
+To determine the problem domain's elements, you need a rich 
+list of class candidates. To improve 
+the selection process, consider both 
+• nouns or noun phrases, and 
+• general types. 
+Focusing on nouns is natural in the object-oriented approach. An object will typically be described by a noun. You can also produce candidates by using the following checklist of general class types: 
+• Physical things: car, goods, package, material. 
+• People and roles: employee, parent, customer, member. 
+• Organizations: company, department, group, project. 
+• Places: shelf, parking spot, construction site, city. 
+• Concepts: square, currency, quality parameters, fee, desire. 
+• Descriptions: rule, item description, policy, product specification. 
+• Resources: money, time, energy, labor force, information. 
+• Devices: radar, sensor, valve, motor. 
+• Systems: street register, cash register, alarm system. 
+
+OOA&D, pages pages 385-392 (until the sub-section on Structure) is an example of development for a Hair salon.
+## Lecture three
+### Structure
+In the class activity, we selected classes for our problem-domain model and characterized each class by its events. In the structure activity, we extend this description by adding structural relations between classes and objects. <br>
+The result of the structure activity is a class diagram. The class diagram provides a coherent problem-domain overview by describing all structural relations between the classes and objects in our model. Figure 4.1 shows an example of a class diagram. <br><br>
+![Figure 4.1: Class diagram for a Hair Salon System](imgs/SAD/ClassDiagramHairSalon.png)
+<br><br>
+All object-oriented structures are described on th e class level by certain connections among classes in a class diagram. As Figure 4.2 shows, the class diagram uses the graphical notation for a class. Figure 4.2(a) shows the notation for a class with a related collection of objects. Below, is also dealt with examples of classes that have no related objects; these are called abstract classes. These are included only for descriptive reasons, using italics to signify their name in notation, as Figure 4.2(b) shows. <br><br>
+
+![Figure 4.2: Graphical notation of a class](imgs/SAD/GraphicalNotationOfClass.png)
+<br><br>
+Even though we describe class and object structures together in the class diagram, there is an important and decisive difference in their semantics. Class structures express static, conceptual relations between classes. They connect classes, and that relation does not change unless we change the description itself The object structures, on the other hand, express dynamic, concrete relations between objects. These relations can change dynamically without any implied changes in the description.
+
+### 4.2 Structures between Classes
+There are two types of class structures: generalization and cluster. Generalization structures gather the common properties and behavioral patterns of different classes into more general classes. Cluster structures collect several classes in a class diagram under one overall concept. <br>
+
+#### Generalization Structure 
+A generalization structure is a relation between two or more specialization classes and a more general class:<br> 
+**Generalization:** A general class (the super class) describes properties common to a group of specialized classes (the subclasses).<br>
+For example, the classes "Taxi" and "Private Car" might be specializations of the general class "Passenger Car," as Figure 4.4 shows. Similarly, the class "Vehicle" might be a further generalization of the classes "Passenger Car" and "Truck." <br><br>
+
+We call a specialized class a subclass and a generalized class a super class. Linguistically, we express specialization with the formulation "is-a." You can use this to verify the correctness of a generalization candidate. We must, for example, be able to say that "a taxi is a passenger car." Figure 4.4 shows the graphical notation for a generalization structure. A generalization structure is drawn as an arrow from the subclass to the super class. If several arrows point to the same class, you can join the arrows as Figure 4.6 shows. The class diagram is easier to understand if all the arrows consistently point upwards, implying that generalization classes are above their specializations. <br><br>
+![Figure 4.4: Generalization structure](imgs/SAD/GeneralizationStructure.png)
+<br><br>
+The set of objects in each of the specia lized classes is a subset of the set of objects in the general class, and all subsets are mutually exclusive. This relationship can be expressed in another way: Everything that holds true for the general class also holds true for the specialized classes, whereas the properties of a specialization class may only hold true for that particular class. <br>
+The generalization structure expresses inheritance: Specialized classes inherit the properties and behavioral pattern of the general class. Given this, the general properties apply to all objects at the specialized level, in addition to their own specialized properties. <br>
+
+In some cases, we want to describe properties at an abstract level, even if the problem domain contains no objects at that level. Figure 4.5 shows an example in which the problem domain contains only employees and customers. Because the "Person" class contains no concrete objects, it is abstract, but it is useful for describing properties that are common to and inherited by both the employee and customer classes. <br><br>
+![Application of an abstract super class ](imgs/SAD/AbstractSuperClass.png)
+<br><br>
+The typical generalization structure is hierarchical in that any subclass is a specialization of exactly one super class. However, multiple inheritance-in which a class inherits properties from two or more super classes can improve our model in some cases. Figure 4.6 shows an example, using a model with three types of accounts: basic account, checking account, and loan. In addition, there is a service account that inherits the properties and behavioral patterns from both the checking account and loan classes. <br><br>
+
+![Figure 4.6: Different types of accounts with multiple inheritance](imgs/SAD/MultipleInheritance.png)
 <br><br>
 
-![Figure 3.6: Considerations about classes in the Hair Salon System](imgs/SAD/CandidatesEventsHairSalon.png)
+**Cluster Structure**
+A cluster is a collection of classes that helps us achieve and provide a problem-domain overview:<br> 
+**Cluster:** *A collection of related classes.* <br>
+A cluster conveys an overall understanding of a problem domain by dividing it into smaller subdomains. The graphical notation is a file folder that encloses the classes. Figure 4. 7 shows an example of a model for an automobile register. As the figure shows, a cluster is usually named after a central class: the "Cars" cluster consists of all classes pertaining to types of cars and their components. Another cluster is composed of the classes describing people associated with the cars. These two clusters summarize the model's basic structure.<br><br>
+![Figure 4.7: Cluster structure](imgs/SAD/ClusterStructure.png)
+<br><br>
+Classes within a cluster are usually connected by either a generalization structure or an aggregation structure. For example, this is the case with the "Cars" cluster in Figure 4. 7. Relations between classes from different clusters are usually association structures. In Figure 4.7, "Owner" and "Car" in two different clusters are related through an association structure. <br>
 
-Cohesion is a classical measure for class-definition quality. A highly cohesive class is a logical unit, and it is this quality that we want to achieve. 
-With a cohesive class, it is easy to express the purpose of the class and to 
-determine whether it reflects a powerful abstraction. In terms of responsibility, a class with only a few, clear responsibilities will be characterized by 
-high cohesion. If, on the other hand, you have a class with a long list of responsibilities, it will have low cohesion and you should probably split it into 
-several new classes with higher cohesion. 
+### Structures between Objects 
+There are two types of object structures: aggregation and association. Both structures capture dynamic relations between objects in the problem domain. We describe the object structures in the class diagram as structural relations between two or more classes. The structures are described on the class level, with an assigned multiplicity property specifying that some objects from the related classes can be connected.<br>
+**Aggregation Structure**
+An aggregation structure is a relation between two or more objects. It expresses that one object is a fundamental and defining part of the other:<br> 
+**Aggregation:** A superior object (the whole) consists of a number of inferior objects (the parts).<br>
+An aggregation structure is drawn as a line between the classes of the whole and the parts, where the line is annotated with a rhomb at the class that models the whole.<br> 
+Figure 4.8 shows an example of an aggregation structure. In this model, objects of the "Cam Shaft" class can be part of an object of the "Engine" class, and an object of the "Car" class can aggregate an object of the "Engine" class. The opposite of aggregation is decomposition. In this figure, for example, a car can be decomposed into objects from the "Body," "Engine,'' 
+and "Wheel" classes. <br>
+As Figure 4.8 shows, we specify multiplicity with a single number or a range between two numbers. The numbers can be either absolute values or variables. You can read the multiplicity as follows: Every engine has between two (2) or more (*) cylinders, while every cylinder is part of precisely 
+one (1) engine. The multiplicity is always read from the middle of the connection out toward the related objects.<br> 
+Linguistically, we express aggregation with the formulation "has-a," such as, "a car has an engine." Similarly, we express decomposition as a "is-part-of" or "is-owned-by" relation, such as, "the engine is a part of the car."<br><br>
+![Figure 4.8: Aggregation structure](imgs/SAD/AggregationStructure.png)<br><br>
 
-**Evaluation Criteria for Events**
-Finally, we've developed evaluation criteria that pertains specifically to events. Again, when evaluating your event candidates, you should be able to answer affirmatively: <br>
-• Is the event instantaneous? <br>
-• Is the event atomic? <br>
-• Can the event be identified when it happens?<br>
-In a Conference Planning System, we have a review event, this is understood as something instantaneous, even though it might take several days. The important thing to remember here is that you don't want to monitor or administrate the actual reviewing process, but rather to know when the review is finished and what the result is. <br> 
-An event is always atomic and cannot be broken down into sub-events. If you want to model sub-events, you should include each of them instead of the overall event. <br>
-Each event should be identifiable when it happens. In a Conference Planning System, we have an event that represents that an article is sent to a reviewer. Instead of this event, we could have one that represents when the reviewer received the article, but because this would be difficult to observe, the "sent" event is more practical.<br> 
-Figure 3.7 shows considerations about event selection for a Hair Salon System.  <br><br>
-
-![Figure 3.7: Considerations about events a Hair Salon System](imgs/SAD/EventsInHairSalon.png)
-
-**Relating Classes and Events**
-As part of systematically evaJuating and selecting class and event candidates, we describe the relations between them. When we select a class, we also define the events that the class' objects are involved in. <br>
-Similarly, when we select an event, we define the objects that are involved in this event. The general questions we ask are: <br>
-Which events is this class involved in? <br> 
-Which classes are involved in this event? <br>
-We summarize the answers in an event table, as Figure 3.1 shows. <br> <br>
-
-You can also use the event table to evaluate the quality of your class and event candidates. A class with many events will have many check 
-marks in its column. This might indicate tha t the class has too many responsibilities and thus low cohesion. Similarly, an event can be common to many classes, indicated by many checks in its row. This indicates that the event connects many mutually related classes that might be highly coupled. Thus, although the event table is the class activity's result, it is also an effective means for evaluating your selection of classes and events. 
-
-
-OOA&D, pages 385-392 (until the sub-section on Structure)
-
-## Lecture three
+**Association Structure**
+An association structure is also a relation between two or more objects, but it differs from aggregation in that associated objects are not a defining property of an object: <br>
+**Association:** *A meaningful relation between a number of objects.*
+An association structure is drawn as a simple line between the relevant classes. We describe association multiplicity in the same way as we describe aggregation. Because the association structures do not imply ranking, you can place the related classes anywhere in the class diagram. Association is often used when aggregation would imply a too strong relation. For example, we may want to model a problem domain where a car 
+is owned by one or more people, and a person owns zero or more cars (see Figure 4.9). It makes no sense to say that an object from the car or person classes contains objects from the other class as its parts. Moreover, the person who owns a car is neither a defining property of a car, nor the reverse. Therefore, the relation between objects from the two classes is described as an association structure and not as an aggregation structure. <br>
+Linguistically, we can express association with the formulation "knows" or "associated-with." 
 
 OOA&D, chapter 4
 OOA&D, chapter 20, pages 392-394 (the sub-sections on Structures and Clusters)
-
 ## Lecture four
-
 OOA&D, chapter 5
 OOA&D, chapter 19, pages 351-360
 OOA&D, chapter 20, pages 394-396
-
 ### Behavioral Pattern and Attributes
 
 An object is an entity with identity, state, and behavior. In the class activity, we see behavior simply as the unordered set of events that involve an object. In the behavior activity, we describe behavior more precisely by adding the relative timing of events. An object's behavior is defined by an event 
@@ -718,7 +720,6 @@ A statechart diagram defines the different states of the interaction and the dif
 OOA&D, Part III
 OOA&D, Chapter 6
 OOA&D, Chapter 19 (pages 362 - 364)
-
 ## Lecture Six - Functions
 
 Functions focus on what the system can do to assist actors in their work. When determining requirements for the functions, we ask the following question: What is the system going to do? In the usage activity, our question focused more on how the system would be used. Given that it is difficult to analyze "what" without analyzing "how," the usage and function activities are closely connected.
@@ -858,7 +859,6 @@ Finally, you must compare the function list with the model. The model must inclu
 OOA&D, Chapter 7.
 
 ## Lecture Seven -
-
 OOA&D, Chapter 15
 
 Other things to read (background), (find them on the source indicated):
@@ -868,7 +868,7 @@ https://link-springer-com.zorac.aub.aau.dk/article/10.1007/PL00010355
 Dahlbom, B. and Mathiassen, L. (1993) Computers in Context: The Philosophy and Practice of Systems Design, Chapter 4 and 5. Blackwell Publishers.
 Can be borrowed through the library (AUB)
 
-Wirth, N. (1971) Program Development by Stepwise Refinement. Communications of the ACM 14(4):221-227.
+ Wirth, N. (1971) Program Development by Stepwise Refinement. Communications of the ACM 14(4):221-227.
 https://dl-acm-org.zorac.aub.aau.dk/ft_gateway.cfm?id=362577&ftid=43866&dwn=1&#URLTOKEN#
 
 Naur, P. (1972) An experiment on program development. BIT 12:347-365.
@@ -878,7 +878,6 @@ Mathiassen, L. and Stage, J. (1992) The Principle of Limited Reduction in Softwa
 https://www-emeraldinsight-com.zorac.aub.aau.dk/doi/pdfplus/10.1108/EUM0000000003550
 
 ## Lecture Eight - Architectural Design, Criteria and Components
-
 OOA&D, Part IV
 OOA&D, Chapter 9
 OOA&D, Chapter 10
@@ -895,14 +894,11 @@ The component architecture decomposes the system into identifiable, mutually rel
 ![Component architecture and process architecture](imgs/SAD/ComArchitectureProcArchitecture.png)
 
 ## Lecture Nine
-
 OOA&D, Part V
 OOA&D, Chapter 12.
 
 ## Lecture Ten
-
 OOA&D, chapter 13.
 
 ## Lecture eleven
-
 OOA&D, chapter 14.
