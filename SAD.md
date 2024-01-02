@@ -511,7 +511,7 @@ For example, the classes "Taxi" and "Private Car" might be specializations of th
 We call a specialized class a subclass and a generalized class a super class. Linguistically, we express specialization with the formulation "is-a." You can use this to verify the correctness of a generalization candidate. We must, for example, be able to say that "a taxi is a passenger car." Figure 4.4 shows the graphical notation for a generalization structure. A generalization structure is drawn as an arrow from the subclass to the super class. If several arrows point to the same class, you can join the arrows as Figure 4.6 shows. The class diagram is easier to understand if all the arrows consistently point upwards, implying that generalization classes are above their specializations. <br><br>
 ![Figure 4.4: Generalization structure](imgs/SAD/GeneralizationStructure.png)
 <br><br>
-The set of objects in each of the specia lized classes is a subset of the set of objects in the general class, and all subsets are mutually exclusive. This relationship can be expressed in another way: Everything that holds true for the general class also holds true for the specialized classes, whereas the properties of a specialization class may only hold true for that particular class. <br>
+The set of objects in each of the specialized classes is a subset of the set of objects in the general class, and all subsets are mutually exclusive. This relationship can be expressed in another way: Everything that holds true for the general class also holds true for the specialized classes, whereas the properties of a specialization class may only hold true for that particular class. <br>
 The generalization structure expresses inheritance: Specialized classes inherit the properties and behavioral pattern of the general class. Given this, the general properties apply to all objects at the specialized level, in addition to their own specialized properties. <br>
 
 In some cases, we want to describe properties at an abstract level, even if the problem domain contains no objects at that level. Figure 4.5 shows an example in which the problem domain contains only employees and customers. Because the "Person" class contains no concrete objects, it is abstract, but it is useful for describing properties that are common to and inherited by both the employee and customer classes. <br><br>
@@ -522,6 +522,10 @@ The typical generalization structure is hierarchical in that any subclass is a s
 ![Figure 4.6: Different types of accounts with multiple inheritance](imgs/SAD/MultipleInheritance.png)
 <br><br>
 
+**Examples**
+If our model contains customers and suppliers, we might make a "business partner" generalization class to contain common properties of the two original classes. <br>
+Another approach is to take each of the selected classes and attempt to define a relevant generalization or specialization. For example, if our model contains employees, we can distinguish between different types of employees according to the type of work they do. We express this by introducing several new classes that are specializations of the employee class.
+
 **Cluster Structure**
 A cluster is a collection of classes that helps us achieve and provide a problem-domain overview:<br> 
 **Cluster:** *A collection of related classes.* <br>
@@ -530,61 +534,188 @@ A cluster conveys an overall understanding of a problem domain by dividing it in
 <br><br>
 Classes within a cluster are usually connected by either a generalization structure or an aggregation structure. For example, this is the case with the "Cars" cluster in Figure 4. 7. Relations between classes from different clusters are usually association structures. In Figure 4.7, "Owner" and "Car" in two different clusters are related through an association structure. <br>
 
+To increase a class diagram's clarity, we can explicitly group and name collections of classes. This organizes conceptually related classes into clusters. <br>
+Figure 4.10 shows an example of a class diagram that gives a simple and overall description of a problem domain. 
+<br><br>
+![Figure 4.10: Clusters in the Hair Salon System](imgs/SAD/ClustersHairSalon.png)
+<br><br>
+Although you might be tempted to include a class in two different clusters, it is not allowed. If you can't determine membership, you should create 
+a new cluster for the class in question. Clusters are expressions of subdomains within the problem domain; we can use them during analysis to enhance clarity. They also help us achieve clarity in the resulting model when other structures have been defined. You can use other structures as a starting point for generating cluster candidates. G<br>
+
 ### Structures between Objects 
 There are two types of object structures: aggregation and association. Both structures capture dynamic relations between objects in the problem domain. We describe the object structures in the class diagram as structural relations between two or more classes. The structures are described on the class level, with an assigned multiplicity property specifying that some objects from the related classes can be connected.<br>
 **Aggregation Structure**
 An aggregation structure is a relation between two or more objects. It expresses that one object is a fundamental and defining part of the other:<br> 
-**Aggregation:** A superior object (the whole) consists of a number of inferior objects (the parts).<br>
+**Aggregation:** *A superior object (the whole) consists of a number of inferior objects (the parts).*<br>
 An aggregation structure is drawn as a line between the classes of the whole and the parts, where the line is annotated with a rhomb at the class that models the whole.<br> 
-Figure 4.8 shows an example of an aggregation structure. In this model, objects of the "Cam Shaft" class can be part of an object of the "Engine" class, and an object of the "Car" class can aggregate an object of the "Engine" class. The opposite of aggregation is decomposition. In this figure, for example, a car can be decomposed into objects from the "Body," "Engine,'' 
-and "Wheel" classes. <br>
+Figure 4.8 shows an example of an aggregation structure. In this model, objects of the "Cam Shaft" class can be part of an object of the "Engine" class, and an object of the "Car" class can aggregate an object of the "Engine" class. The opposite of aggregation is decomposition. In this figure, for example, a car can be decomposed into objects from the "Body," "Engine", and "Wheel" classes. <br>
 As Figure 4.8 shows, we specify multiplicity with a single number or a range between two numbers. The numbers can be either absolute values or variables. You can read the multiplicity as follows: Every engine has between two (2) or more (*) cylinders, while every cylinder is part of precisely 
 one (1) engine. The multiplicity is always read from the middle of the connection out toward the related objects.<br> 
 Linguistically, we express aggregation with the formulation "has-a," such as, "a car has an engine." Similarly, we express decomposition as a "is-part-of" or "is-owned-by" relation, such as, "the engine is a part of the car."<br><br>
 ![Figure 4.8: Aggregation structure](imgs/SAD/AggregationStructure.png)<br><br>
 
+There are three typical applications of aggregation structures: 
+• Whole-Part, in which the whole is the sum of the parts; if we add or remove any part, we change the whole fundamentally. <br>
+• Container-Content, in which the whole is a container for the parts; if we add or remove any content, we do not change the fundamental properties of the whole. <br>
+• Union-Member, in which the whole is an organized union of members. We do not change the union fundamentally by adding or removing a few members. However, there is a lower limit on the number of members, as it is artificial to model a union without members. <br>
+In an aggregation structure, the whole is considered to be superior to its parts. This is reflected in the class diagram through the vertical placement of the classes.<br><br>
+
 **Association Structure**
 An association structure is also a relation between two or more objects, but it differs from aggregation in that associated objects are not a defining property of an object: <br>
 **Association:** *A meaningful relation between a number of objects.*
-An association structure is drawn as a simple line between the relevant classes. We describe association multiplicity in the same way as we describe aggregation. Because the association structures do not imply ranking, you can place the related classes anywhere in the class diagram. Association is often used when aggregation would imply a too strong relation. For example, we may want to model a problem domain where a car 
+An association structure is drawn as a simple line between the relevant classes. We describe association multiplicity in the same way as we describe aggregation. Because the association structures do not imply ranking, you can place the related classes anywhere in the class diagram. <br>
+Association is often used when aggregation would imply a too strong relation. For example, we may want to model a problem domain where a car 
 is owned by one or more people, and a person owns zero or more cars (see Figure 4.9). It makes no sense to say that an object from the car or person classes contains objects from the other class as its parts. Moreover, the person who owns a car is neither a defining property of a car, nor the reverse. Therefore, the relation between objects from the two classes is described as an association structure and not as an aggregation structure. <br>
-Linguistically, we can express association with the formulation "knows" or "associated-with." 
+Linguistically, we can express association with the formulation "knows" or "associated-with." <br>
+<br>
 
-OOA&D, chapter 4
-OOA&D, chapter 20, pages 392-394 (the sub-sections on Structures and Clusters)
+![Figure 4.9: Association structure](imgs/SAD/AssociationStructure.png)
+<br><br>
+It is not always clear which properties a given association structure represents. We solve this by explicitly naming the association structure. We 
+might call an association structure between a person and a car "ownership," for example, to emphasize the relationship that the structure represents. 
+Also, in a motor vehicle register, for example, two different associations between cars and people might be necessary: "owned by" and "used by."
+<br>
+To generate candidates for association structures, we look at the remaining class pairs to see if they can be meaningfully related. We should describe 
+associations whenever we must administrate, monitor, or control relations between objects that are not otherwise related in the model.<br>
+
+### Find Candidates for Structure
+We model structural relations in much the same way as we select classes and events. We start by generating candidates for structural relations between the model's classes. This is based on the following principles:<br> 
+**Principle:** *Study abstract, static relations between classes*<br>
+**Principle:** *Study concrete, dynamic relations between objects.*<br>
+Canidates are generate candidates based on the four types of structures we introduced above.
+
+### Explore Patterns
+you can apply patterns to solve specific problems during problem-domain modeling. A rich pattern collection is also useful as a catalog of ideas for modeling phenomena in a problem domain. Here is four patterns that are particularly concerned with structure.
+
+**The Role Pattern**
+We use the role pattern to model a situation in which a single person can have several different roles in the problem domain. The diagram on the left of Figure 4.11 shows an example of a company in which a person can be either an employee, a customer, or both. We model this by generalizing employees and customers into persons. A person then 
+aggregates one or more roles, where each role is either employee or customer.<br> <br>
+![Figure 4.11: The role pattern](imgs/SAD/RolePattern.png)
+<br>
+This structure lets a person change roles dynamically over time. For example, a person may start as a customer and later be hired as an employee. 
+In this case, we would first establish a person object and assign a customer role, and later add an employee role. <br>
+The right side of Figure 4.11 shows the general role pattern. A person object aggregates zero or more role objects, where each role object is from 
+one of the classes Role 1, Role2, ... Role0 . Pr operties and behavior common to all the role classes are described in the abstract class "Role."<br> 
+If the different role classes have nothing in common, we use a simplified pattern variation without a separate role class, as Figure 4.12 shows. <br><br>
+
+![Figure 4.12: A simple variant of the role pattern ](imgs/SAD/SimpleRolePattern.png)
+<br><br>
+
+**The Relation Pattern**
+A typical modeling problem is the desire to relate two objects to each other through a relation that carries its own properties. We can model this by assigning a name to the association, but the relation pattern is a better solution. <br>
+The Figure 4.13 shows an example, in which we modeled the ownership relation between a car and its owner. The person aggregates a number of ownership objects and each of them relates to exactly one car. During its lifetime, a car might have several owners.<br><br>
+
+![Figure 4.13: The relation pattern](imgs/SAD/RelationPattern.png) 
+
+
+**The Hierarchy Pattern**
+Many problem domains include objects that are organized into a hierarchy with two or more levels and relationships exist among objects on different levels. <br>
+The left side of Figure 4.14 shows an example where all students are organized into classes, and all classes are organized into semesters. A student belongs to exactly one class and the class has many students. <br>
+The right side of the figure shows the general version of the hierarchy pattern. When we use this pattern, we must decide what the elements are and how many levels of hierarchy to organize them in.<br><br>
+![Figure 4.14: The hierarchy pattern](imgs/SAD/HierarchyPattern.png)
+<br>
+A useful variation on the hierarchy pattern is one in which objects at one level can belong to several objects on the level above. In this situation, the elements of the hierarchy are not mutually exclusive.
+
+**The Item-Descriptor Pattern**
+The left side of Figure 4.15 illustrates a solution to a classical domain-modeling problem: the distinction between items and their description. The example is taken from a library. Books have descriptions and keywords to facilitate search, and numbers to determine where they are located in the library. For each book, there is at least one copy. Each copy h as its own identity and is treated as a separate entity, but all copies share the properties described by the related book object. <br>
+The right side of Figure 4.15 shows the general version of the item-descriptor pattern. An object from the overall class "Descriptor" defines specific properties shared by all the related objects from the "Item" class. <br><br>
+
+![Figure 4.15: The item-descriptor pattern](imgs/SAD/ItemDescriptorPattern.png) 
+<br>
+The item-descriptor pattern is particularly useful in systems that administrate different kinds of descriptions, such as contracts, insurance policies, and product specifications. 
+
+### Evaluate Systematically 
+It is easy to generate many candidates for structural relations between classes. It is much more difficult to produce a simple and comprehensive problem-domain model. You must be prepared to reformulate and refine classes and structures several times before arriving at a satisfying solution. This involves systematic evaluation based on the following principle: <br>
+**Principle:** *Model only the necessary structural relations.* <br> 
+When we evaluate structural relations, we can benefit from the following criteria. 
+• Structures must be used correctly. <br>
+• Structures must be conceptually true. <br>
+• Structures must be simple. <br>
+A fundamental and classical error when modeling object-oriented structures is to mix generalization and aggregation. Both are potentially relevant abstractions, but it makes no sense to say that "an engine is a car," or that "a passenger car bas taxis and private cars."<br>
+An aggregation structure is a special, stronger form of association and can thus always be expressed as an association structure. "Has-a" or "is-part-of" are good tests for aggregation candidates. <br>
+the following three questions can assist you in differentiating between aggregation and association structures. 
+• Can the objects exist independently of each other? <br>
+• Are the objects equally ranked? <br>
+• Can the connection from an object from the one class change to other objects from the other class? <br>
+If you answer yes to at least two of the questions, consider an association structure. Otherwise, consider an aggregation structure. For example, looking at the structures in Figure 4.6, a car and its engine cannot exist independently over a long period, the car is superior to the engine, and we typically wouldn't move the engine to another car. Therefore we select an aggregation structure. A car and its owner can, on the other hand, exist independently of each other, they are equally ranked, and both car and owner can change their relation to other objects of the same class. Therefore, an association structure is most appropriate.<br>
+
 ## Lecture four
-OOA&D, chapter 5
-OOA&D, chapter 19, pages 351-360
-OOA&D, chapter 20, pages 394-396
+### Behavior
+In the behavior activity, we extend our class definitions in the class diagram by adding descriptions of the behavioral pattern and attributes of each class. The result is expressed graphically in a statechart diagram, as illustrated in Figure 5.1<br>
+![Figure 5.1: A simple statechart diagram for a class "Customer" in a bank](imgs/SAD/SimpleStatechart.png)
+<br>
+
 ### Behavioral Pattern and Attributes
 
 An object is an entity with identity, state, and behavior. In the class activity, we see behavior simply as the unordered set of events that involve an object. In the behavior activity, we describe behavior more precisely by adding the relative timing of events. An object's behavior is defined by an event 
 trace that exhibits a certain ordering of events over time: <br><br>
  ***Event trace:*** A sequence of events inuoluing a specific object.
-
-An event trace is unique for a specific object; it is the precise event sequence 
-that the object is involved in during a time interval. For example, an object 
-of the class "Customer" in the figure below might have the following event trace 
-during its lifetime:
-
-account opened - amount deposited - amount withdrawn -
-amount deposited - account closed
-
-![EventTraceforCustomer](imgs/SAD/EventTraceCustomer.png)
-
+<br>
+An event trace is unique for a specific object; it is the precise event sequence that the object is involved in during a time interval. For example, an object of the class "Customer" in the figure below might have the following event trace during its lifetime:
+<br>
+account opened - amount deposited - amount withdrawn - amount deposited - account closed
+<br>
 The focus in object-oriented problem-domain analysis is on objects, but for practical reasons, we describe groups of objects by common class definitions. Accordingly, we refrain from describing the behavior of every object in the problem domain. Instead, we describe a behavioral pattern for object classes: <br><br>
- ***Behavioral pattern:*** A description of possible event traces for all objects in a class.
+
+ ***Behavioral pattern:*** *A description of possible event traces for all objects in a class.*
 
 The above figure defines such a behavioral pattern. It expresses that an object from the class "Customer" is created when the customer opens an account in the bank. The customer can then deposit and withdraw money. The customer object ends its life when the account is closed. <br> 
 The behavioral pattern describes behavior common to all objects of the class. To produce the pattern, we use examples of event traces for individual objects in the class: <br><br> 
-***Principle:*** Create behavioral patterns from event traces.
+
+***Principle:*** *Create behavioral patterns from event traces.*<br>
+
+When we model the problem domain, we formulate requirements for data that the system will store, and thereby render the data accessible through functions and interfaces. To specify the data, we use attributes: <br>
+**Attribute:** *A descriptive property of a class or an event.*<br>
+In object-oriented analysis, attribute specification is part of a class definition and is based on our understanding of object behavior. This is expressed in the following principle: <br>
+**Principle:** *Derive class attributes from behavioral patterns.*<br>
+We define attributes simply, using a name rather than detailed divisions into data fields and data-format specifications. For example, a person's name and address can be subdivided into first name and last name, as well as street, number, and town. In object-oriented analysis, such subdivisions are unnecessary as they simply extend the analysis document and add nothing substantial to our understanding of the problem domain.<br><br>
+
+The behavior activity includes four subactivities. Our departure point is the event table and the class diagram. We start by describing a behavioral pattern for each class in the class diagram, using the related events as building blocks. We use general patterns of class behavior to improve our description and discover new ways of expressing dynamic aspects of the problem domain. Because these activities will unveil weaknesses and deficiencies in our choice of classes and structures, we also generate candidates for new classes and structures at this time. The activity ends with our specification of the main attributes for all classes and events.   
+
+### Notation for Behavioral Patterns 
+A behavioral pattern orders individual events in time using fundamental control structures from structured programming:<br>
+*Sequence:* Events in a set occur one by one.<br>
+*Selection:* Exactly one out of a set of events occurs.<br> 
+*Iteration:* An event occurs zero or more times.<br>
+<br>
+The behavioral pattern is a description that captures the dynamic character of the problem domain without specifying how or why a certain behavior occurs. <br>
+A behavioral pattern with sequence, selection, and iteration can be described most comprehensibly by a regular expression, a regular expression is a compact and precise notation, which you might know as 'regex'.  Given that "+" denotes sequence, "|" denotes selection, and "*" denotes iteration, the behavior of a customer can be described by the following regular expression:<br> <br>
+account opened + (amount deposited I amount withdrawn)* + account closed <br><br>
+This describes the possible course of each customer object's life, by defining, on a class level, the possible behavior of all the objects that belong to the class. It defines numerous event traces, each of which represents a potential object behavior. For example, all of the following event traces lie within the boundaries of the behavioral pattern defined by the regular expression above:<br> 
+account opened - account closed <br>
+account opened - amount deposited - amount withdrawn -amount deposited - account closed<br>
+account opened - amount withdrawn - account closed <br><br>
+The behavioral pattern also defines the event traces that are not legal. For example, it is impossible, within the limits of the behavioral pattern defined above, to make deposits or withdrawals before an account is opened or after an account is closed. The behavioral pattern thus describes both the legal and illegal event traces for objects in a specific class. <br>
+You can also describe a behavioral pattern graphically with a statechart diagram. This classic notation is generally used to describe dynamics involving a finite number of states and a finite number of transitions between them. Transitions between states are representations of possible problem-domain events. A statechart diagram has the same expressive capability as a regular expression.<br><br>
+
+As Figure 5.3 shows, the three classical control structures used in regular expressions can also be expressed in a statechart diagram. <br>
+*Sequence* is expressed by making the events lead through several states, where each state has only one event leaving it. The events must occur in the order that the sequence specifies, indicated by the direction of the arrows. The sequence in Figure 5.3 indicates that the events from "a" to "z" occur one-by-one in the given order. The first and last events in the overall sequence are especially important. The first describes the event(s) that leads to the creation or birth of an object. Similarly, the last event(s) describes when a problem-domain object dies or disappears.<br> 
+*Selection* is expressed by making all possible events lead out of the same state. The selection in Figure 5.3 means that exactly one of the events from "a" to "z" occurs exactly once.<br>
+*Iteration* is expressed by making an event lead back to its original state. The first iteration in Figure 5.3 means that the event "a" occurs zero or more times. This form of iteration is direct as it leads right back to the original state. Figure 5.3 shows an example of indirect iteration: Event "b" leads to a state, and from that event "c" leads back to the original state. Therefor, an object's event trace includes an arbitrary number of repetitions of the sequence "b-c," indicating that the object toggles several times between two states.<br><br>
+![Figure 5.3: Control structures in a statechart diagram](imgs/SAD/ControlStructuresStatechart.png) 
+
+In special cases you may want to supplement with another form of transition-one that occurs when a stated condition becomes true. The behavior description of a rental-car reservation can, for example, look like the one shown in Figure 5.4. Here, an object is born when a reservation is registered at a customer's request. The customer must confirm the reservation. In addition, if the customer does not confirm the reservation before the deadline, the reservation is canceled and no rental can occur. This requirement is stated in the square brackets in the figure. This form of conditional transition is useful both with administrative and technical systems.<br><br>
+![Figure 5.4: Example of a statechart diagram using conditions](imgs/SAD/StatechartDiagramUsingConditions.png)
+<br>
+
+### Describe Behavioral Patterns
+When producing a behavioral pattern for a class, the point of departure is the set of events that involve objects. In the class activity, we captured the 
+connection between classes and events in the event table. From this unordered set of events, we start identifying the first and last event in an object's life. We accomplish this by asking the following questions for objects from the class:<br> 
+• Which events cause the creation of a problem-domain object? These events are grouped as selections that can cause the birth of an object.<br>
+• Which events cause the disappearance of a problem-domain object? These events are grouped as selections that can cause the death of an object.<br><br>
+**Sufficient, but Simple** 
+When we make behavioral patterns, we have the following-sometimes conflicting-goals:<br> 
+• The behavioral pattern should be sufficiently precise to describe all legal, and thus all illegal, event traces.<br> 
+• The behavioral pattern should provide an overview and thus be as simple as possible.<br> 
 
 ### Behaviour activities
 
 ###
 
 ### Event traces
-
+OOA&D, chapter 5
+OOA&D, chapter 19, pages 351-360
+OOA&D, chapter 20, pages 394-396
 ## Lecture Five - Usage
 
 ![ApplicationDomainAnalysisPurpose](imgs/SAD/ApplicationDomainAnalysisPurpose.png)
