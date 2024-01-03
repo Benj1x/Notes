@@ -703,19 +703,45 @@ When producing a behavioral pattern for a class, the point of departure is the s
 connection between classes and events in the event table. From this unordered set of events, we start identifying the first and last event in an object's life. We accomplish this by asking the following questions for objects from the class:<br> 
 • Which events cause the creation of a problem-domain object? These events are grouped as selections that can cause the birth of an object.<br>
 • Which events cause the disappearance of a problem-domain object? These events are grouped as selections that can cause the death of an object.<br><br>
-**Sufficient, but Simple** 
+**Sufficient, but Simple** <br>
 When we make behavioral patterns, we have the following-sometimes conflicting-goals:<br> 
 • The behavioral pattern should be sufficiently precise to describe all legal, and thus all illegal, event traces.<br> 
 • The behavioral pattern should provide an overview and thus be as simple as possible.<br> 
+#### Explore Patterns <br>
+We focus on three basic behavior patterns. You can use them to improve an outline or contribute to a completely new idea for part of the problem-domain model.
 
-### Behaviour activities
+**The Stepwise Relation Pattern**<br>
+We use the stepwise relation pattern when certain problem-domain objects are related to the elements of a hierarchy in a stepwise or sequential manner. Figure 5.8 shows an example of this pattern. <br>
+tepwise or sequential manner. Figure 5.8 shows an example of this pattern. The model describes a situation in which university students are first assigned to a semester, then to 
+a class, and then to a group within the class. The group is an element of the relevant class, and the class is an element of the relevant semester. In this sense, it is a proper hierarchy. <br>
+Figure 5.8 outlines the behavioral patterns. Student behavior, shown on the right, has a form wherein all events occur in a sequence. The events shown are those that are necessary to model when a student is assigned to an element in the hierarchy. <br>
+At the bottom left of the figure is the relevant part of the behavioral pattern for the "Class" class. At some point, this element in the hierarchy is in a state where it accepts assignment of students to the class. There may be several occurrence of this event; each models the assignment of one student. <br><br>
 
-###
+![Figure 5.8: Example of the stepwise relation pattern ](imgs/SAD/StepwiseRelationPattern.png)
+<br><br>
 
-### Event traces
-OOA&D, chapter 5
-OOA&D, chapter 19, pages 351-360
-OOA&D, chapter 20, pages 394-396
+**The Stepwise Role Pattern**<br>
+The stepwise role pattern describes interaction between several objects over time, but this pattern focuses on the horizontal dimension in a class diagram rather than the vertical dimension. You can use this pattern to describe how the behavior of a whole changes as its parts become active.<br>
+Figure 5.9 shows an example of the pattern, where a sale is modeled as consisting of an offer, an order, and a delivery. The two statechart diagrams illustrate the behavior of the classes. The diagram to the right describes the behavioral pattern of the class "Sale." An object from this class is created when an offer is requested and terminates when the delivery is made. The other statechart diagram on the bottom left of the figure shows how the behavioral pattern of one of the parts will look. An offer is created when it is requested, and terminates when the offer is accepted or rejected. The two 
+other parts will have similar behavioral patterns, and the last event in "Offer" will be the first in "Order," so an order is created when an offer is accepted. Similarly, a delivery is created when an order is received. <br>
+A sale can be terminated at any time in the course of its life. We model this with a hierarchical state in which the event "sale cancelled" can terminate an object at any point in the subchart.<br>
+The object that models the whole can start at later points in the sequence than we show in Figure 5.9. For example, a sale might be born directly as a delivery. To model this, we would include additional arrows from the initial state down to other states in the sequence. In Figure 5.9, the event "order received" might lead from the initial state to the "Awaiting" 
+state.<br><br>
+
+![Figure 5.9: Example of the stepwise role pattern](imgs/SAD/StepwiseRolePattern.png)
+<br><br>
+
+**The Composite Pattern**<br>
+The composite pattern offers a way to describe the creation and destruction of a hierarchy using a detailed structw·e that is unknown at model-development time. An example of such a structure is the list of contents in a written document, a chart of financial-system accounts, or a list of pieces in a 
+manufacturing process. <br>
+Figure 5.10 shows an example of relevant structure and behavior for a manufacturing system: "part" is an abstract class; "simple part" and "composite part" are specializations. A composite part aggregates several parts, 
+where each part is one of the two specializations.<br> 
+Figure 5.10 also shows the behavioral patterns for the three classes. A part's statechart diagram imposes limits on specializations. A simple part's statechart diagram indicates that it is immediately ready, because it does not need assembly. It is then mounted in an enclosing composite. At this point, the simple part's separate life ends and it continues to live on only as an integrated part of a composite. The composite also has a terminating event, when this part with all of its subparts are mounted into a larger composite. <br>
+The key point in this pattern is that the top-level behavior requires some behavior from the level beneath it, which in turn requires behavior from the level beneath it, and so on. We thus end up with a recursive description.
+![Figure 5.10: Example of the composite pattern](imgs/SAD/CompositePattern.png)
+Examples in OOA&D: chapter 19, pages 351-360
+Examples in OOA&D, chapter 20, pages 394-396
+
 ## Lecture Five - Usage
 
 ![ApplicationDomainAnalysisPurpose](imgs/SAD/ApplicationDomainAnalysisPurpose.png)
@@ -750,11 +776,11 @@ The goal is to create a coherent and consistent result. The following figure giv
 In the next section, "Usage", we discuss how you can determine target-system use in the application domain by identifying and structuring actors and use cases. 
 ![Activities in application-domain analysis](imgs/SAD/AccAppDomainAnalysis.png)
 
-### Usage
+## Usage
 
 !["Usage" purpose](imgs/SAD/UsagePurpose.png)
 
-#### Use Cases
+### Use Cases
 
 Analyzing an existing application domain can create a huge amount of detailed information that has little value to the development process. For efficiency, you must maintain a relevant level of abstraction and focus on the interaction between users and the system. Use cases can help you achieve a relevant focus and abstraction level. In this activity ti;he key concepts are:
 
@@ -783,7 +809,7 @@ Changes to a company's computerized systems affect the company's organization an
 The above figure offers a summary of usage analysis activities: Actors and usecases are defined, often using patterns as inspiration. The activity results 
 in a description of all use cases and actors. These descriptions should be systematically evaluated.
 
-#### 6.2 Example: An Automated Payment System
+### 6.2 Example: An Automated Payment System
 
 A basic automated payment system has four actors: account owners, who use the system for payment and cash withdrawals; creditors, who have customers that pay via the 
 system; administrators, who work with the system; and lquidity monitors, who use the system to monitor the bank's liquidity.
@@ -812,13 +838,12 @@ defined. You may not notice great differences or variations in some systems, but
 
 #### Actors and Classes, Use Cases, and Events - A side note
 
-An actor table looks similar to the event table discussed in Chapter 3. This raises the question: Is there any difference between actors with use cases and classes with events? The answer is yes. The main difference is that the phenomena occur in different domains.
-A class describes something that the target system should manage, such as a customer. An actor describes someone or something that interacts physically with the system, such as a clerk. An event describes an incident the system must be aware of, such as when a customer orders certain goods. A use case describes the interaction between an actor and the system, such as a clerk entering an order.
-An event is something we want the system to remember. A use case is a way of using the system, such as to enter information. The event can occur at a different time and place than the related use case. For example, the ordering could happen in a store and the related use case could be performed later on in a back office.
+An actor table looks similar to the event table discussed in Chapter 3. This raises the question: Is there any difference between actors with use cases and classes with events? The answer is yes. The main difference is that the phenomena occur in different domains.<br>
+A class describes something that the target system should manage, such as a customer. An actor describes someone or something that interacts physically with the system, such as a clerk. An event describes an incident the system must be aware of, such as when a customer orders certain goods. A use case describes the interaction between an actor and the system, such as a clerk entering an order.<br>
+An event is something we want the system to remember. A use case is a way of using the system, such as to enter information. The event can occur at a different time and place than the related use case. For example, the ordering could happen in a store and the related use case could be performed later on in a back office.<br><br>
 
-Of course, there are similarities between actor tables and event tables. They both view their domains- the application domain 
-and problem domain, respectively-in static and dynamic aspects. Actors and classes describe static aspects, while use cases and events describe dynamic aspects. Events are structured into behavioral patterns. Similarly, use cases can be viewed as another type of behavioral pattern, albeit in another domain.
-We can imagine cases in which the application domain and the problem domain overlap. If a customer enters an order over the Web, then "Customer" is both a class and an actor, and "ordering" is both a use case and the event that occurs when the order is accepted. Thus, the denotation of the concepts can overlap, but the descriptions of actors and classes, and use cases and events, will differ.
+Of course, there are similarities between actor tables and event tables. They both view their domains- the application domain and problem domain, respectively-in static and dynamic aspects. Actors and classes describe static aspects, while use cases and events describe dynamic aspects. Events are structured into behavioral patterns. Similarly, use cases can be viewed as another type of behavioral pattern, albeit in another domain.<br>
+We can imagine cases in which the application domain and the problem domain overlap. If a customer enters an order over the Web, then "Customer" is both a class and an actor, and "ordering" is both a use case and the event that occurs when the order is accepted. Thus, the denotation of the concepts can overlap, but the descriptions of actors and classes, and use cases and events, will differ.<br>
 
 #### Find Actors and Use Cases
 
@@ -847,6 +872,11 @@ You can produce a list of possible use cases by examining the application domain
 A statechart diagram defines the different states of the interaction and the different ways the system or actor can change that state. Figure 6.5 shows an example of a statechart diagram, and Figure 6.6 shows a specification of the same use case. In a use-case specification, the use case itself is briefly but precisely described in a structured text that focuses on the actors. As a supplement, you can also describe the relevant system objects and functions.
 
 ![Statechart diagram for cash withdrawl](imgs/SAD/StatechartCashWithdrawl.png)
+
+You can describe a use case with either a statechart diagram, a usecase specification, or both. A statechart diagram provides a good overview 
+of the dynamic process and the logic of a use case, but omits many details. A 
+use- case specification conveys an overview of usage details, but makes it 
+difficult to simply and sufficiently describe its logic. 
 
 OOA&D, Part III
 OOA&D, Chapter 6
