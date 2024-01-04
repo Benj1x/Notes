@@ -178,18 +178,18 @@ A system definition expresses funndamental properties for system development and
 <br> <br>
 The intention of such a definition is to explicate different interpretations and possibilities. System definitions help maintain an overview of different options, and you can use them to compare alternatives. When a system defintion has been selected, it should also be used as an indispensable foundation for continuing the analysis and design activities. <br>
 
-A system definition should be breif, precise, and contain the most fundamental decisions about the system. Creating breif system definitions, provides an overview and makes it easier to compare alternaties. Longs definitions makes this harder.
+A system definition should be breif, precise, and contain the most fundamental decisions about the system. Creating breif system definitions, provides an overview and makes it easier to compare alternaties. Longs definitions makes this harder.<br>
 In this lecture we will also be introduced to the FACTOR criterion for system definitions. Each letter refers to a key element in the system definition.
 
 #### FACTOR
 
 The factor criterion consists of six elements: <br>
-*Functionality:* The system functions that support the application-do-main tasks.<br><br>
-*Application domain:* Those parts of an organization that administrate, monitor, or control a problem domain. <br><br>
-*Conditions:* The conditions under which the system will be developed and used. <br><br>
-*Technology:* Both the technology used to develop the system and the technology on which the system will run.<br><br>
-*Objects:* The main onbjets in the problem domain. <br><br>
-*Responsibility:* The system's overall responsibility in relation to its context.<br><br>
+**Functionality:** The system functions that support the application-do-main tasks.<br><br>
+**Application domain:** Those parts of an organization that administrate, monitor, or control a problem domain. <br><br>
+**Conditions:** The conditions under which the system will be developed and used. <br><br>
+**Technology:** Both the technology used to develop the system and the technology on which the system will run.<br><br>
+**Objects:** The main onbjets in the problem domain. <br><br>
+**Responsibility:** The system's overall responsibility in relation to its context.<br><br>
 These elements describe, in a coherent manner, the most fundamental decisions involved in creating a sound computerized solution.
 The FACTOR criterion can be used in two ways. You can use it to support system-definition development, carefully considering how each of the six elements should be formulated. ***Or*** you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. "In principle either starting point works" -Jan<br><br>
 ![Figure 2.1: Subactivities in choosing a system](/imgs/SAD/SubactivitiesChoosingSystem.png)
