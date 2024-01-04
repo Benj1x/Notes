@@ -2,8 +2,6 @@
 
 This class, has a lot of sections where everything in it seems important to me, sometime just for some context. Therefore, this class will probably just have a lot of what seems like copy pasting instead of just 'this one sentence seems important' kind of notes.
 
-Sections marked with <span style="color:Red">red</span> are extremly important for this subject, and should therefore be read and understood.
-
 # Lecture one
 
 ## Method
@@ -79,7 +77,7 @@ Because the controllers' understanding of the problem domain is both created and
 usefully representing it to the system's users.<br>
 ### Emphasize the Architecture
 
-Understanding the context is important, but it is equally important to understand the system itself. We view the system as an entity adapted to solve identified needs for a specific technical platform:<br>
+Understanding the context is important, but it is equally important to understand the system itself. We view the system as an entity adapted to solve identified needs for a specific technical platform:<br><br>
 ***System:*** *A collection of components that implement modeling requirements, functions, and interfaces.*
 <br><br>
 During analysis and design, it is essential to develop an overall understanding of the system. OOA&D therefore emphasizes the system architecture as a key challenge, focusing on ease of understanding, flexibility, and usefulness.<br>
@@ -89,17 +87,6 @@ However, these general criteria do not specify when a design job is finished. Th
 
 A reasonable architecture gives us an overview of the system. Even small systems contain so many classes and objects that the system easily becomes unwieldy. As a tool for handling system complexity, OOA&D uses components, which are groups of classes and objects. <br>
 Identifying the relevant components in a concrete system is a crucial issue in object-oriented design. The choice of architecture will always reflect the concrete situation, and selecting one is a highly iterative process. In OOA&D, we start with a very basic architecture with three components: a model component, a function component, and an interface component.
-
-### Reuse Patterns
-
-A fundamental way of ensuring quality and efficiency in analysis and design is to reuse ideas that have been tested and used in other situations. OOA&D inspires reuse in two ways: by using objects and components, and, more generally, by using analysis and design patterns. A pattern is a generalized description of a problem and a related solution.<br>
-A pattern is expressed as a configuration of objects or components that can be used as inspiration for analysis and design efforts. A pattern is simplified and abstract, and must 
-be adapted to the particulars of a given situation. In essence, it is a template that points at possible, often partial, solutions that must be further developed and supplemented to fit particular needs.
-
-For example, we can use the role pattern during analysis to model different roles that people play over time. Given a system containing information about both employees and customers, we can choose a straightforward model in which people are modeled as employees or customers. However, if a customer is later hired, we would have to model this by having both a customer object and an employee object with similar attributes.<br>
-The alternative is to design a dynamic role model, as shown in the below figure. This is a little more complicated, but better reflects reality. In this model, a person at any point in time has zero or one employee and zero or one customer roles, and maybe several over time. Thus, when a customer is hired, we would simply add an employee role to the existing customer role. The role pattern captures a general way to model objects with dynamically changing roles using a shared repertoire of possible roles.
-
-![A simple role pattern](imgs/SAD/RolePattern.png)
 
 ### Tailor the method
 
