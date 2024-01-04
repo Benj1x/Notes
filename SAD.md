@@ -124,7 +124,7 @@ Finally, the system should be understood as a whole: ***The system should be a w
 ### Four Main Activities
 
 OOA&D covers the four perspectives through four main activities, shown in the below figure.<br><br>
-![The activities and results in OOA&D](imgs\SAD\FourMainActivities.png)
+![The activities and results in OOA&D](imgs/SAD/FourMainActivities.png)
 <br><br>
 Analysis and design are always strongly iterative, wherein considerations based on one perspective give rise to new considerations based upon another perspective. The four activities' relative importance and sequence changes from project to project. In some projects, the application-domain analysis is characterized by great uncertainty. The project might, for example, be based on a new interface technology that is unfamiliar to both users and developers.<br>
 In other projects, the architecture is characterized by great uncertainty, perhaps because the system is to be implemented on a recently distributed platform. Therefore, the priority and organization of OOA&D's main activities depends on the situation.<br><br>
