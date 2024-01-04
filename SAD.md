@@ -151,28 +151,29 @@ principle-based presentation is that you can substitute your own techniques when
 <br>
 The choice of UML yields two important advantages. First, UML, like OOA&D, builds on a division between process and notation, so there are no built-in process guidelines in UML to consider. Second, UML's broad support gives you access to a large market of UML-compatible development tools. <br>
 The Unified Software Development Process is related to, but independent of, UML. The unified process represents one way to organize object-oriented projects that is use-case driven, architecture-centric, iterative, and incremental. A use case is a particular technique for application-domain analysis. Lecture 5 Chapter 6, it will be discussed that OOA&D builds on similar, but more general principles. <br>
-Figure 1.6 shows a use-case-driven, architecture-centric, and incremental approach based on OOA&D. As compared with the traditional, top-down approach in figure 1.5, we see differences and similarities.
-![A use-case driven, architecture-centric, and incremental approach based on OOA&D ](imgs/SAD/UseCaseDrivenApproach.png)
+Figure 1.6 shows a use-case-driven, architecture-centric, and incremental approach based on OOA&D. As compared with the traditional, top-down approach in figure 1.5, we see differences and similarities.<br>
 
+![A use-case driven, architecture-centric, and incremental approach based on OOA&D](imgs/SAD/UseCaseDrivenApproach.png)
+<br><br>
 The traditional approach is driven primarily by problem-domain analysis, whereas the unified approach is driven primarily by application-domain analysis (that is, 
-by use cases). The traditional approach emphasizes analysis, design, and programming of the entire system, whereas the unified approach is incremental, focusing on analysis, design, and programming of one system part at a time. Both approaches however are iterative and stress architectural concerns. <br> <br>
+by use cases). The traditional approach emphasizes analysis, design, and programming of the entire system, whereas the unified approach is incremental, focusing on analysis, design, and programming of one system part at a time. Both approaches however are iterative and stress architectural concerns. <br>
 
 Ultimately, you must identify the uncertainties you face and organize the process accordingly. Sometimes, this will lead you to take a highly incremental approach; other times, a more traditional one. Also, some projects require more focus on application-domain knowledge, while others require an emphasis on the problem domain.
 
 ## System Choice
 
-As you might know development projects often begin with a collection of different ideas about the desired system. It might start with a thorough preliminary analysis or with a list of decisions that h ave already been made. It is the system developers' job and responsibility to take a step back and consider the main questions. <br>
+As you might know development projects often begin with a collection of different ideas about the desired system. It might start with a thorough preliminary analysis or with a list of decisions that have already been made. It is the system developers' job and responsibility to take a step back and consider the main questions. <br>
 What are the problems we are going to solve? Is the planned system a useful solution? What if we developed an entirely different system? <br>
 In this section, it will be explained how you can take this step back. It will describe how to systematically examine project challenges and options, and 
 how to obtain relevant and precise information as a basis for analysis and design. Techniques that can help you create different alternatives are also introduced. These techniques can help your development team thoroughly consider a project situation and arrive at a short and precise definition of the planned system. Although the development team should always analyze, formulate, and evaluate possible solutions, in the end customers and users are responsible for choosing the system.
 
 ### System Definition
 
-In order for us developers to design solutions for many of the challenges we will stumple upon during project development we must understand the structures, relations and details of the user organization, and evaluate and manage relevant technologies in a proffesional manner. We should also know how to operate in constantly changing situations with new requirements, ideas and possiblities.
+In order for us developers to design solutions for many of the challenges we will stumple upon during project development we must understand the structures, relations and details of the user organization, and evaluate and manage relevant technologies in a proffesional manner. We should also know how to operate in constantly changing situations with new requirements, ideas and possiblities.<br>
 Some development projects arise from problems that needs to be solved, some of these problems, might have been defined and desribed perfectly, while some have just been vaguely identified. So at the begining of development projects we must try to 'find. define and analyse in detail' (see: explicate) the most important challenges in the project. To do so, we explicate can explicate and debate alternative system definitions.
-<br>
+<br><br>
 **System definition:** *A consicise description of a computerized system expressed in natural language*
-<br>
+<br><br>
 A system definition expresses funndamental properties for system development and use. It describes the system in context, what information it should contain, which functions it should provide, where it is going to be used, and which conditions the system should be developed under.
 <br> <br>
 The intention of such a definition is to explicate different interpretations and possibilities. System definitions help maintain an overview of different options, and you can use them to compare alternatives. When a system defintion has been selected, it should also be used as an indispensable foundation for continuing the analysis and design activities. <br>
@@ -180,7 +181,7 @@ The intention of such a definition is to explicate different interpretations and
 A system definition should be breif, precise, and contain the most fundamental decisions about the system. Creating breif system definitions, provides an overview and makes it easier to compare alternaties. Longs definitions makes this harder.
 In this lecture we will also be introduced to the FACTOR criterion for system definitions. Each letter refers to a key element in the system definition.
 
-#### <span style="color:Red">FACTOR</span>
+#### FACTOR
 
 The factor criterion consists of six elements: <br>
 *Functionality:* The system functions that support the application-do-main tasks.<br><br>
@@ -188,10 +189,10 @@ The factor criterion consists of six elements: <br>
 *Conditions:* The conditions under which the system will be developed and used. <br><br>
 *Technology:* Both the technology used to develop the system and the technology on which the system will run.<br><br>
 *Objects:* The main onbjets in the problem domain. <br><br>
-*Responsibility:* The system's overall responsibility in relation to its context.
+*Responsibility:* The system's overall responsibility in relation to its context.<br><br>
 These elements describe, in a coherent manner, the most fundamental decisions involved in creating a sound computerized solution.
-The FACTOR criterion can be used in two ways. You can use it to support system-definition development, carefully considering how each of the six elements should be formulated.  Or you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. "In principle either starting point works" -Jan
-![Subactivities in choosing a system](/imgs/SAD/SubactivitiesChoosingSystem.png)
+The FACTOR criterion can be used in two ways. You can use it to support system-definition development, carefully considering how each of the six elements should be formulated. ***Or*** you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. "In principle either starting point works" -Jan<br><br>
+![Figure 2.1: Subactivities in choosing a system](/imgs/SAD/SubactivitiesChoosingSystem.png)
 ### Choosing the system
 As Figure 2.1 shows, system choice is based on three subactivities.
 The first subactivity focuses on challenges: we attempt to get an overview of both the situation and the different ways people interpret it.<br>
