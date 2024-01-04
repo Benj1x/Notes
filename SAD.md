@@ -123,8 +123,9 @@ Finally, the system should be understood as a whole: ***The system should be a w
 
 ### Four Main Activities
 
-OOA&D covers the four perspectives through four main activities, shown in the below figure.
-![The activities and results in OOA&D](\imgs\SAD\FourMainActivities.png)
+OOA&D covers the four perspectives through four main activities, shown in the below figure.<br><br>
+![The activities and results in OOA&D](imgs\SAD\FourMainActivities.png)
+<br><br>
 Analysis and design are always strongly iterative, wherein considerations based on one perspective give rise to new considerations based upon another perspective. The four activities' relative importance and sequence changes from project to project. In some projects, the application-domain analysis is characterized by great uncertainty. The project might, for example, be based on a new interface technology that is unfamiliar to both users and developers.<br>
 In other projects, the architecture is characterized by great uncertainty, perhaps because the system is to be implemented on a recently distributed platform. Therefore, the priority and organization of OOA&D's main activities depends on the situation.<br><br>
 
@@ -132,7 +133,8 @@ The system should be in balance with its context. But how can you achieve this? 
 <br><br>
 OOA&D's four main activities are abstract tasks that you can perform together with other tasks in a practical system development project. How you organize these tasks depends on strategy, which differs from project to project. <br>
 Figure 1.5 shows a traditional, top-down approach based on OOA&D; Figure 1.6 shows a use-case-driven approach, also based on OOA&D. OOA&D offers a systematic and complete approach to object-oriented analysis and design. Principles constitute OOA&D's central and unchangeable parts, while techniques and notation act as their concrete realization. The method was designed so that you can easily adapt it to local traditions. 
-and supplement it with elements from other methods;  
+and supplement it with elements from other methods;
+
 ![A traditional top down approach based on OOA&D 1.5](TraditionalTopDownApproach.png)
 
 ### Results
