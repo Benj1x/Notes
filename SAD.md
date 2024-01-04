@@ -34,24 +34,25 @@ In design, we express an object's behavior by the operations it can carry out an
 goods are ordered) through its operations (add order and remove order) An operation is defined as a process capability in a class and activated through the class' objects.
 
 Analysis and design objects describe two clearly different matters. 
-Analysis objects describe phenomena outside the system, such as people and things, which are typically independent. Although we cannot always command them, we must register the events they perform or experience. 
-Design objects describe phenomena within the system that we can control. We describe their behavior as operations for the computer to carry out
+**Analysis objects describe** phenomena outside the system, such as people and things, which are typically independent. Although we cannot always command them, we must register the events they perform or experience. <br>
+**Design objects describe** phenomena within the system that we can control. We describe their behavior as operations for the computer to carry out
 
 ### Advantages of Object-Orientation
 
 Objects, state, and behavior, are more general concepts and are suitable for describing most phenomena that can be expressed in natural language. Objects are similar to nouns, designating things such as people or inventory. Object attributes or states, like adjectives, characterize object traits. Object behavior, like verbs, describe actions or influences
-For example:
-"The house looked nice after Bob painted it." This closely parallels the object-oriented way of thinking. 
+For example:<br>
+"The house looked nice after Bob painted it." This closely parallels the object-oriented way of thinking. <br>
 There are two objects (the house and Bob), a common event (painting the house), and one of the objects has changed state (the house has become nice)
-
-Here we touch upon a primary strength of object-orientation: It provides clear information about the system's context.Good at distributing specialized data throughout a system.
-
+<br>
+Here we touch upon a primary strength of object-orientation: It provides clear information about the system's context. <br>
+<br>
 Another strength of object-oriented methods is the close connection between object-oriented analysis, object-oriented design, object-oriented user interfaces, and object-oriented programming. Objects can model social, economic, and organizational conditions, as well as the system's interfaces, functions, processes, and components.
-
+<br><br>
 And lastly; Objects provide material coherence to the system's structure. They also provide mental coherence: Objects offer developers a natural way of thinking about problems that support abstraction without forcing a one-sided, technical point of view.
+<br>
 
-### <span style="color:Red">Model the Context</span>.
-
+### Model the Context
+<br>
 Success in system development greatly depends on the developer's understanding of the system's practical application. As the figure below shows, the system's context can be viewed from two complementary perspectives: the system models something (the problem domain) and it is operated by users (the application domain).
 
 ![The system context](imgs/SAD/SystemContext.png)
@@ -63,24 +64,24 @@ We define these two different, but strongly related context perspectives as foll
 ***Application domain:*** *The organization that administrates, monitors, or controls a problem domain.*
 
 The problem domain describes the system's purpose, as well as the parts of reality that the system should help administrate, monitor, or control. The application domain is a part of the user organization. A system's success (or failure) depends on how well it links the application and problem domains together into a functioning whole.
+<br><br>
 
-A few examples of the problem domain and application domain would be:
+**A few examples of the problem domain and application domain would be:**<br>
 For a payroll system, the application domain includes the personnel office, while the problem domain includes the employees, their contracts, and 
-their work schedules. 
-For an air traffic control system, the application domain is a part of the air traffic controllers' job, while the problem domain includes planes, flight departures, flight corridors, runways, flight positions, and movements. 
-For a device for measuring telephone signals, the application domain is part of the technicians' job, and the problem domain includes signals, protocols, lines, transmitters, and receivers.
+their work schedules. <br>
+For an air traffic control system, the application domain is a part of the air traffic controllers' job, while the problem domain includes planes, flight departures, flight corridors, runways, flight positions, and movements.<br> 
+For a device for measuring telephone signals, the application domain is part of the technicians' job, and the problem domain includes signals, protocols, lines, transmitters, and receivers.<br><br>
 
-A key task in analysis and design is to model what the system will administrate, monitor, or control. For example, in an air traffic control system, this includes airplanes, flight departures, flight corridors, and positions. The air traffic controllers' job consists of monitoring and controlling the air traffic using the system's information about these objects. Controllers use this information, rather than direct observation of aircraft movement, as a basis for decision making. Their understanding of air traffic consists of both the actual situation in the air, and the way they think and talk about the traffic in technical terms.<br>
+A key task in analysis and design is **to model what the system will administrate, monitor, or control.** <br>
+For example, in an air traffic control system, this includes airplanes, flight departures, flight corridors, and positions. The air traffic controllers' job consists of monitoring and controlling the air traffic using the system's information about these objects. <br>
+Controllers use this information, rather than direct observation of aircraft movement, as a basis for decision making. Their understanding of air traffic consists of both the actual situation in the air, and the way they think and talk about the traffic in technical terms.<br>
 Because the controllers' understanding of the problem domain is both created and maintained through the system, the problem domain and the system's model of the problem domain must agree completely. This is a crucial quality requirement. It is also crucial that the system's model is organized in agreement with the air traffic controller's structural understanding. Thus, in this and all cases, system developers should analyze the problem domain, both to understand the system's context and to learn how to 
 usefully representing it to the system's users.<br>
-A second key task in analysis and design is to model how the system will interact with users in the application domain. This includes identifying all user groups and understanding both what they will use the system for and how each group will interact with the system in different situations.<br>
-If we continue with the air traffic control example,  we would study how traffic controllers, pilots, and ground personnel would interact with the system to ensure a smooth and effective operation once the system is deployed.
-
 ### Emphasize the Architecture
 
-Understanding the context is important, but it is equally important to understand the system itself. We view the system as an entity adapted to solve identified needs for a specific technical platform:
+Understanding the context is important, but it is equally important to understand the system itself. We view the system as an entity adapted to solve identified needs for a specific technical platform:<br>
 ***System:*** *A collection of components that implement modeling requirements, functions, and interfaces.*
-
+<br><br>
 During analysis and design, it is essential to develop an overall understanding of the system. OOA&D therefore emphasizes the system architecture as a key challenge, focusing on ease of understanding, flexibility, and usefulness.<br>
 The system architecture should be easy to understand because it serves as the basis for decisions and as a communication and work tool in the development work ahead. It should be 
 flexible because system development takes place in a turbulent environment. Finally, the architecture sh ould be useful because the system's success depends on the role it will play in the user organization.<br>
@@ -869,155 +870,168 @@ You can produce a list of possible use cases by examining the application domain
 
 You can produce a list of possible use cases by examining the application domain's tasks. To determine whether or not the use cases are actually distinct, you must describe them in greater detail. Because use cases are dynamic phenomena, you can desc1·ibe them using statechart diagrams or text specifications.
 
-A statechart diagram defines the different states of the interaction and the different ways the system or actor can change that state. Figure 6.5 shows an example of a statechart diagram, and Figure 6.6 shows a specification of the same use case. In a use-case specification, the use case itself is briefly but precisely described in a structured text that focuses on the actors. As a supplement, you can also describe the relevant system objects and functions.
+A statechart diagram defines the different states of the interaction and the different ways the system or actor can change that state. Figure 6.5 shows an example of a statechart diagram, and Figure 6.6 shows a specifibøcation of the same use case. In a use-case specification, the use case itself is briefly but precisely described in a structured text that focuses on the actors. As a supplement, you can also describe the relevant system objects and functions.
 
 ![Statechart diagram for cash withdrawl](imgs/SAD/StatechartCashWithdrawl.png)
 
-You can describe a use case with either a statechart diagram, a usecase specification, or both. A statechart diagram provides a good overview 
-of the dynamic process and the logic of a use case, but omits many details. A 
-use- case specification conveys an overview of usage details, but makes it 
-difficult to simply and sufficiently describe its logic. 
+You can describe a use case with either a statechart diagram, a usecase specification, or both. A statechart diagram provides a good overview of the dynamic process and the logic of a use case, but omits many details. A use-case specification conveys an overview of usage details, but makes it difficult to simply and sufficiently describe its logic. 
+<br><br>
+![Figure 6.6: Use-case specification for "cash withdrawals"](imgs/SAD/UseCaseSpecification.png)
 
-OOA&D, Part III
-OOA&D, Chapter 6
-OOA&D, Chapter 19 (pages 362 - 364)
+In each use-case description, you should identify individual actors and interactions. You can postpone further detailing (such as how the interactions are precisely performed). The purpose of use cases is to provide an overview of the application domain's interaction with the system. The use 
+cases should be sufficiently detailed to enable developers to identify all functional and interface elements and requirements. You can elaborate on how individual actions are actually performed when you design the detailed user interface.
+<br><br>
+Look at OOA&D, Chapter 19 (pages 362 - 364) for examples
+<br><br>
+
 ## Lecture Six - Functions
+<br><br>
 
 Functions focus on what the system can do to assist actors in their work. When determining requirements for the functions, we ask the following question: What is the system going to do? In the usage activity, our question focused more on how the system would be used. Given that it is difficult to analyze "what" without analyzing "how," the usage and function activities are closely connected.
+<br><br>
 
 ### System Functions
-
+<br><br>
 From an analytical point of view, the elegance of functions is that they express, in a simple way, the intent of a system. More precisely, we define a function as follows.
+<br><br>
 
 **Function:** *A facility for making a model useful for actors.*
-
+<br><br>
 A function is activated, executed, and provides a result. Function execution can change a model component's state or create a reaction in the application or problem domains. A function is a requirement; it is an abstract property of the system. Functions are realized through program operaions
+<br><br>
 
 ### Function Types
-
+<br>
 As an aid to our analysis, we will discuss different types of functions. Each function type expresses a relation between the model and the system's context and has characteristics that help us when we define functions. We have identified four types of functions:
+<br><br>
 
 *Update* functions are activated by a problem-domain event and result in a change in the model's state.
+<br><br>
 
 *Signal* functions are activated by a change in the model's state and result in a reaction in the context; this reaction might be a display to the actors in the application domain, or a direct intervention in the problem domain.
+<br><br>
 
 *Read* functions are activated by a need for information in an actor's work task and result in the system displaying relevant parts of the model.
+<br><br>
 
 *Compute* functions are activated by a need for information in an actor's work task and consist of a computation involving information provided by the actor or the model; the result is a display of the computation's result.
-
+<br><br>
 A system's specific functions are rarely "pure"; they seldom fit perfectly into one of the four types. Functions are mixtures. The primary function in an air traffic control system will involve update, signal, read, and compute. 
 However, it is still useful to categorize the functions. To do so increases our understanding of their
 character, and lets us use the function types as tools in our application-domain analysis.
-
+<br><br>
 * An example of a signal is a function that continuously follows the traffic situation and gives an alarm in a critical situation.
+<br><br>
 
 ### Analyzing Functions
 
 The purpose of this activity is to determine the system's information processing capabilities by constructing a complete list of functions, as well as a detailed specification of the complex parts. Describing functions is not particularly difficult; the greater challenge is to choose which functions to include.
+<br><br>
 
 ![Function Specification](imgs/SAD/Functions.png)
-
+<br><br>
 The central criterion for system-functionality analysis is that analysis ends with a list of functions that is both complete and consistent with the use cases. This is expressed in the following principle:
+<br><br>
 
 **Principle:** *Identify all functions.*
-
+<br><br>
 For some functions, you must describe their content in detail to understand what they do. However, you should give detailed descriptions for only the most complex and incomprehensible functions. The second principle for the function-analysis activity is:
+<br><br>
 
 **Principle:** *Specify only complex functions.*
+<br><br>
 
 ![Events vs use case vs functions explained](imgs/SAD/EventVSUseCaseVsFunctions.png)
+<br><br>
 
 **Principle:** *Check consistency with use cases and the model*
-
-Function analysis consists of three subactivities: find functions, specify 
-complex functions, and evaluate critically. The relations between subactivities, preconditions, and results are shown in the first figure of this lecure.
+<br>
+Function analysis consists of three subactivities: find functions, specify complex functions, and evaluate critically. The relations between subactivities, preconditions, and results are shown in the first figure of this lecure.<br> <br>
 
 ### Find functions
-
-When finding the functions, there are two essential aspects that you should keep in mind. First, consider the sources for identifying functions. Where do the system's function requirements come from? Second, consider the level of detail. How detailed should you be in function descriptions? How general or specific should you be in defining individual functions? The sources for identifying functions are partly the problem-domain description, as expressed by its classes and events, and partly the application-domain description, as expressed by its use cases. Classes typically give rise to read and update functions. Events lead to requirements for update functions. Use cases give rise to all types of functions.
-
-You must describe functions in enough detail to provide both an overview of the total functionality and a basis for agreement between users and developers. Given this, the level of detail required depends on the experience of the users and developers. Inexperienced developers and users require greater detail to ensure that they share an understanding of the functions.
-
-Functions specified at a very general level yield uncertainty. Functions specified at a very specific level render the analysis inefficient. For example, describing read and update functions for all attributes is too much detail. A function like "calculate pay for all employees," is, on the other hand, too general. "Calculate basic pay," "calculate health insurance," and "calculate tax," is typically an appropriate level of detail for users and developers familiar with the application and problem domains.
-
-A good way to start identifying functions is to systematically ask questions related to the four function types. Each of the four function types give rise to several questions that lead to the required functions. We will now examine the analytical questions for each of the function types.
+<br>
+When finding the functions, there are two essential aspects that you should keep in mind. First, consider the sources for identifying functions. Where do the system's function requirements come from? Second, consider the level of detail. How detailed should you be in function descriptions? How general or specific should you be in defining individual functions? The sources for identifying functions are partly the problem-domain description, as expressed by its classes and events, and partly the application-domain description, as expressed by its use cases. Classes typically give rise to read and update functions. Events lead to requirements for update functions. Use cases give rise to all types of functions.<br>
+<br>
+You must describe functions in enough detail to provide both an overview of the total functionality and a basis for agreement between users and developers. Given this, the level of detail required depends on the experience of the users and developers. Inexperienced developers and users require greater detail to ensure that they share an understanding of the functions.<br>
+<br>
+Functions specified at a very general level yield uncertainty. Functions specified at a very specific level render the analysis inefficient. For example, describing read and update functions for all attributes is too much detail. A function like "calculate pay for all employees," is, on the other hand, too general. "Calculate basic pay," "calculate health insurance," and "calculate tax," is typically an appropriate level of detail for users and developers familiar with the application and problem domains.<br>
+<br>
+A good way to start identifying functions is to systematically ask questions related to the four function types. Each of the four function types give rise to several questions that lead to the required functions. We will now examine the analytical questions for each of the function types.<br>
 ---------------------------------
 
 **Questions for each event** 
 ---------------------------------
+<br>
 
-* **How is the event observed, and how is it registered? In which 
-use cases does this happen?**
+* **How is the event observed, and how is it registered? In which use cases does this happen?**
+<br>
 
 * **How should the use cases be supported by update functions?**
- 
-* **Which objects, attributes, and object structures are affected 
-by the event, and what requirements does this impose on the 
-update functions?**
+<br>
 
+* **Which objects, attributes, and object structures are affected by the event, and what requirements does this impose on the update functions?**
+<br>
 ---------------------------------
-
-Update functions are connected to events. The fact that an event is included in the model expresses that it is sufficiently important to warrant registration in the system. Each event triggers a state update for model objects that are involved in the event.
-
-Read functions are related to information needs expressed in use cases, but they are also related to the model's content. The fact that a class with events, attributes, and structures has been defined often reflects a direct need for information in the application domain. The following figure shows the relevant questions for uncovering information needs
+<br>
+Update functions are connected to events. The fact that an event is included in the model expresses that it is sufficiently important to warrant registration in the system. Each event triggers a state update for model objects that are involved in the event.<br>
+<br>
+Read functions are related to information needs expressed in use cases, but they are also related to the model's content. The fact that a class with events, attributes, and structures has been defined often reflects a direct need for information in the application domain. The following figure shows the relevant questions for uncovering information needs.<br>
 ---------------------------------
 
 **Questions about infomation needs**
 ---------------------------------
-
-* Given the work of the actors, what do the actors need to know 
-about the st.ate of the model? What read functions does this 
-give rise to? 
-* Given the model, which objects and structures will the actors 
-need information about? What read functions does this give 
-rise to?
-
+<br>
+* Given the work of the actors, what do the actors need to know about the state of the model? What read functions does this give rise to? <br>
+* Given the model, which objects and structures will the actors need information about? What read functions does this give 
+rise to?<br>
+<br>
 ---------------------------------
-
-Compute functions are related to more complex information needs that cannot be immediately met by reading the model. Compute functions must be identified from the use cases. An important question is how to delimit the individual compute function. Again, the use cases hold the answer. A computational sequence that cannot be interrupted by the actor should be 
-supported by one function. If the computational sequence consists of several alternative parts, you must consider using more than one function. On the other hand, you should avoid cluttering the list of functions with insignificant variations in the computations of a basic function. The following figure shows the questions for analyzing compute functions. 
+<br>
+Compute functions are related to more complex information needs that cannot be immediately met by reading the model. Compute functions must be identified from the use cases. An important question is how to delimit the individual compute function. Again, the use cases hold the answer. A computational sequence that cannot be interrupted by the actor should be supported by one function. If the computational sequence consists of several alternative parts, you must consider using more than one function. On the other hand, you should avoid cluttering the list of functions with insignificant variations in the computations of a basic function. The following figure shows the questions for analyzing compute functions. <br>
 ---------------------------------
 
 **Questions about needs for computation**
 ---------------------------------
-
+<br>
 * Which computations (not necessarily based on the model) do 
-the actors need to have carried out? 
+the actors need to have carried out? <br>
 * Does the computational basis come from the actors, the 
-model, or both? 
+model, or both? <br>
 * Which computations form complete wholes in the use cases?
-
+<br>
 ---------------------------------
+<br>
+The result of the function-analysis activity is a list of functional requirements for the system. The list must be complete and express the collective needs of customers and actors and meet the application-domain's demands for computer support. The following figure shows an example of a list of functions for the Hair Salon System. At the top is the total functionality as described in the system definition; we then list the name, complexity, and type of each individual function. <br>
+Complexity is an assessment of how complicated it will be to develop the function. In this case, we used a simple four-point scale with the values simple, medium, complex, and very complex. Assessing function complexity is a part of customer negotiations and offers an estimate of the development effort ahead. You can also use these assessments later, during development, as a basis for negotiations about changes to system requirements.<br><br>
 
-The result of the function-analysis activity is a list of functional requirements for the system. The list must be complete and express the collective needs of customers and actors and meet the application-domain's demands for computer support. The following figure shows an example of a list of functions for the Hair Salon System. At the top is the total functionality as described in the system definition; we then list the name, complexity, and type of each individual function. 
-Complexity is an assessment of how complicated it will be to develop the function. In this case, we used a simple four-point scale with the values simple, medium, complex, and very complex. Assessing function complexity is a part of customer negotiations and offers an estimate of the development effort ahead. You can also use these assessments later, during development, as a basis for negotiations about changes to system requirements.
 ![Function complexity planning](imgs/SAD/FunctionComplexity.png)
+<br><br>
 
 ### Specify Complex Functions
-
+<br>
 The basic rule is that you should describe functions briefly and informally in a list. Detailed specifications are for special cases. You can construct a detailed specifications in several ways.
-
+<br><br>
 * A mathematical expression where the relation between input data and output data is specified as o = f(i) 
 * An algorithm, which is typically sketched in a simple structured language with a few, simple control structures (also called pseudo code). 
-
+<br><br>
 * A further functional partitioning of a function in the function list, showing the complete functional hierarchy directly in the list, as the following figure shows. A hierarchical function list often gives a better overview than an equivalent data-flow description.
-![Function complexity planning](imgs/SAD/FunctionComplexityPartition.png)
+<br><br>
 
-No matter what form you choose, it is recommended that you specify functions 
-as briefly as possible during the analysis. The primary purpose is to identify the function
+![Function complexity planning](imgs/SAD/FunctionComplexityPartition.png)
+<br><br>
+No matter what form you choose, it is recommended that you specify functions as briefly as possible during the analysis. The primary purpose is to identify the function.<br><br>
 
 ### Evaluate Systematically
 
 In principle, there are three ways to ensure that your function list is complete. First, the users can review the list and agree that it shows exactly the functions they want. You can further support this by experiments with the users and function prototypes, or by comparing the functions and use cases.
-
+<br><br>
 Second, for each function type, you can ensure the possibilities are exhausted by returning to the questions in Section 7 .2, and using them to review your function list.
-
+<br><br>
 Third, you can compare the function list with the system definition and the model.
-
-The general definition of the system functionality in the system definition should be in accordance with your final list of functions. If the system definition says it is a payroll system, then no invoicing functions should be included. Differences between the general definition and the list of functions may give rise to a revision of both the system definition and the functions. 
+<br><br>
+The general definition of the system functionality in the system definition should be in accordance with your final list of functions. If the system definition says it is a payroll system, then no invoicing functions should be included. Differences between the general definition and the list of functions may give rise to a revision of both the system definition and the functions. <br>
 Finally, you must compare the function list with the model. The model must include precisely that information about the objects that the functions need; no more, no less. That is, if the model contains objects, structures, or events that are never used by any of the functions, then either the model contains too much or some functions are missing.
 
-OOA&D, Chapter 7.
 
 ## Lecture Seven -
 OOA&D, Chapter 15
@@ -1039,27 +1053,111 @@ Mathiassen, L. and Stage, J. (1992) The Principle of Limited Reduction in Softwa
 https://www-emeraldinsight-com.zorac.aub.aau.dk/doi/pdfplus/10.1108/EUM0000000003550
 
 ## Lecture Eight - Architectural Design, Criteria and Components
-OOA&D, Part IV
-OOA&D, Chapter 9
-OOA&D, Chapter 10
-![Architectural Design purpose](imgs/SAD/PurposeIV.png)
+<br>
+A vague and unclear architecture will result in a lot of wasted work. Architectural design is often considered an all or nothing question. Either you build the system from scratch, in which case all the architectural issues must be addressed; or you adapt the system to an existing architecture, in which case many arch itectural decisions have already been made. 
+The former situation is unusual; systems are rarely constructed from scratch. But, even if you are adapting the system to an existing architecture, you should be acquainted with the conditions that the architecture defines for the design activity. Even when much is already given, a surprising number of aspects must still be understood, studied, and thoroughly designed.<br><br>
 
-A vague and unclear architecture 
-will result in a lot of wasted work. Architectural design is often considered an all or nothing question. Either you build the system from scratch, in which case all the architectural issues must be addressed; or you adapt the system to an existing architecture, in which case many arch itectural decisions have already been made. 
-The former situation is unusual; systems are rarely constructed from scratch. But, even if you are adapting the system to an existing architecture, you should be acquainted with the conditions that the architecture defines for the design activity. Even when much is already given, a surprising number of aspects must still be understood, studied, and thoroughly designed
-
-Computerized systems are complex and multi-faceted: Are we talking about a system description, or are we dealing with its execution? Are we operating at an abstract level, or are we thinking about the physical devices and processes? Are we focusing on stable aspects, or are we emphasizing processes and dynamics? We must handle this complexity during design. Here, we offer two different and partially overlapping viewpoints. When combined, they provide a good understanding of architectural design
+Computerized systems are complex and multi-faceted: Are we talking about a system description, or are we dealing with its execution? Are we operating at an abstract level, or are we thinking about the physical devices and processes? Are we focusing on stable aspects, or are we emphasizing processes and dynamics? We must handle this complexity during design. Here, we offer two different and partially overlapping viewpoints. When combined, they provide a good understanding of architectural design<br><br>
 
 The following figure illustrates the architecture concepts. The component architecture focuses on classes (the stable aspects). It structures the system in related components, and is concerned mainly with logical considerations. 
 The component architecture decomposes the system into identifiable, mutually related components. The process architecture focuses on objects (the dynamic aspects).
 ![Component architecture and process architecture](imgs/SAD/ComArchitectureProcArchitecture.png)
+<br><br>
 
-## Lecture Nine
-OOA&D, Part V
-OOA&D, Chapter 12.
+### Criteria
+#### Good design
+A design is not only judged by its positive traits. If the 
+design contains even one crucial flaw, it can be unusable in practice. Quality is essentially the absence of flaws, as expressed in the following principle: <br>
 
-## Lecture Ten
-OOA&D, chapter 13.
+**Principle:** *A good design has no major weaknesses.*
+<br><br>
 
-## Lecture eleven
-OOA&D, chapter 14.
+#### Prioritize
+<br>
+You can assign priorities to the classical software-quality criteria, and add criteria that reflect your specific design conditions. The table in Figure 9.4 can serve as a checklist in this process.<br><br>
+
+![Figure 9.4: Checklist for prioritizing design criteria](imgs/SAD/ChecklistPrioritizingDesignCriteria.png)
+
+<br><br>
+
+#### Principles
+The following principles summarize our main points.<br> 
+*A good design has no major weaknesses.* A single flaw can be enough to invalidate a design. A good design thus strives to achieve good properties and, at the same time, avoid bad ones.
+<br> 
+
+*A good design balances several criteria.* A good design must meet several criteria. Because these criteria can be conflicting, prioritizing all criteria is essential. 
+<br>
+
+*A good design is usable, flexible, and comprehensible.* The system's usability is determined by tensions between the system's technical qualities and its applicability to the users' work. Flexibility and comprehensibility help ease design and implementation work. 
+
+### Components
+#### System Components 
+The component architecture defines the overall system structure, as summarized in the following definition. <br>
+**Component architecture:** *A system structure composed of interconnected components.* <br>
+In our method, we call the program parts that structure the classes a "component." We define a component in this way.<br> 
+**Component:** *A collection of program parts that constitutes a whole and has well-defined responsibilities.*<br><br>
+
+As this definition states, to design the component architecture we work with descriptions in the form of coherent program parts rather than program executions. On an object-oriented platform, most of these program parts will be classes. Our definition also emphasizes that any component 
+must have clear and well-defined responsibilities. 
+<br><br>
+In Figure 10.1, for example, we have the component "User interface," which is responsible for reading the buttons and updating displays that let users interact with the system. The component "Functions" is responsible for providing system functionality. Functionality is provided to "User interface" as a set of operations on public classes in "Functions," hence the dependency in the diagram. <br><br>
+
+![Figure 10.1: Class diagram with component architecture for a simple system](imgs/SAD/ClassDiagramComponentArchitecture.png)
+<br><br>
+The main purpose of the component architecture is that it be both comprehensive and flexible. Complex systems make stronger demands on these criteria, and thus the following principle.<br><br>
+
+**Principle:** *Reduce complexity by separating concerns. In essence, then, separate components should address separate concerns.* 
+Separating the concerns into different components adds to the comprehensibility. lt also increases system flexibility, particularly when the context's stability is taken into account. <br><br>
+#### The Layered Architecture Pattern
+An example is ISO's Open Systems Intercommunication model for networks. The OSI standard describes seven network layers, from the lowest (where electrical signals are physically exchanged) to the highest (where users apply software to exploit network facilities). In OSI, each layer has a well-defined purpose and a clear interface with the layers above and below it. <br><br>
+
+![Figure 10.3: Layered architecture pattern](imgs/SAD/LayeredArchitecturePattern.png)
+<br><br>
+In the simplest form, a layered architecture consists of several components, designated as layers. The design of each component describes its responsibilities as well as its upward and downward interfaces. The downward interface describes which operations the component can access in the layer below. The upward interface describes the operations it makes available to the layer above.<br>
+Figure 10.3 illustrates this pattern: The layers are described as components, and the dashed arrows show dependencies. In general, a dependency implies that a change in one component (pointed at) may affect the other component (pointed from). The typical dependency is that a layer uses the layer below. In UML the stereotype <<\usage>> denotes this, but in most 
+cases it is implicitly assumed. <br><br>
+
+#### The Generic Architecture Pattern
+You can use the layered architecture to elaborate basic systems that include interface, function, and model components. The model component, containing the model of the problem domain, can be the lowest layer, followed by a system functions layer and, on top, the interface component. You can often decompose the interface layer into two separate parts: user interface and system interface. Figure 10.5 shows this simple and basic architecture.<br><br>
+
+![Figure 10.5: The generic architecture pattern for a system](imgs/SAD/GenericArchitecturePattern.png)
+ 
+<br><br>
+
+#### The Client-Server Architecture Pattern 
+The client-server architecture was originally developed to handle the distribution of a system among several geographically dispersed processors. The components in a client-server architecture are a server and several 
+clients. The essential point is that there are many clients that use the server independently of one another, and they are not neccessarily part of any common whole, as Figure 10.6 shows.<br><br>
+
+![Figure 10.6: The client-server architecture pattern](imgs/SAD/ClientServerArchitecturePattern.png)
+<br><br>
+
+### Define Subsystems 
+<br>
+Large systems must be divided into several independent subsystems that communicate with each other. Although each subsystem is part of the total system, you can also view it as an independent system with its own model, functions, and interfaces. In other words, when you decompose a system into subsystems, you're actually distributing the total model, functionality, and interface among several smaller systems. Figure 10.7 shows the general architecture of subsystems; in Chapter 22, there is a concrete example of a decomposed Cruise Control System. <br><br>
+![Figure 10.7: The general architecture of subsystems](imgs/SAD/GeneralArchitectureOfSubsystems.png)
+<br><br>
+
+### Identify Components 
+<br>
+In system or subsystem design, we usually start with the layered architecture pattern using interface, function, and model components. We then extend this basic architecture with various decompositions by looking at the three primary concerns-the model, functions, and interface-together. Next, we look at components to encapsulate the technical platform, and see if it's possible to do this using existing components.<br>
+
+**Model**<br>
+A model component's main responsibility is to hold the objects that represent the problem domain. Whenever something relevant happens in the problem domain, the model-component objects should change state accordingly. If there are clear demarcations in the problem domain and the various segments appear incohesive, you may want to decompose the model component into parts.
+<br><br>
+
+**Function** <br>
+The main responsibility of a function component is to provide the model's functionality. You can decompose the function component if it is incohesive or if the system has complex functionality needs. If there is a clear demarcation between parts of functionality, you can design this into the architecture as parts in a function component. 
+<br><br>
+
+**Interface** <br>
+The main responsibility of an interface component is to handle the interaction between the actors and the functionality. Although stand-alone systems have only a user-interface component and embedded systems have only a system interface, most systems have both. Again, if usage is incohesive or complex (whether because of users or other systems) you should consider decomposing the interface components into parts.
+<br><br>
+
+### Principles <br>
+**Reduce complexity by separating concerns.** The component architecture should be comprehensible. Using architectural patterns makes the architecture easier to understand. Reducing complexity also eases understanding; this is achieved by separating concerns into different components. <br>
+
+**Reflect stable context structures.** The component architecture must be useful and valid in the future. To achieve this, the architecture should reflect stable aspects of the problem and application domains. 
+At the same time, the component architecture should be flexible toward a context's unstable aspects.
+
+**Reuse existing components.** Using components developed for reuse or for earlier versions of the system, or components bought off-the-shelf from a competent vendor, is an effective way to reduce the programming effort. Such components come in various forms; the right ones let you integrate previous experience and good solutions into your architecture. This contributes to a better design and less programming work
+<br>
