@@ -152,7 +152,7 @@ principle-based presentation is that you can substitute your own techniques when
 The choice of UML yields two important advantages. First, UML, like OOA&D, builds on a division between process and notation, so there are no built-in process guidelines in UML to consider. Second, UML's broad support gives you access to a large market of UML-compatible development tools. <br>
 The Unified Software Development Process is related to, but independent of, UML. The unified process represents one way to organize object-oriented projects that is use-case driven, architecture-centric, iterative, and incremental. A use case is a particular technique for application-domain analysis. Lecture 5 Chapter 6, it will be discussed that OOA&D builds on similar, but more general principles. <br>
 Figure 1.6 shows a use-case-driven, architecture-centric, and incremental approach based on OOA&D. As compared with the traditional, top-down approach in figure 1.5, we see differences and similarities.
-![A use-case driven, architecture-centric, and incremental approach based on OOA&D ](../Notes/imgs/SAD/UseCaseDrivenApproach.png)
+![A use-case driven, architecture-centric, and incremental approach based on OOA&D ](imgs/SAD/UseCaseDrivenApproach.png)
 
 The traditional approach is driven primarily by problem-domain analysis, whereas the unified approach is driven primarily by application-domain analysis (that is, 
 by use cases). The traditional approach emphasizes analysis, design, and programming of the entire system, whereas the unified approach is incremental, focusing on analysis, design, and programming of one system part at a time. Both approaches however are iterative and stress architectural concerns. <br> <br>
