@@ -109,17 +109,17 @@ How you organize and document these activities will depend on how you tailor OOA
 
 ### Four methods
 
-First understand the system from an information perspective: *The system must offer a useful model of the problem domain.*<br> 
+First understand the system from an information perspective: ***The system must offer a useful model of the problem domain.***<br> 
 It should contain a model of the relevant problem-domain. This information perspective is predomiant during analysis. But the perspective is also important during design 
-since the system should make the model available in an efficient and useful manner.
+since the system should make the model available in an efficient and useful manner.<br><br>
 
-The system is next understood from the user's viewpoint: The system must be integrated in the application domain. We must understand the people, devices, and other systems that the target system will interact with, and which functions to offer these actors. 
+The system is next understood from the user's viewpoint:  ***The system must be integrated in the application domain.***<br> We must understand the people, devices, and other systems that the target system will interact with, and which functions to offer these actors. <br>
 Relations such as how, how quickly, how often, and in what pattern different actors should interact with the system are crucial for system usability. A well-functioning system is integrated with other systems and adapted to the organization and the traditions in the application domain.
 
 The third perspective is the architectural perspective: 
-The system must run on a specific technical platform. How should the system be divided into components? Important considerations include the physical processes, units, and connections that make up the technical platform. How should the system use this platform? An architecture emphasis helps you determine how best to take advantage of a platform's possibilities and overcome its limitations.
+***The system must run on a specific technical platform.***<br> How should the system be divided into components? Important considerations include the physical processes, units, and connections that make up the technical platform. How should the system use this platform? An architecture emphasis helps you determine how best to take advantage of a platform's possibilities and overcome its limitations.<br><br>
 
-Finally, the system should be understood as a whole: The system should be a well-functioning unit of cooperating parts. The individual components and their mutual interfaces and interactions should be designed to serve as a basis for system implementation.
+Finally, the system should be understood as a whole: ***The system should be a well-functioning unit of cooperating parts.***<br> The individual components and their mutual interfaces and interactions should be designed to serve as a basis for system implementation.<br><br>
 
 ### Four Main Activities
 
