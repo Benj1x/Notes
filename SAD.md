@@ -194,7 +194,7 @@ These elements describe, in a coherent manner, the most fundamental decisions in
 The FACTOR criterion can be used in two ways. You can use it to support system-definition development, carefully considering how each of the six elements should be formulated. ***Or*** you can start your definition by describing the system and then use the criteria to see how the system definition satisfies each of the six factors. "In principle either starting point works" -Jan<br><br>
 ![Figure 2.1: Subactivities in choosing a system](/imgs/SAD/SubactivitiesChoosingSystem.png)
 ### Choosing the system
-As Figure 2.1 shows, system choice is based on three subactivities.
+As Figure 2.1 shows, system choice is based on three subactivities.<br>
 The first subactivity focuses on challenges: we attempt to get an overview of both the situation and the different ways people interpret it.<br>
 The second subactivity creates and evaluates ideas for system design. This method offers a series of techniques to support creativity and introduce new ways of thinking.<br> 
 In the third subactivity, we formulate and choose the system definition, discussing and evaluating alternative system definitions in relation to our particular situation.<br><br>
@@ -222,7 +222,7 @@ Coming up with good symbols for drawing rich pictures can be difficult. Figure 2
 ![Figure 2.4: Ideas for symbols for rich pictures](imgs/SAD/IdeasForRichPictures.png)
 
 ### Practical Advice
-To be a useful part of system definition, rich pictures should: 
+To be a useful part of system definition, rich pictures should: <br>
 • contain a lot of information and be open to interpretation; <br>
 • present processes and structures in a coherent, well-balanced way; <br>
 • show at least one problematic area; <br>
