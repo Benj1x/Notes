@@ -233,6 +233,63 @@ Research work involves using a variety of techniques to understand and analyze s
 are not the people who will be using the final system. Designers need to understand the requirements of other people. 
 This is not easy, but talking to people through interviews, observing people and recording their activities on video, organizing focus groups and having workshops will all help the designer to understand both the requirements for the new design (the ‘gain’ a new system or service will deliver) and the problems people are having with existing ways of doing things (the ‘pain’ of the current situation). By engaging with people using various techniques that encourage the participation of people in the design process, designers will acquire a large number of stories that form the basis for the analysis work. Recasting several similar stories into more structured conceptual scenarios will also help the designer to understand and generate requirements. 
 
+### Interviews
+One of the most effective ways of finding out what people want and what problems they have at the moment is to talk to them! Interviews with all the various stakeholders in the domain are a vital way of gathering stories. Designers employ a range of different styles of interview, from a completely structured survey through to a general conversation. The structured interview uses questions that are developed beforehand. The interview follows the wording exactly. Public opinion polls, for example of the sort produced in great numbers before elections, are normally based on structured interviews. Structured interviews are reasonably easy to carry out, simply because of the degree of pre-structuring. However, people are limited to very restricted replies, and it is difficult for the interviewer to follow up on any unexpected response. Here is an extract from a structured interview pro forma about a student information system.
+
+![Structured Invterview example](imgs/DEB/StructuredInterview.png)
+
+Designers frequently use semi-structured interviews. Sometimes the interviewer is armed with prepared questions but can reword these as appropriate and explore new topics as they arise. Often the interviewer simply prepares a checklist, sometimes with suitable prompts, such as ‘Tell me about the first things you do when you get into the office in the morning’. Clearly, this free-form approach is more demanding for the interviewer, but the data obtained does generally repay the effort. 
+The interview is designed to start at a high level, then to probe at a greater level of detail. The analyst’s checklist of topics to cover for this example included the type of information needed, current sources (paper or on-line) and specific examples of information needs. 
+
+Completely unstructured interviews are sometimes used where it is particularly important to minimize designers’ preconceptions, or where very little background information is available beforehand. As the term suggests, there are no pre-set questions or topics beyond the general subject of the project in question. 
+
+###  Stories, scenarios and early prototyping in interviewing 
+Scenarios and stories are helpful aids to understanding activities and help avoid having people imagine (or reconstruct) situations in the abstract. For example, people can be 
+asked to recall a typical ‘day in the life’ or incidents when the current technology does not support what they need to do. This will identify circumstances that the new design 
+must take into account.
+Once there is a rough idea of what the new technology might do, discussing a scenario will highlight many issues, from the naming of individual functions to the impact 
+of changes in work practice.
+
+Prototypes – anything from paper sketches to semi-functioning products – are very often used to embody scenarios in possible technology. 
+For example, in the later stages of analysis for a shared notebook for engineers, simple prototypes created in PowerPoint coupled with small usage scenarios were used. These 
+were projected on a screen and discussed in a small group meeting, prompting discussion about the match between our design ideas and the way the engineers currently disseminated information. Whether or not a prototype is used, the analyst and the customer ‘walk through’ the scenario, while the analyst probes for comments, problems, possible alternatives and 
+suggestions in general. Depending on the outcome of the scenario/prototype walk-through, modifications and further iterations may be desirable. 
+
+### Think-aloud commentaries
+When it is necessary to know a good deal of low-level detail about current technology, users can be asked to talk through the operations concerned – including their internal 
+cognitive processes (i.e. what they are thinking about) – as they use the technology in question. This data, properly termed a ‘verbal protocol’ (Ericsson and Simon, 1985), can 
+provide helpful indications of current problems. It is important to remember, however, that by imposing the requirement to generate a commentary you are interfering with 
+the very process you are attempting to study. Further, not all cognitive processes can be accessed by the conscious mind.
+
+Simply put, have a user test it, and have them say everything they think out loud, in-order to get an insight in what they are thinking, and or trying to do, and therefor potential problems. 
+
+### Questionnaires
+Questionnaires are one way of streamlining the understanding process if a large 
+number of people are to be surveyed and resources are not available to interview them 
+individually. However, constructing a workable questionnaire is surprisingly difficult 
+and time-consuming in order to make all the items: 
+
+* understandable 
+* unambiguous 
+* generate data which actually answers evaluation questions 
+* easy to analyze. 
+
+It is a skilled task to devise the wording of questions when there are no opportunities to detect and clear up misunderstandings as they happen. Questionnaires need to be designed, prototyped and evaluated in the same way as any other form of interaction design. For small numbers of people – up to 10 or so – an interview will obtain the same information, and more, in a manageable way. This will consume little or no extra resource if the time required to construct a questionnaire is taken into account. 
+
+### Probes
+Probes are collections of artefacts designed to elicit requirements, ideas or opinions in specific contexts. ‘Cultural probes’ were developed by Bill Gaver and colleagues ( Gaver et 
+al ., 1999 ) in working with elderly people located in three European cities. The overall aim was to design technologies that would foster greater participation in the community by 
+older people. The designers first got to know the groups in person, then introduced them to the cultural probes packages. Each person received a collection of maps, postcards, a 
+disposable camera and booklets – each item being carefully designed to stimulate interest and curiosity, and suggesting ways in which people could use it to send ideas back to the designers. They were ‘designed to provoke inspirational responses’ (ibid., p. 22).
+
+The disposable cameras had customized covers which suggested scenes to be captured, such as ‘the first person you will see today’ or ‘something boring’. Over a period of weeks, many of the probe materials were sent back to the designers, carrying rich data about the lives of the elderly people. Not all items worked out as planned – the authors do not specify which – and the materials were selectively redesigned before being distributed to subsequent participants. All in all, the exercise was highly successful in capturing the general sense of what it meant to be elderly in the communities involved, although it is noted that the results did not have a direct impact on design.
+
+Technology probes are another form of probe that were used to gather requirements for home technologies and the area has now evolved into a whole area of ‘probology’. In discussing the use of mobile probes (Hulkko et al., 2004), it is argued that probes are humane, they create fragments of understanding and insight and use uncertainty through providing stories. Probes inspire and provoke designers to engage with the lives of others. 
+Another analysis of probes (cultural, mobile, domestic, urban) by Graham et al. (2007) concludes that probes represent the ‘turn to the personal’ in a direct reference to the ‘turn to the social’ that happened in HCI at the beginning of the 1990s. Probes are an amalgam of social science methods for understanding (such as photography, diaries, life documents, etc.) that enables designers to focus upon the individual’s everyday life, going beyond the general.
+
+### Artefact collection and 'desk work'
+Data from interviews, questionnaires and observation will have identified a range of artefacts in the form of things that support an activity. It is often possible to supplement this by collecting artefacts – such as documents, forms or spreadsheets, in office settings – or to video or photograph items that cannot be removed. Systems, apps and services that are somehow similar to the domain under investigation should also be studied.
+
 Benyon, D. (3rd or 4th ed) Chapter 7 "Understanding"
 We also draw from the PDF from the 2nd edition From Benyon (2nd ed): Chapter 12, section 12.2 on contextual inquiry https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607129/Benyon%20%282ed%29%20-%2012-2.pdf
 
@@ -326,7 +383,7 @@ presence that users will have when they experience a service or product.
 
 ### Mood boards
 
-Mood boards are widely used in advertising and interior design. Quite simply designers gather visual stimuli that capture something of the feeling about the design. Photographs and other images, colours, textures, shapes, headlines from newspapers or magazines, quotations from people, pieces of fabric can all be used to contribute to this.
+Mood boards are widely used in advertising and interior design. Quite simply design ers gather visual stimuli that capture something of the feeling about the design. Photographs and other images, colours, textures, shapes, headlines from newspapers or magazines, quotations from people, pieces of fabric can all be used to contribute to this.
 
 Lucero (2012) argues that mood boards are useful for ‘framing, aligning, paradoxing, abstracting, and directing’ designers in their work on the look and feel of a product or service.
 
@@ -427,34 +484,61 @@ aspects of good design.
 * Twelve design principles are particularly important. They can be grouped into three 
 main design issues of learnability, effectiveness and accommodation.
 
-## Lecture Five
+## Lecture Five - Physical Design - Memory and Attention
 
-After this lecture you should be able to:
+### Memory
+Memory is usually divided into a set of memory processes and a number of different types of memory store. The table below is a summary of the main memory stores and their sub-components and associated processes. The figure is an illustration of this multistore model of memory (note the role of attention).
+![A summary of the structure of memory ](imgs/DEB/StructureOfMemory.png)
 
-* Describe the importance of memory and attention and their major 
-components and processes
-* Understand attention and awareness; situation awareness, 
-attracting and holding attention
-* Understand the characteristics of human error and mental 
-workload and how they are measured.
+#### Memory stores: working memory
+Working memory, first identified and named by Baddeley and Hitch (1974), is made up from three linked components: a central executive, a visuospatial sketchpad and an articulatory loop (also called the phonological loop). The central executive is involved in decision making, planning and related activities. It is also closely linked to managing our ability to perform more than one thing at a time (see the section below which discusses the role of attention). The articulatory or phonological loop can be thought of as behaving like a loop of audio tape. When we are trying to call an unfamiliar telephone number or repeating a phrase in a foreign language, we tend to repeat the string of numbers (or words) either out loud or silently to ourselves. This process is called rehearsal. When we are doing this we are making use of the articulatory loop, which can also account for our experience of the inner voice. The analogy of the audio tape is useful as it allows us to see that the articulatory loop is limited in both capacity and duration.
 
-Chapter 21 - "Memory and Attention"
+The visuo-spatial sketchpad (also called the scratchpad) is the visual and spatial information equivalent of the articulatory loop and has been linked to our mind’s eye.We use our mind’s eye to visualize a route through a town or building or for the mental rotation of figures (visualize a coin and then rotate it to see what is on the other side). The visuo-spatial sketchpad is also limited in capacity and duration unless refreshed by means of rehearsal. Finally, the capacity of working memory itself is approximately three or four items (e.g. MacGregor, 1987; LeCompte, 1999) where an item may be a word or a phrase or an image. It should be noted that older textbooks and papers suggest that the limit of short-term memory is 7 ± 2 items, sometimes called the magical number 7: this is now known to be incorrect. 
+
+#### Memory stores: long-term memory 
+Long-term memory has an effectively unlimited capacity and memories stored there may last as long as an individual’s lifetime. The coding (the internal representation) of 
+the information it holds is primarily semantic in nature, that is, it is stored in terms of its meaning, for example knowledge of facts and the meaning of words (contrast this with 
+the binary encoding of information in a computer). However, research has indicated that other forms of encoding are present too – for example, memories of music or the 
+bark of a dog are encoded as auditory information; similarly, haptic (touch) encoding allows us to remember the feeling of silk and the sting of a cut. Finally, olfactory (smell) 
+and gustatory (taste) encoding allow us to recognize and distinguish between the smell and taste of fresh and rotten food. 
+
+In addition to semantic memory, long-term memory includes other kinds of memories such as episodic or autobiographical memory (memory of our personal history, 
+for example our first kiss, graduation day, the death of a parent) and procedural memory (e.g. the knowledge of how to ride a bike, type, play the euphonium). This neat three-way division of long-term memory into component parts – semantic, episodic and procedural – has been questioned by Cohen and Squire (1980), who argue that the real distinction is between ‘knowing that’ (declarative memory) and ‘knowing how’ (procedural memory), but in practice there is little between these two accounts. 
+
+#### How do we remember? 
+If what we want to store is not too complex (that is, it does not exceed the capacity of working memory), we will typically rehearse it, that is, repeat the string of words 
+either aloud or using our inner voice. This is useful for remembering unfamiliar names or strings of numbers or words such as a foreign phrase, for example ‘Dos cervezas, por favor’. This technique exploits the articulatory loop of working memory. Similar strategies are used to remember, for a short time, the shape of an object or a set of directions. The capacity of working memory can effectively be enhanced by chunking the material to be remembered first. Chunking is the process by which we can organize material into meaningful groups (chunks). For example, an apparently random string of numbers such as 00441314551234 may defeat most people unless it is chunked. This particular number may be seen to be a telephone number made up from the code for international calls (0044), the area code for Edinburgh (131) and the prefix for Edinburgh Napier University (455), leaving only 1234 to remember. Thus the string of numbers has been reduced to four chunks. 
+
+So how do we remember things for longer periods? One answer is elaboration, which has been developed as an alternative view of memory in itself. The levels of processing (LoP) model proposed by Craik and Lockhart (1972) argues that rather than focusing on the structural, multi-store model of memory we should emphasize the memory processes involved. The LoP model recognizes that any given stimulus (piece of information) can be processed in a number of ways (or levels), ranging from the trivial or shallow all the way through to a deep, semantic analysis. Superficial processing may involve the analysis of the stimulus’s surface features such as its colour or shape; a deeper level of analysis may follow which may test for such things as whether the stimulus (e.g. cow) rhymes with the word ‘hat’. The final and deepest level of analysis is the semantic, which considers the stimulus’s meaning – does the word refer to a mammal? 
+Finally, we are able to retrieve stored information by way of recall and/or recognition. Recall is the process whereby individuals actively search their memories to retrieve a particular piece of information. Recognition involves searching our memory and then deciding whether the piece of information matches what we have in our memory stores. 
+
+#### How and why do we forget? 
+There are numerous theories of forgetting. However, before we discuss their strengths and weaknesses, we begin with another key distinction, namely the difference between 
+accessibility and availability . Accessibility refers to whether or not we are able to retrieve information that has been stored in memory, while the availability of a memory depends on whether or not it was stored in memory. The metaphor of a library is often used to illustrate this difference. Imagine you are trying to find a specific book in a library. There are three possible outcomes: 
+1. You find the book (the memory is retrieved). 
+2. The book is not in the library (the memory is not available). 
+3. The book is in the library but has been misfiled (not accessible). 
+
+There is, of course, a fourth possibility, namely that someone else has borrowed the 
+book, which is where the metaphor breaks down
+As we described earlier, information is transferred from working memory to long-term memory to be stored permanently, which means that availability is the main issue for working memory while accessibility is the main (potential) problem for long-term memory.
+
 Chapter 12.4 - "Physiological Principles and interface design"
 
-## Lecture Six
+## Lecture Six - Physical Design - Perception and Navigation
 Chapter 25 "Perception and Navigation"
 Chapter 12, Section 12.4 and the subsections "Guidelines from perception" and "Principles from navigation"
 Chapter 23, section 23.4 "Embodied cognition"
 
-## Lecture Seven
+## Lecture Seven - What is Usability and Usability Testing
 Chapter 4 section 4.3 "Usability"
 Chapter 10 "Evaluation"
 (4th ed) Chapter 5 section 5.3 "Usability" or (3rd ed) Chapter 4 section 4.3 "Usability"
 
-## Lecture Eight
+## Lecture Eight - Evaluation - Identifying Problems 
 https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607135/Rubin-cp-11.pdf
 https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607135/Rubin-Chisnell-%20ch12.pdf
-## Lecture Nine
+## Lecture Nine - Evaluation - Alternative Methods and UX"
 https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p2689-bargas.pdf
 https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p233-kjeldskov.pdf
 https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p1405-andreasen.pdf
