@@ -1,26 +1,261 @@
 # Design and Evaluation of User Interfaces
 
-## Envisionment
+## Lecture one - Introduction and overview
 
-Envisionment is concerned with making ideas visible; with 
-externalizing thoughts. Externalization can take all manner of forms: 
-stories and scenarios, presentations, sketches, formal models, software 
-prototypes, cardboard models and so on. Different forms of 
-representation will be more or less useful at different stages in the 
-design process and more or less effective for doing different things. A 
-formal presentation of a design concept for a potential client will look 
-quite different from a sketch of a screen layout intended to explore 
-what something will look like. Envisionment is needed to represent 
-design work to ourselves and to others. It occurs throughout 
-development as the designer generates multiple design solutions and 
-whittles them down to a final product or service.
+User Experience (UX) is about designing various types of interactive services and products, including web services, apps, games, and interactive products like home control systems, digital cameras, and tablet applications. It also involves designing entire environments, such as new retail spaces, where various devices and services interact with each other and people. The goal is to enhance the user experience in different settings, including home, work, or community support.
+
+A prime example of an influential interactive product is the iPhone, introduced by Apple Inc. in 2007. The iPhone revolutionized mobile technologies with its carefully crafted interface designed for finger input and a touch-sensitive screen that allowed for multi-touch input. This innovation facilitated new interaction techniques, such as pinching to resize an image. While many devices have since adopted this technology, the iPhone was the pioneer.
+
+User Experience (UX) design encompasses a variety of activities, which can be categorized into product design, system design, and service design depending on the context. The key concerns of a UX designer include:
+
+Design: Understanding what design is and how to implement it effectively.
+Technologies: Knowledge about interactive systems, products, devices, and components is crucial.
+People: UX designers need to consider the users of the systems and services, aiming to improve their lives through their designs.
+Activities and Contexts: UX design is about understanding people’s goals, feelings, and achievements, and considering the contexts within which these activities take place.
+In essence, UX design is a holistic (dealing with or treating the whole of something or someone and not just a part) approach that considers the design, technology, people, and the context of use to create a positive user experience.
+
+### Design
+*What is design? It’s where you stand with a foot in two worlds – the world of technology and the world of people and human purposes – and you try to bring the two together*
+- Mitch Kapor in Winograd (1996), p. 1 
+
+‘Design’ refers to both the creative process of creating something new and the representations produced during this process. Design is not a straightforward process and often involves iteration and exploration of requirements and solutions. The design process evolves with the problem and solution.
+
+Design can be categorized based on the level of formality:
+
+Engineering design is at one end of the spectrum, where scientific principles and technical specifications are used to create formal models before construction begins. ((such as the design of a bridge, a car or a building)
+
+Creative or artistic design is at the other end of the spectrum, emphasizing innovation, imagination, and conceptual ideas. (innovation, imagination and conceptual ideas are the key ingredients.)
+
+Design as craft lies in the middle, incorporating both engineering and creative approaches.
+
+Most design involves aspects of all these categories. For instance, a fashion designer needs to know about people and fabrics, an interior designer needs to know about paints and lighting, and a jewellery designer needs to know about precious stones and metals.
+
+Donald Schön, a famous design commentator, described design as a ‘conversation with materials’, meaning designers must understand the nature of the materials they work with. In the case of UX, the medium consists of interactive systems, services, and the physical spaces where interactions occur. The text also emphasizes that design is a conscious, social activity often undertaken in a design team.
+
+### People and technologies
+Interactive systems refer to technologies that UX designers use, which are primarily concerned with interactively processing information content. This includes components, devices, products, services, and software systems that deal with the transmission, display, storage, or transformation of content that people can perceive. These systems respond dynamically to people’s actions.
+
+Examples of interactive systems include mobile phones, websites, delivery tracking systems, and tourist attractions that provide information about specific locations. As connectivity increases, more products are incorporating interactive components, forming device ecologies. This is often referred to as the Internet of Things (IoT).
+
+A key challenge for UX is managing the differences between people and interactive systems. While a machine-centered view sees people as vague and disorganized and machines as precise and orderly, a people-centered view sees people as creative and resourceful and machines as rigid and constrained. UX designers must navigate these differences, often needing to translate people’s goals into instructions that machines can understand.
+
+![Machine- and people-centred views](/imgs/DEB/MachinePeopleCentred.png)
+
+### The interface 
+The user interface (UI) of an interactive system is the part of the system that people interact with physically, perceptually, and conceptually.
+
+Physically, interaction might involve pressing buttons or swiping a touch-sensitive screen, with the device providing feedback through tactile responses or display changes.
+Perceptually, the device presents visual, auditory, or tactile information that users can perceive.
+Conceptually, users interact with the device by understanding its functions and determining their actions accordingly. The device aids this process by providing helpful messages and content.
+The UI needs to have mechanisms for both ‘input’ (allowing users to give instructions and enter data) and ‘output’ (providing feedback and displaying content such as information, pictures, movies, animations, etc.). The interface may also facilitate connectivity between devices and services, like the internet.
+
+User Experience (UX) design is not just about creating interfaces. It involves considering the entire human-device ecosystem, including the human-human interactions facilitated by these systems. As interactive systems increasingly consist of interconnected devices - some worn, some embedded in buildings, and some carried - UX designers focus on connecting people through these devices and channels. They need to consider the entire environment they are creating.
+
+### Being human-centred 
+User Experience (UX) is about creating interactive experiences with a human-centered approach. This involves prioritizing people’s needs over the capabilities of technology, fostering connections between individuals, including users in the design process, and designing with a focus on diversity. The ultimate goal is to create a user experience that supports and is enjoyable for people.
+
+### The skills of the UX designer
+UX designers require a diverse set of skills and understanding across various disciplines. Their key responsibilities include:
+
+Conducting user research to understand people’s activities, goals, and aspirations, and the contexts in which technology might be useful.
+Understanding the possibilities offered by technologies.
+Creating technological solutions that align with people’s needs, their desired activities, and the contexts of those activities (a process sometimes called ‘ideation’).
+Evaluating alternative designs and iterating through further research and design until a solution is found.
+Given the breadth of skills and academic disciplines involved, it’s often the case that no single person possesses all the necessary skills for a design activity, making UX design typically a team effort.
+
+A UX designer’s role can vary widely, from designing apps, websites, and promotional materials for a community information system project, to creating a kiosk for processing photographs, developing the information architecture for a real estate firm, or designing a children’s educational game.
+
+While UX designers cannot be experts in all these fields, they need to be sufficiently aware to draw techniques from different areas or access research in different disciplines when appropriate. The subjects that contribute to the design of interactive systems are grouped under the headings of knowledge of people, technologies, activities, contexts, and design, an illustration of this can be seen below:
+
+![Disciplines contributing to interactive systems design](/imgs/DEB/DisciplinesContributingSystemsDesign.png)
+
+### People
+In designing user experience, methods from the following disciplines are used to better understand and design for people:
+**Sociology:** The study of relationships between people, their groups, and their societal settings.
+
+**Anthropology:** Similar to sociology but also focuses on culture, biology, language, and their evolution. It uses ‘ethnography’ to describe a particular culture or social group.
+
+**Cultural Studies:** Examines people’s relationship with cultural issues like identity and everyday activities like shopping or watching TV.
+
+**Humanistic HCI:** Introduced by Bardzell and Bardzell (2015), it offers a new approach to understanding User Experience (UX).
+
+**Psychology:** Studies how people think, feel, and act. Cognitive psychology focuses on brain functions, language, and problem-solving.
+
+**Ergonomics:** Studies the fit between people and machines.
+
+### Technologies
+Interactive system designers need to be proficient in several areas:
+
+**Software:** They should understand software engineering methods for specifying and implementing computer programs. This includes knowledge of programming languages to instruct any programmable device.
+
+**Hardware:** Designers need to be familiar with hardware, specifically sensors for data collection and actuators for effecting change. They should be able to leverage various components to produce different effects, using engineering knowledge and principles.
+
+**Communications:** Understanding of various communication protocols is essential for enabling device intercommunication.
+
+**Content:** Designers should be knowledgeable about multimedia content, including its production and manipulation.
+
+In essence, the design of interactive systems requires a broad and integrated understanding of software, hardware, communications, and content.
+
+### Activities and contexts
+Interactions often occur within a ‘community of practice’, a group of individuals with shared interests and activities. In business communities and organizations, methods have been developed to ensure the effectiveness of information systems. The soft systems theory (Checkland and Scholes, 1999) provides a framework for designing interactive systems. Understanding social and organizational psychology is crucial to assess the impact of technological changes on organizations. Recently, knowledge management and social computing have emerged as significant fields. New technologies present fresh opportunities, enabling business and interactive system designers to create innovative ways of working.
+
+### Design
+UX design incorporates principles and practices from various design disciplines.
+Ideas from architecture, garden design, interior design, fashion, and jewellery design are used in UX design.
+Design knowledge is often specific to a genre, making it challenging to simply pick up ideas from different disciplines.
+Designers need to understand the materials they work with.
+Product design is a key discipline contributing to UX design skills, and it’s evolving to incorporate interactivity.
+Graphic design and information design are crucial for information layout, understandability, and the aesthetic experience of products.
+Human-computer interaction techniques have evolved to ensure people-focused designs.
+UX fits into a range of design disciplines, indicating the diverse skills a UX designer needs to know or access.
+Many UX agencies specialize in one or two areas and employ freelance specialists for specific expertise.
+
+### Why being human-centred is important
+Human-centred design is costly as it involves observing, communicating, and testing ideas with people.
+
+This approach adds an additional cost to any project.
+
+Businesses often question the worth of investing time in talking to people and producing prototype designs.
+
+Despite the cost, the text asserts that a human-centred approach is fundamentally beneficial.
+
+The human-centred approach is advantageous for designing interactive systems.
+
+### Return on investment 
+Williams et al. (2007) conducted case studies on the costs and benefits of a human-centred approach to interactive systems design.
+
+Paying attention to people’s needs, product usability, and overall UX can lead to reduced customer helpline calls, fewer training materials, increased throughput, and increased sales.
+
+Involving people in the design of their systems can ensure acceptability and effectiveness.
+
+Systems designed from a human-centred perspective can increase productivity.
+
+The economic argument is particularly relevant in web design and e-commerce sites.
+
+Jared Spool and User Interface Engineering have demonstrated the importance of good UX to e-commerce.
+
+They claim that sales can increase by 225% by converting ‘browsers’ into ‘buyers’.
+
+### Safety
+In the early 1980s, an accident at the Three Mile Island nuclear power plant in the USA nearly caused a meltdown.
+
+One problem was a control panel indicating a valve was closed when it was actually open.
+
+Another issue was an indicator obscured by a tag attached to another control.
+
+These were two fundamental design errors, one technical and one organizational, that could have been avoided with human-centred design techniques.
+
+There have been plane and train disasters attributed to faulty displays or operators not correctly understanding or interpreting displays.
+
+Systems must be designed for people and contexts.
+
+It’s not valid to claim ‘human error’ if the initial design was so poor that an accident was inevitable.
+
+### Ethics
+Human-centred design ensures designers are truthful and open in their practice.
+
+With the ease of data collection, designers need to be vigilant about its use.
+
+As systems can connect and share data autonomously, it’s vital for people to know where their data is going and how it might be used.
+
+People need to trust systems and have the ability to make choices about privacy and representation.
+
+Intellectual property is a significant aspect of ethical design.
+
+Issues associated with plagiarism or dishonest use of materials are prevalent.
+
+
+Privacy, security, control, honesty, equality, and access are significant features of a UX designer’s role.
+
+As technology evolves, so do traditional views and approaches to moral and ethical questions.
+
+Designs need to meet certain standards and legal requirements.
+
+Ethical design is essential as the systems produced should be easy and enjoyable to use, impacting the quality of people’s lives.
+
+Designers have power over others and must exercise that power ethically.
+
+The ACM (Association of Computing Machinery) code of ethics provides guidance on ethical design.
+
+### Sustainability
+Interactive systems have a significant impact on the world.
+
+Designers should approach interaction design from a sustainability perspective.
+
+Millions of mobile phones and other devices are discarded each year, containing potentially environmentally harmful metals.
+
+Large displays and projectors consume a lot of power.
+
+Cultures can be overwhelmed by the views and values of dominant hardware and software suppliers.
+
+Local languages can die out when all information is in dominant languages like English, Chinese, or Hindi.
+
+Human-centred design needs to recognize diversity and aim to enhance human values.
+
+
+Chapter 2, sections 2.1 - 2.6
+Chapter 3, sections 3.1 - 3.5
+Chapter 4, section 4.1-4.2
+Chapter 5, section 5.1-5.3
+
+## Lecture two - Understanding and Data Collection Techniques
+### Aim
+This lecture emphasizes the importance of understanding the people, activities, and contexts involved in a design process before starting the creative design. This understanding, termed PACT, helps generate system requirements. However, a thorough understanding of requirements often comes after some design work has been completed and evaluated. The understanding process focuses on what people do, how and why they do it, and any problems with the current system. UX designers aim to develop technologies that enhance efficiency and enjoyment in everyday life. They conduct user research to understand the domain of investigation. This step is known as ‘requirements analysis’ in software engineering or information systems projects. After studying this chapter, one should be able to understand and generate requirements, use techniques for understanding people and their activities, and document the results as requirements on interactive technologies, UX, and services.
+
+### Requirements
+The text discusses the role of UX designers in understanding client needs and translating them into product requirements. This process involves studying current activities, gathering user stories, and generating information about the current situation and people’s goals. This information is then transformed into requirements for a new product, system, or service, often requiring a creative leap through a process called ideation.
+
+The process is iterative, with the effectiveness of the designer’s creative leap judged when the user and other designers review the requirements. This is best done with scenarios, early designs, or a prototype. As the design process continues, additional requirements may emerge.
+
+The text also discusses the terminology used for the requirements activity, including ‘requirements gathering’, ‘requirements generation’, ‘requirements elicitation’, and ‘requirements engineering’. The term ‘understanding’ is preferred as it encapsulates the ideas of gathering and generation. Interaction design projects often start from a ‘design brief’, which may be a vague description of what the clients want, and clients often require a requirements specification, a formal written document.
+
+Requirements are divided into two types: functional and non-functional. Functional requirements are what the system must do; non-functional requirements are the qualities that the system must have. These qualities may be crucial factors in the acceptability, sales or usage of a product. Non-functional requirements cover a number of aspects of design, including image and aesthetics, usability, UX, performance, maintainability, security, cultural acceptability and legal restrictions. Also important are the data or media requirements of any system – the type of content that it has to deal with and the various media that will be used.
+
+For both types of requirements, note that how the technology will meet the requirement is not specified. This is a later part of the design activity. It is best to supplement the list of requirements with some supporting evidence – interview or observation reports, photographs of artefacts, video snippets if practicable. This helps readers of the requirements specification understand the reason behind items in the list.
+
+### Prioritizing requirements
+Requirements should be reviewed with customers and clients and modified as necessary. Decisions will almost always be made about the relative priority of the requirements, since few design projects have unlimited resources. One way of doing this is by 
+using the ‘MoSCoW rules’. These classify requirements into:
+
+* Must have – fundamental requirements without which the system will be unworkable and useless, effectively the minimum usable subset
+
+* Should have – would be essential if more time were available, but the system will be useful and usable without them 
+
+* Could have – of lesser importance, therefore can more easily be left out of the current development
+
+* Want to have but W on’t have this time round – can wait until a later development. 
+
+MoSCoW is an important part of agile development ( Section 3.1 ), with the must-have requirements determining the minimum viable product (MVP) that will be acceptable 
+to a particular development.
+
+### Participative design
+Research work involves using a variety of techniques to understand and analyze someone else’s needs, goals and aspirations. The key thing for designers to remember is that they 
+are not the people who will be using the final system. Designers need to understand the requirements of other people. 
+This is not easy, but talking to people through interviews, observing people and recording their activities on video, organizing focus groups and having workshops will all help the designer to understand both the requirements for the new design (the ‘gain’ a new system or service will deliver) and the problems people are having with existing ways of doing things (the ‘pain’ of the current situation). By engaging with people using various techniques that encourage the participation of people in the design process, designers will acquire a large number of stories that form the basis for the analysis work. Recasting several similar stories into more structured conceptual scenarios will also help the designer to understand and generate requirements. 
+
+Benyon, D. (3rd or 4th ed) Chapter 7 "Understanding"
+We also draw from the PDF from the 2nd edition From Benyon (2nd ed): Chapter 12, section 12.2 on contextual inquiry https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607129/Benyon%20%282ed%29%20-%2012-2.pdf
+
+Chapter 7 in Preece, Rogers & Sharp  https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607129/Data_gathering_Preece_Rogers_Sharp.pdf
+
+Preece, Rogers & Sharp (2007). Interaction Design - Beyond Human-Computer Interaction (2nd ed). Wiley, ISBN: 9780470018668
+
+## Lecture three
+### Envisionment
+
+Envisionment is concerned with making ideas visible; with externalizing thoughts. Externalization can take all manner of forms: 
+stories and scenarios, presentations, sketches, formal models, software prototypes, cardboard models and so on. Different forms of representation will be more or less useful at different stages in the design process and more or less effective for doing different things. A formal presentation of a design concept for a potential client will look 
+quite different from a sketch of a screen layout intended to explore what something will look like. Envisionment is needed to represent 
+design work to ourselves and to others. It occurs throughout development as the designer generates multiple design solutions and whittles them down to a final product or service.
 
 After studying this lecture you should be able to:
 
-* Use a variety of techniques for envisioning design problems and 
-possible solutions
+* Use a variety of techniques for envisioning design problems and possible solutions
+
 * Understand the role of concrete scenarios in envisioning design
+
 * Select and use appropriate prototyping techniques
+
 * Understand the main factors in communicating designs effectively
 
 Envisionment is fundamental to effective human-centred design, to enable designers 
@@ -202,3 +437,26 @@ components and processes
 attracting and holding attention
 * Understand the characteristics of human error and mental 
 workload and how they are measured.
+
+Chapter 21 - "Memory and Attention"
+Chapter 12.4 - "Physiological Principles and interface design"
+
+## Lecture Six
+Chapter 25 "Perception and Navigation"
+Chapter 12, Section 12.4 and the subsections "Guidelines from perception" and "Principles from navigation"
+Chapter 23, section 23.4 "Embodied cognition"
+
+## Lecture Seven
+Chapter 4 section 4.3 "Usability"
+Chapter 10 "Evaluation"
+(4th ed) Chapter 5 section 5.3 "Usability" or (3rd ed) Chapter 4 section 4.3 "Usability"
+
+## Lecture Eight
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607135/Rubin-cp-11.pdf
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607135/Rubin-Chisnell-%20ch12.pdf
+## Lecture Nine
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p2689-bargas.pdf
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p233-kjeldskov.pdf
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p1405-andreasen.pdf
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/p2117-bruun.pdf
+https://www.moodle.aau.dk/pluginfile.php/2863481/course/section/607136/10.1007_978-3-319-22701-6_17.pdf
