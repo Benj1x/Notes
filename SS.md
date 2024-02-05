@@ -54,3 +54,11 @@ We may describe a specific function in several ways. One way is with a procedure
 ![Example 0.8 - Function table](/imgs/SS/Example0.8.png)
 
 ![Example 0.9 - Function table](/imgs/SS/Example0.9.png)
+
+A ***predicate*** or ***property*** is a function whose range is ´{TRUE,FALSE}´. For example, let even be a property that is TRUE if its input is an even number and FALSE if its input is an odd number. Thus ´even´(4) = TRUE and ´even´(5) = FALSE. A property whose domain is a set of k-tuples A ×···×A is called a relation, a k-ary relation,or a k-ary relation on A. Acommoncaseisa2-aryrelation,
+ called a binary relation.Whenwritinganexpressioninvolvingabinaryrela
+tion, we customarily use infix notation. For example, “less than” is a relation
+ usually written with the infix operation symbol <. “Equality”,writtenwiththe
+ = symbol, is another familiar relation. If R is a binary relation, the statement
+ aRb means that aRb = TRUE. Similarly, ifR is a k-ary relation, the statement
+ R(a1,...,ak) means that R(a1,...,ak)=TRUE.
