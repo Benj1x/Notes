@@ -62,3 +62,16 @@ tion, we customarily use infix notation. For example, “less than” is a relat
  = symbol, is another familiar relation. If R is a binary relation, the statement
  aRb means that aRb = TRUE. Similarly, ifR is a k-ary relation, the statement
  R(a1,...,ak) means that R(a1,...,ak)=TRUE.
+
+## Lecture 2: Nondeterministic Finite Automata
+Topics: Nondeterminism (informally); nondeterministic finite automata (formal definition and examples); equivalence of DFAs and NFAs;  closure under regular operations.
+Introduction to the Theory of Computation (Chapter 1 (Section 1.2): pages 47-63);
+
+### Nondeterminism
+So far in our discussion, every step of a computation follows in a unique way from the preceding step. When the machine is in a given state and reads the next input symbol, we know what the next state will be—it is determined. We call this **deterministic** computation. In a **nondeterministic** machine, several choices may exist for the next state at any point.
+Nondeterminism is a generalization of determinism, so every deterministic finite automaton is automatically a nondeterministic finite automaton. As Figure 1.27 shows, nondeterministic finite automata may have additional features.
+
+![Figure 1.27 The nondeterministic finite automaton N_1](/imgs/SS/NondeterministicFiniteAutomaton.png)
+The difference between a deterministic finite automaton, abbreviated DFA, and a nondeterministic finite automaton, abbreviated NFA, is immediately apparent. First, every state of a DFA always has exactly one exiting transition arrow for each symbol in the alphabet. The NFA shown in Figure 1.27 violates that rule.
+
+State q1 has one exiting arrow for 0, but it has two for 1; q2 has one arrow for 0, but it has none for 1. In an NFA, a state may have zero, one, or many exiting arrows for each alphabet symbol. Second, in a DFA, labels on the transition arrows are symbols from the alphabet. This NFA has an arrow with the label ε. In general, an NFA may have arrows labeled with members of the alphabet or ε. Zero, one, or many arrows may exit from each state with the label ε.
