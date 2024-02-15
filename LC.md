@@ -79,7 +79,7 @@ fragments for the subexpressions, and then joining these to form an NFA fragment
 when an NFA fragment is shown as a dotted oval (it is “hidden” inside the oval). 
 When an NFA fragment has been constructed for the whole regular expression, the construction is completed by connecting the outgoing half-transition to an accepting 
 state. The incoming half-transition serves to identify the starting state of the completed NFA. Note that, even though we allow an NFA to have several accepting states, an NFA constructed using this method will have only one: the one added at the end of the construction. 
-An NFA constructed this way for the regular expression (**a**|**b**)∗**ac** is shown in Fig. 1.5. We have numbered the states for future reference.
+An NFA constructed this way for the regular expression (**a**|**b**)∗**ac** is shown in Fig. 1.5. The states are numbered for future reference.
 ![Fig. 1.4 Constructing NFA fragments from regular expressions](/imgs/LC/ConstructingNFAFragmentsRegex.png)
 
 ![Fig. 1.5 NFA for the regular expression (**a**|**b**)∗**ac**](/imgs/LC/NFAForRegex.png)
