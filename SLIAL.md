@@ -16,7 +16,7 @@ The elements (or entries, coefficients, components) of a vector are the values i
 elements it contains. The vector above, for example, has size four; its third entry is 3.6. A vector of size *n* is called an *n-vector*. A 1-vector is considered to be the
 same as a number, i.e., we do not distinguish between the 1-vector [ 1.3 ] and the number 1.3.
 We often use symbols to denote vectors. If we denote an *n-vector* using the symbol *a*, the *i*th element of the vector *a* is denoted *a_i*, where the subscript *i* is an integer index that runs from 1 to *n*, the size of the vector.
-Two vectors *a* and *b* are *equal*, which we denote *a* = *b*, if they have the same size, and each of the corresponding entries is the same. If *a* and *b* are *n*-vectors, then *a* = *b* means *a*_1 = *b*_1, . . . , *a*_*n* = *b*_*n*.
+Two vectors *a* and *b* are *equal*, which we denote *a* = *b*, if they have the same size, and each of the corresponding entries is the same. If *a* and *b* are *n*-vectors, then *a* = *b* means *a*_1 = *b*_1, . . . , *a_n* = *b_n*.
 
 <span style="color:red">The numbers or values of the elements in a vector are called scalars</span>. We will focus on the case that arises in most applications, where the scalars are real numbers. In this case we refer to vectors as real vectors. (Occasionally other types of scalars arise, for example, complex numbers, in which case we refer to the vector as a complex vector.) <span style="color:red">The set of all real numbers is written as **R**, and the set of all real *n*-vectors is denoted **R**^*n*</span>, so *a* ∈ **R**^*n* is another way to say that *a* is an *n*-vector with real entries. Here we use set notation: *a* ∈ **R**^*n* means that *a* is an element of the set **R**^*n*; see appendix A.
 
@@ -27,11 +27,40 @@ Two vectors *a* and *b* are *equal*, which we denote *a* = *b*, if they have the
 where *a*, *b*, *c*, and *d* are vectors. If *b* is an *m*-vector, *c* is an *n*-vector, and *d* is a
 *p*-vector, this defines the (*m* + *n* + *p*)-vector
 
-*a* = (*b*_1, *b*_2, . . . , *b*_*m*, *c*_1, *c*_2, . . . , *c*_*n*, *d*_1, *d*_2, . . . , *d*_*p*).
+*a* = (*b*_1, *b*_2, . . . , *b_m*, *c*_1, *c*_2, . . . , *c_n*, *d*_1, *d*_2, . . . , *d_p*).
 
-<span style="color:red">The stacked vector *a* is also written as a = (b, c, d).
-Stacked vectors can include scalars (numbers). For example if a is a 3-vector,
-(1, a) is the 4-vector (1, a1, a2, a3).</span>
+<span style="color:red">The stacked vector *a* is also written as *a* = (*b*, *c*, *d*).
+Stacked vectors can include scalars (numbers). For example if *a* is a 3-vector,
+(1, *a*) is the 4-vector (1, *a*_1, *a*_2, *a*_3).</span>
+
+**Subvectors.** In the equation above, we say that *b*, *c*, and *d* are *subvectors* or *slices* of *a*, with sizes *m*, *n*, and *p*, respectively. *Colon notation* is used to denote subvectors. If *a* is a vector, then the subvector *a_r:s* is a vector of size *s* − *r* + 1, with entries *a_r*, . . . , *a_s*:  <span style="color:red">
+
+*a_r*:*s* = (*a_r*, . . . , *a_s*).
+
+
+As a more concrete example, if <span style="color:red">*z* is the 4-vector (1, −1, 2, 0), the slice *z*_2:3 is *z*_2:3 = (−1, 2).</span> Colon notation is not completely standard, but is gaining traction.
+
+<span style="color:red">In programming, arrays of length *n* are indexed from i = 0 to i = *n* − 1. In standard mathematical notation, *n*-vectors are indexed from i = 1 to i = *n*, so in this subject/class, vectors will be indexed from i = 1 to i = *n*</span>
+
+**Zero vectors.** <span style="color:red">A *zero vector* is a vector with all elements equal to zero. Sometimes the zero vector of size *n* is written as 0_n, where the subscript denotes the size.But usually a zero vector is denoted just 0, the same symbol used to denote the number 0.</span> In this case you have to figure out the size of the zero vector from the context. As a simple example, if *a* is a 9-vector, and we are told that *a* = 0, the 0 vector on the right-hand side must be the one of size 9.
+Even though zero vectors of different sizes are different vectors, we use the same symbol 0 to denote them. In computer programming this is called *overloading*: 
+The symbol 0 is overloaded because it can mean different things depending on the context (e.g., the equation it appears in)
+
+**Unit vectors.** <span style="color:red">A (standard) *unit vector* is a vector with all elements equal to zero, except one element which is equal to one. The *i*th unit vector (of size *n*) is the unit vector with *i*th element one, and denoted *e_i*.</span> For example, the vectors
+
+![A standard unit vector](/imgs/SLIAL/StandardUnitvector.png)
+
+are the three unit vectors of size 3. The notation for unit vectors is an example of the ambiguity in notation noted above. <span style="color:red">Here, *e_i* denotes the *i*th unit vector, and not the *i*th element of a vector *e*.</span> Thus we can describe the *i*th unit n-vector *e_i* as
+
+![*i*th Unit Vector description](/imgs/SLIAL/ithUnitVectorDesc.png)
+
+for *i,j* = 1, . . . , *n*. On the left-hand side *e_i* is an *n*-vector; (*e_i*)_*j* is a number, its *j*th entry. As with zero vectors, the size of *e_i* is usually determined from the context.
+
+**Ones vector.** We use <span style="color:red">the notation **1**_*n* for the *n*-vector with all its elements equal to one. We also write **1** if the size of the vector can be determined from the context. (Some use *e* to denote a vector of all ones, but we will not use this notation.) The vector **1** is sometimes called the *ones vector*.</span>
+
+**Sparsity.** <span style="color:red">A vector is said to be *sparse* if many of its entries are zero; its *sparsity pattern* is the set of indices of nonzero entries. The number of the nonzero entries of an *n*-vector *x* is denoted **nnz**(*x*). Unit vectors are sparse, since they have only one nonzero entry. The zero vector is the sparsest possible vector, since it has no nonzero entries.</span> Sparse vectors arise in many applications.
+
+###
 
 
 Literature: [VMLS], Chapter 1, Section 2.1 + slides
