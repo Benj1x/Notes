@@ -1,14 +1,19 @@
 # Languages and Compilers
+
 ## Lecture 2 - Lexical analysis: Regular expressions and automata
+
 The learning goals are:
+
 * To be able to explain the rôle of lexical analysis in the implementation of a programming language
 * To be able to use the basic terminology for lexical analysis correctly
 * To be able to write a correct regular expression that specifies a given language
 * To be able to construct an equivalent NFA from a regular expression
-* To be able to explain the method used for constructing an NFA from a regular expression 
+* To be able to explain the method used for constructing an NFA from a regular expression
 
 Reading: Introduction to Compiler Design:  Sections 1.1 to 1.3
+
 ### Regular Expressions (You probably know most of this)
+
 The set of all integer constants or the set of all variable names are examples of sets of strings, where the individual digits or letters used to form these constants or names are taken from a particular alphabet, i.e., a set of characters. A set of strings is called a language. For integers, the alphabet consists of the digits 0–9 and for variable names, the alphabet contains both letters and digits (and perhaps a few other characters, such as hyphens and underscores).
 Given an alphabet, we will describe sets of strings over this alphabet by regular expressions, an algebraic notation that is compact and relatively easy for humans to use and understand. The idea is that regular expressions that describe simple sets of strings can be combined to form bigger regular expressions that describe more complex sets of strings. Regular expressions are often called “regexps” or "Regex" for short.
 
@@ -29,7 +34,7 @@ We can use the derivation rules to find the language for a regular expression. A
 
 ![Regular expressions and their derivation](/imgs/LC/RegExDerivation.png)
 
-Parentheses and Precedence Rules 
+Parentheses and Precedence Rules
 
 When we use the symbols above to construct composite regular expressions such as **a**|**ab**∗, it is not a priori clear how the different subexpressions are grouped. We 
 will sometimes (like we did above) use parentheses to make the grouping of symbols explicit such as in (**a**|(**ab**))∗. Additionally, we use precedence rules, similar to the 
@@ -37,7 +42,8 @@ algebraic convention that multiplication binds stronger than additions, so. 3+4�
 
 ![Fig. 1.2 Some algebraic properties of regular expressions](/imgs/LC/AlgebraicPropertiesRegEx.png)
 
-#### Shorthands 
+#### Shorthands
+
 While the constructions in Fig. 1.1 suffice to describe e.g., number strings and variable names, we will often use extra shorthands for convenience. For example, if we want 
 to describe non-negative integer constants, we can do so by saying that a number constant is a sequence of one or more digits, which is expressed by the regular expression
 
@@ -54,9 +60,10 @@ common, so we introduce another shorthand,. s+, to denote one or more occurrence
 On a similar note, it is common that we can have zero or one occurrence of something (e.g., an optional sign to a number). Hence we introduce the shorthand **s**? for **s**|**ε**. 
 The shorthand symbols. + and. ? bind with the same precedence as∗.
 
-Examples of this can be found in: "1.1.2 Examples" in the book "Introduction to Compiler Design" 
+Examples of this can be found in: "1.1.2 Examples" in the book "Introduction to Compiler Design"
 
 ### Nondeterministic Finite Automata
+
 A finite automaton is, in the abstract sense, a machine that has a finite number of states and a finite number of transitions between pairs of states. A transition between 
 two states is usually labelled by a character from the input alphabet, but we will also use transitions marked with. ε, the so-called epsilon transitions.
 A finite automaton can be used to decide if an input string is a member in some particular set of strings. To do this, we select one of the states of the automaton as the starting state. We start in this state, and in each step we can do one of the following:
@@ -69,7 +76,8 @@ A finite automaton can be used to decide if an input string is a member in some 
 Starting states are sometimes called *initial states* and accepting states can also be called *final states* (which is why we use the letter *F* to denote the set of accepting states)
 We use the abbreviations FA for finite automaton, NFA for nondeterministic finite automaton and DFA for deterministic finite automaton.
 
-### Converting a Regular Expression to an NFA 
+### Converting a Regular Expression to an NFA
+
 We will construct an NFA compositionally from a regular expression, i.e., we will construct the NFA for a composite regular expression from the NFAs constructed from its subexpressions. To be precise, we will from each subexpression construct an NFA fragment and then combine these fragments into bigger fragments. A fragment is not a complete 
 NFA, so we complete the construction by adding the necessary components to make a complete NFA. 
 An NFA fragment consists of a number of states with transitions between these and additionally two incomplete transitions: One pointing into the fragment and one pointing out of the fragment. The incoming half-transition is not labelled by a symbol, but the outgoing half-transition is labelled by either. ε or an alphabet symbol. These half-transitions are the entry and exit to the fragment and are used to connect it to other fragments or additional “glue” states.
