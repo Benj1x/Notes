@@ -136,7 +136,63 @@ The converse is also true.</span> Suppose *f* is a function that maps *n*-vector
 
 where *e_k* is the *k*th unit vector of size *n*. The right-hand side can also be written as a matrix-vector product *Ax*, with
 
-![alt text](/imgs/SLIAL/8.2.1.png)
+![8.2.1](/imgs/SLIAL/8.2.1.png)
+
+
+**Examples of linear functions.**
+
+![Examples of linear functions](/imgs/SLIAL/ExamplesLinearFunctions.png)
+![Examples of linear functions 2](/imgs/SLIAL/ExamplesLinearFunctions2.png)
+
+**Examples of functions that are not linear** here we list some examples of functions *f* that map *n*-vectors x to n-vectors f(x) that are not linear. In each case
+we show a superposition counterexample.
+
+![Examples of nonlinear functions](/imgs/SLIAL/ExamplesNonlinearFunctions.png)
+
+**Affine functions.** <span style="color:red">A vector-valued function *f* : **R**^*n* → **R**^*m* is called affine if it can be expressed as *f*(*x*) = *Ax* + *b*, where *A* is an *m × n* matrix and *b* is an *m*-vector. It can be shown that a function *f* : **R**^*n* → **R**^*m* is affine if and only if</span>
+
+*f*(*α*x + *β*y) = *αf*(*x*) + *βf*(*y*)
+
+holds for all *n*-vectors *x*, *y*, and all scalars *α*, *β* that satisfy *α* + *β* = 1. In other words, superposition holds for affine combinations of vectors. (For linear functions, superposition holds for any linear combinations of vectors.) 
+The matrix *A* and the vector *b* in the representation of an affine function as *f*(*x*) = *Ax* + *b* are unique. These parameters can be obtained by evaluating *f* at the vectors 0, *e*_1, . . . , *e*_n, where *e_ k* is the *k*th unit vector in **R**^*n*. We have
+
+A = [*f*(*e*_1) − *f*(0) *f*(*e*_2) − *f*(0) ... *f*(*e_n*) − *f*(0)], *b* = *f*(0).
+
+Just like affine scalar-valued functions, affine vector-valued functions are often called linear, even though they are linear only when the vector *b* is zero.
+
+**Linear function models**
+
+### Linear function models
+Many functions or relations between variables that arise in natural science, engineering, and social sciences can be approximated as linear or affine functions. In these cases we refer to the linear function relating the two sets of variables as a model or an approximation, to remind us that the relation is only an approximation, and not exact.
+
+**Taylor approximation**
+Suppose *f* : **R**^*n* → **R**^*m* is differentiable, i.e., has partial derivatives, and *z* is an *n*-vector. The first-order Taylor approximation of *f* near *z* is given by
+
+![First-order Taylor approximation](/imgs/SLIAL/FirstOrderTaylorApproximation.png)
+
+for *i* = 1, ..., *m*. (This is just the first-order Taylor approximation of each of the scalar-valued functions *f_i*, described in Lecture One.) For *x* near *z*, \hat{f}(*x*) is a very good approximation of *f*(*x*). We can express this approximation in compact notation, using matrix-vector multiplication, as
+
+![Taylor approximation using compact notation](/imgs/SLIAL/TaylorApproximationCompactNotation.png)
+
+where the *m* × *n* matrix D*f*(*z*) is the *derivative* or *Jacobian* matrix of *f* at *z* (see §C.1). Its components are the partial derivatives of *f*,
+
+![Derivative or Jacobian matrix](/imgs/SLIAL/JacobianMatrix.png)
+
+<span style="color:red">As in the scalar-valued case, Taylor approximation is sometimes written with a second argument as \hat{f}(*x*; *z*) to show the point z around which the approximation is made. Evidently the Taylor series approximation \hat{f} is an affine function of *x*. (It is often called a linear approximation of *f*, even though it is not, in general, a linear function.) </span>
+
+### Regression model
+Taking the regression model:
+
+![The regression model](/imgs/SLIAL/RegressionModel.png)
+
+where <span style="color:red">the *n*-vector *x* is a feature vector for some object, *β* is an *n*-vector of weights, *v* is a constant (the offset), and \hat{y} is the (scalar) value of the regression model prediction.
+Now suppose we have a set of *N* objects (also called *samples* or *examples*), with feature vectors *x*^(1), ... , *x*^(N). The regression model predictions associated with the examples are given by</span>
+
+![The regression model predictions associated with given examples](/imgs/SLIAL/RegressionModelPredictions.png)
+
+These numbers usually correspond to predictions of the value of the outputs or responses. If in addition to the example feature vectors *x*^(*i*) we are also given the actual value of the associated response variables, *y*^(1), ..., *y*^(*N*), then our *prediction errors* or *residuals* are
+
+![Regression model prediction errors (residuals) ](/imgs/SLIAL/RegressionModelResiduals.png)
 
 Literature: [VMLS], Chapter 8 + slides. You may find a much more detailed explanation of row reduction with examples in Sections 1.1-1.2 of [Lay]="Linear Algebra and Its Applications" by Lay, Lay, McDonald (attached). Note: I only discuss the (non-unique) echelon form in my slides, after which we run a backward substitution algorithm, whereas Lay also talks about the reduced echelon form. Basically we do not explicitly perform "Step 5" of the reduction algorithm on p. 17 in Lay's book.
 
