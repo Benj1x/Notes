@@ -112,6 +112,31 @@ Complexity of matrix-vector product: 6.20
 Norm of matrix-vector product: 6.14
 
 ## Lecture 4 - Linear equations. Gaussian elimination
+This lecture is about vector-valued linear and affine functions, and systems of linear equations
+
+### Linear and affine functions
+**Vector-valued functions of vectors.** <span style="color:red">The notation *f* : R^n -> R^m means that *f* is a function that maps real *n*-vectors to real *m*-vectors.</span> The value of the function *f*, evaluated at an *n*-vector *x*, is an *m*-vector *f*(*x*) = (*f*_1(*x*), *f*_22(*x*),..., *f*_*m*(*x*)). Each of the components *f*_*i* of *f* is itself a scalar-valued function of *x*. As with scalar-valued functions, we sometimes write *f_i*(*x*) = *f_i*(*x*_1 *x*_2 *x_n*) to emphasize that *f* is a function of *n* scalar arguments. We use the same notation for each of the components of *f*, writing *f_i*(*x*) = *f_i*(*x*_1, *x*_2, ..., *x_n*) to emphasize that *f_i* is a function mapping the scalar arguments *x*_1, ..., *x_n* into a scalar.
+
+**The matrix-vector product function.** <span style="color:red">Suppose *A* is an *m* X *n* matrix. We can define a function *f* : **R**^*n* -> **R**^*m* by *f*(*x*) = *Ax*. The inner product function *f* : **R**^*n* -> **R**, defined as *f*(*x*) = *a*^*T*_*x*, discussed in Lecture 1, is the special case with *m*=1.</span>
+
+ **Superposition and linearity.** The function *f*: *R^n* -> *R^m*, defined by *f*(*x*) = *Ax*, is *linear*, *i.e.*, it satisfies the superposition property:
+
+![Superposition Property](/imgs/SLIAL/SuperpositionProperty.png)
+
+holds for all n-vectors x and y and all scalars \alpha and \beta . It is a good exercise to parse this simple looking equation, since it involves overloading of notation. On the left-hand side, the scalar-vector multiplications \alpha x and \beta y involve *n*-vectors, and the sum \alpha x+\beta y is the sum of two *n*-vectors. The function *f* maps *n*-vectors to *m*-vectors, so *f*(\alpha x+\beta y) is an *m*-vector. On the right-hand side, the scalar-vector multiplications and the sum are those for *m*-vectors. Finally, the equality sign is equality between two *m*-vectors.
+
+<span style="color:red">We can verify that superposition holds for *f* using properties of matrix-vector and scalar-vector multiplication:</span>
+
+![Verify that superposition holds for *f*](/imgs/SLIAL/SuperpositionHolds.png)
+
+<span style="color:red">Thus we can associate with every matrix *A* a linear function *f*(*x*) = *Ax*.
+The converse is also true.</span> Suppose *f* is a function that maps *n*-vectors to *m*-vectors, and is linear, i.e., (8.1) holds for all *n*-vectors *x* and *y* and all scalars \alpha and \beta . Then there exists an *m* x *n* matrix A such that f(x) = Ax for all x. This can be shown in the same way as for scalar-valued functions in 2.1, by showing that if f is linear, then
+
+![8.2](/imgs/SLIAL/8.2.png)
+
+where *e_k* is the *k*th unit vector of size *n*. The right-hand side can also be written as a matrix-vector product *Ax*, with
+
+![alt text](/imgs/SLIAL/8.2.1.png)
 
 Literature: [VMLS], Chapter 8 + slides. You may find a much more detailed explanation of row reduction with examples in Sections 1.1-1.2 of [Lay]="Linear Algebra and Its Applications" by Lay, Lay, McDonald (attached). Note: I only discuss the (non-unique) echelon form in my slides, after which we run a backward substitution algorithm, whereas Lay also talks about the reduced echelon form. Basically we do not explicitly perform "Step 5" of the reduction algorithm on p. 17 in Lay's book.
 
