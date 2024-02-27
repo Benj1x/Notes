@@ -120,3 +120,11 @@ A language is regular if and only if some non deterministic finite automaton rec
 
 One direction of the “if and only if” condition states that a language is regular if some NFA recognizes it. Theorem 1.39 shows that any NFA can be converted into an equivalent DFA. Consequently, if an NFA recognizes some language, so does some DFA, and hence the language is regular. The other direction of the “if and only if” condition states that a language is regular only if some NFA recognizes it. That is, if a language is regular, some NFA must be recognizing it.
 Obviously, this condition is true because a regular language has a DFA recognizing it and any DFA is also an NFA
+
+## Lecture 4: Pumping Lemma for Regular Languages
+###  NONREGULAR LANGUAGES
+To understand the power of finite automata, you must also understand their limitations. In this section, we show how to prove that certain languages cannot be recognized by any finite automaton. 
+Let’s take the language *B* = {0^*n* 1^*n* | *n* ≥ 0}. If we attempt to find a DFA that recognizes *B*, we discover that the machine seems to need to remember how many 0s have been seen so far as it reads the input. Because the number of 0s isn’t limited, the machine will have to keep track of an unlimited number of possibilities. But it cannot do so with any finite number of states.
+Next, we present a method for proving that languages such as B are not regular. Doesn’t the argument already given prove nonregularity because the number of 0s is unlimited?It does not. Just because the language appears to require unbounded memory doesn’t mean that it is necessarily so. It does happen to be true for the language *B* but other languages seem to require an unlimited number of possibilities, yet actually they are regular. For example, consider two languages over the alphabet Σ={0,1}:
+*C* ={*w* | *w* has an equal number of 0s and 1s}, and
+*D* ={*w* | *w* has an equal number of occurrences of 01 and 10 as substrings}
