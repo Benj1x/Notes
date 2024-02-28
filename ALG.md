@@ -71,6 +71,24 @@ INSERTION-SORT(A)
  7          i = i - 1
  8      A[i+1] = key
  ```
+ **Loop invariants and the correctness of insertion sort**
+The above figure shows how this algorithm works for *A*=<(5, 2, 4, 6, 1, 3)>. The index *j* indicates the “current card” being inserted into the hand. At the beginning of each iteration of the **for** loop, which is indexed by *j*, the subarray consisting of elements *A*[1...j-1] constitutes the currently sorted hand, and the remaining subarray *A*[1...j-n] corresponds to the pile of cards still on the table. In fact, elements *A*[1...j-1] are the elements *originally* in positions 1 through *j*-1, but now in sorted order. We state these properties of *A*[1...j-1] formally as a **loop invariant**:
+
+At the start of each iteration of the for loop of lines 1–8, the subarray *A*[Œ1::j 1] consists of the elements originally in *A*[1..j-1], but in sorted order.
+
+<span style="color:red">We use loop invariants to help us understand why an algorithm is correct. We must show three things about a loop invariant:</span>
+
+**Initialization:** It is true prior to the first iteration of the loop.
+**Maintenance:** If it is true before an iteration of the loop, it remains true before the next iteration.
+**Termination:** When the loop terminates, the invariant gives us a useful property that helps show that the algorithm is correct
+
+When the first two properties hold, the loop invariant is true prior to every iteration of the loop. (Of course, we are free to use established facts other than the loop invariant itself to prove that the loop invariant remains true before each iteration.) Note the similarity to mathematical induction, where to prove that a property holds, you prove a base case and an inductive step. Here, showing that the invariant holds before the first iteration corresponds to the base case, and showing that the invariant holds from iteration to iteration corresponds to the inductive step.
+The third property is perhaps the most important one, since we are using the loop invariant to show correctness. Typically, we use the loop invariant along with the condition that caused the loop to terminate. The termination property differs from how we usually use mathematical induction, in which we apply the inductive step infinitely; here, we stop the “induction” when the loop terminates. 
+Let us see how these properties hold for insertion sort.
+
+**Initialization:** We start by showing that the loop invariant holds before the first loop iteration, when *j*=2 (When the loop is a **for** loop, the moment at which we check the loop invariant just prior to the first iteration is immediately after the initial assignment to the loop-counter variable and just before the first test in the loop header. In the case of `INSERTION-SORT`, this time is after assigning 2 to the variable *j* but before the first test of whether *j* <= *A*.length.). The subarray *A*[1..*j*-1], therefore, consists of just the single element *A*[1], which is in fact the original element in *A*[1]. Moreover, this subarray is sorted (trivially, of course), which shows that the loop invariant holds prior to the first iteration of the loop. 
+**Maintenance:** Next, we tackle the second property: showing that each iteration maintains the loop invariant. Informally, the body of the for loop works by moving AŒj 1, AŒj 2, AŒj 3, and so on by one position to the right until it finds the proper position for AŒj (lines 4–7), at which point it inserts the value of AŒj (line 8). The subarray AŒ1::j then consists of the elements originally in AŒ1::j , but in sorted order. Incrementing j for the next iteration of the for loop then preserves the loop invariant. A more formal treatment of the second property would require us to state and show a loop invariant for the while loop of lines 5–7. At this point, however,
+
 CLRS-3: Ch 2 (pp 16-29) and Ch3 (pp. 43-53, read by yourself small-omicron and small-omega notation)
 Optional Readings: CLRS-3: Ch 3 (pp. 53-60) or CLRS-4: Ch 3 (pp. 63-70)
 
@@ -80,4 +98,21 @@ Lecture Outline:
 Algorithm Design: Divide and Conquer 
 Merge sort (Correctness & Runtime Analysis)
 CLRS-3 Section 2.3
+
+## Lecture 04: Recurrences & The Master Method 
+Lecture Outline:
+We present three useful techniques to perform asymptotic running time analysis of recursive algorithms
+
+the substitution method
+the recursion-tree method
+the master method
+Readings
+CLRS-3 Ch4 excluding Sec. 4.1, 4.2, and 4.6
+
+CLRS-4 Ch4 excluding Sec. 4.1, 4.2, and 4.6
+
+Optional readings
+CLRS-3 Ch4 - Sec. 4.6
+
+CLRS-4 Ch4 - Sec. 4.6
 
