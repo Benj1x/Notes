@@ -1,6 +1,6 @@
 # Algorithms and Data structures (ALG)
 
-## Lecture 01: Algorithms, Correctness, and Efficiency
+## Lecture 01 - Algorithms, Correctness, and Efficiency
 
 Lecture Outline:
 
@@ -42,7 +42,7 @@ We shall see that the constant factors can have far less of an impact on the run
 The book from this course has an example, but TL;DR is: 
 <span style="color:red">If a computer "A" (using insertion sort) is 1000 times faster than computer "B" (using merge sort), computer B would be 17 times faster than computer A at sorting 10 milion numbers. In the example it took computer A 20000 seconds to sort them, and computer B 1163 seconds. The advantage of merge sort only grows, with highter numbers. (REMEMBER THAT INSERTION SORT CAN STILL BE FASTER WITH SMALLER ARRAYS)</span>
 
-## Lecture 02: Insertion sort & Asymptotic notation
+## Lecture 02 - Insertion sort & Asymptotic notation
 
 Lecture Outline:
 Insertion sort
@@ -101,19 +101,20 @@ We shall use this method of loop invariants to show correctness later in this ch
 <span style="color:red">**Pseudocode conventions for the class/subject can be found on page 20-22** in Introduction to Algorithms Third Edition</span>
 
 ### 2.2 Analyzing algorithms
+
 <span style="color:red">When analyzing an algorithm we want to measure computational time. Generally, by analyzing several candidate algorithms for a problem, we can identify a most efficient one. Such analysis may indicate more than one viable candidate, but we can often discard several inferior algorithms in the process.</span>
 
 CLRS-3: Ch 2 (pp 16-29) and Ch3 (pp. 43-53, read by yourself small-omicron and small-omega notation)
 Optional Readings: CLRS-3: Ch 3 (pp. 53-60) or CLRS-4: Ch 3 (pp. 63-70)
 
-## Lecture 03: Divide-and-Conquer: Merge Sort
+## Lecture 03 - Divide-and-Conquer: Merge Sort
 
 Lecture Outline:
 Algorithm Design: Divide and Conquer 
 Merge sort (Correctness & Runtime Analysis)
 CLRS-3 Section 2.3
 
-## Lecture 04: Recurrences & The Master Method
+## Lecture 04 - Recurrences & The Master Method
 
 Lecture Outline:
 We present three useful techniques to perform asymptotic running time analysis of recursive algorithms
@@ -130,3 +131,55 @@ Optional readings
 CLRS-3 Ch4 - Sec. 4.6
 
 CLRS-4 Ch4 - Sec. 4.6
+
+## Lecture 05 - Sorting
+Lecture Outline
+Heapsort  
+Quicksort
+Counting Sort
+Radix Sort
+Readings:
+CLRS-3 (same for CLRS-4) Ch6 until 6.4 (included), Ch7 sections 7.1 and 7.2, Ch8 sections 8.2 and 8.3
+
+Optional Readings: 
+CLRS-3 (same for CLRS-4) Section 8.1
+
+In this lecture, we introduce another sorting algorithm: heapsort. Like merge sort, but unlike insertion sort, heapsort’s running time is O(n lg n) Like insertion sort, but unlike merge sort, heapsort sorts in place: only a constant number of array elements are stored outside the input array at any time. Thus, heapsort combines the better attributes of the two sorting algorithms we have already discussed.
+Heapsort also introduces another algorithm design technique: using a data structure, in this case one we call a “heap,” to manage information. Not only is the heap data structure useful for heapsort, but it also makes an efficient priority queue. The heap data structure will reappear in algorithms in later chapters.
+The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. Our heap data structure is not garbage-collected storage, and whenever we refer to heaps in this book, we shall mean a data structure rather than an aspect of garbage collection
+
+### Heaps
+The (binary) heap data structure is an array object that we can view as a nearly complete binary tree, as shown in Figure 6.1. Each node of the tree corresponds to an element of the array. The tree is completely filled on all levels except possibly the lowest, which is filled from the left up to a point. An array *A* that represents a heap is an object with two attributes: *A.length*, which (as usual) gives the number of elements in the array, and *A.heap-size*, which represents how many elements in the heap are stored within
+array *A*. That is, although A[1..A.length] may contain numbers, only the elements in A[1..A.*heap-size*], where 0 <= *A.heap-size* <= *A.length*, are valid elements of the heap. The root of the tree is A[1], and given the index *i* of a node, we can easily compute the indices of its parent, left child, and right child: 
+![Figure 6.1 A max-heap viewed as (a) a binary tree and (b) an array. The number within the circle at each node in the tree is the value stored at that node. The number above a node is the corresponding index in the array. Above and below the array are lines showing parent-child relationships; parents are always to the left of their children. The tree has height three; the node at index 4 (with value 8) has height one.](/imgs/ALG/MaxHeap.png)
+
+![Computing the index of parent, left or right node](/imgs/ALG/ComputeIndex.png)
+
+There are two kinds of binary heaps: `max-heaps` and `min-heaps`. In both kinds, the values in the nodes satisfy a **heap property**, the specifics of which depend on the kind of heap. In a **max-heap**, the **max-heap property** is that for every node *i* other than the root,
+*A*[PARENT(*i*)] <= *A*[*i*].
+
+The smallest element in a min-heap is at the root.
+For the heapsort algorithm, we use max-heaps. Min-heaps commonly implement priority queues, which we discuss in Section 6.5. We shall be precise in specifying whether we need a max-heap or a min-heap for any particular application, and when properties apply to either max-heaps or min-heaps, we just use the term “heap.”
+
+Viewing a heap as a tree, we define the **height** of a node in a heap to be the number of edges on the longest simple downward path from the node to a leaf, and we define the height of the heap to be the height of its root. Since a heap of *n* elements is based on a complete binary tree, its height is \theta(lg *n*) (see Exercise 6.1-2). We shall see that the basic operations on heaps run in time at most proportional to the height of the tree and thus take O(lg *n*) time. The remainder of this lecture presents some basic procedures and shows how they are used in a sorting algorithm and a priority-queue data structure.
+
+* The `MAX-HEAPIFY` procedure, which runs in O.lg n/ time, is the key to maintaining the max-heap property.
+* The `BUILD-MAX-HEAP` procedure, which runs in linear time, produces a max-heap from an unordered input array.
+* The `HEAPSORT` procedure, which runs in O.n lg n/ time, sorts an array in place.
+* The `MAX-HEAP-INSERT`, `HEAP-EXTRACT-MAX`, `HEAP-INCREASE-KEY`, and `HEAP-MAXIMUM` procedures, which run in *O*(lg n) time, allow the heap data structure to implement a priority queue.
+
+### Maintaining the heap property
+In order to maintain the max-heap property, we call the procedure MAX-HEAPIFY. Its inputs are an array *A* and an index *i* into the array. When it is called, MAX-HEAPIFY assumes that the binary trees rooted at LEFT(*i*) and RIGHT(*i*) are max-heaps, but that A[*i*] might be smaller than its children, thus violating the max-heap property. MAX-HEAPIFY lets the value at A[*i*] “float down” in the max-heap so that the subtree rooted at index *i* obeys the max-heap property.
+
+``
+MAX-HEAPIFY(A, i)
+ *l* = LEFT(*i*)
+2 r = RIGHT(*i*)
+3 if *l* <= *A.heap-size* and A[*l*] > A[*i*]
+4   largest = *l*
+5 else largest = *i*
+6 if *r* <= *A.heap-size* and A[r] > A[largest]
+7 largest = *r*
+8 if largest != *i*
+9 exchange A[i] with A[largest]
+10 MAX-HEAPIFY(A, largest)``
