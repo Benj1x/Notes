@@ -37,7 +37,6 @@ Stacked vectors can include scalars (numbers). For example if *a* is a 3-vector,
 
 *a_r*:*s* = (*a_r*, . . . , *a_s*).
 
-
 As a more concrete example, if <span style="color:red">*z* is the 4-vector (1, −1, 2, 0), the slice *z*_2:3 is *z*_2:3 = (−1, 2).</span> Colon notation is not completely standard, but is gaining traction.
 
 <span style="color:red">In programming, arrays of length *n* are indexed from i = 0 to i = *n* − 1. In standard mathematical notation, *n*-vectors are indexed from i = 1 to i = *n*, so in this subject/class, vectors will be indexed from i = 1 to i = *n*</span>
@@ -61,7 +60,6 @@ for *i,j* = 1, . . . , *n*. On the left-hand side *e_i* is an *n*-vector; (*e_i*
 **Sparsity.** <span style="color:red">A vector is said to be *sparse* if many of its entries are zero; its *sparsity pattern* is the set of indices of nonzero entries. The number of the nonzero entries of an *n*-vector *x* is denoted **nnz**(*x*). Unit vectors are sparse, since they have only one nonzero entry. The zero vector is the sparsest possible vector, since it has no nonzero entries.</span> Sparse vectors arise in many applications.
 
 ###
-
 
 Literature: [VMLS], Chapter 1, Section 2.1 + slides
 Exercises:
@@ -112,14 +110,16 @@ Complexity of matrix-vector product: 6.20
 Norm of matrix-vector product: 6.14
 
 ## Lecture 4 - Linear equations. Gaussian elimination
+
 This lecture is about vector-valued linear and affine functions, and systems of linear equations
 
 ### Linear and affine functions
+
 **Vector-valued functions of vectors.** <span style="color:red">The notation *f* : R^n -> R^m means that *f* is a function that maps real *n*-vectors to real *m*-vectors.</span> The value of the function *f*, evaluated at an *n*-vector *x*, is an *m*-vector *f*(*x*) = (*f*_1(*x*), *f*_22(*x*),..., *f*_*m*(*x*)). Each of the components *f*_*i* of *f* is itself a scalar-valued function of *x*. As with scalar-valued functions, we sometimes write *f_i*(*x*) = *f_i*(*x*_1 *x*_2 *x_n*) to emphasize that *f* is a function of *n* scalar arguments. We use the same notation for each of the components of *f*, writing *f_i*(*x*) = *f_i*(*x*_1, *x*_2, ..., *x_n*) to emphasize that *f_i* is a function mapping the scalar arguments *x*_1, ..., *x_n* into a scalar.
 
 **The matrix-vector product function.** <span style="color:red">Suppose *A* is an *m* X *n* matrix. We can define a function *f* : **R**^*n* -> **R**^*m* by *f*(*x*) = *Ax*. The inner product function *f* : **R**^*n* -> **R**, defined as *f*(*x*) = *a*^*T*_*x*, discussed in Lecture 1, is the special case with *m*=1.</span>
 
- **Superposition and linearity.** The function *f*: *R^n* -> *R^m*, defined by *f*(*x*) = *Ax*, is *linear*, *i.e.*, it satisfies the superposition property:
+**Superposition and linearity.** The function *f*: *R^n* -> *R^m*, defined by *f*(*x*) = *Ax*, is *linear*, *i.e.*, it satisfies the superposition property:
 
 ![Superposition Property](/imgs/SLIAL/SuperpositionProperty.png)
 
@@ -137,7 +137,6 @@ The converse is also true.</span> Suppose *f* is a function that maps *n*-vector
 where *e_k* is the *k*th unit vector of size *n*. The right-hand side can also be written as a matrix-vector product *Ax*, with
 
 ![8.2.1](/imgs/SLIAL/8.2.1.png)
-
 
 **Examples of linear functions.**
 
@@ -163,6 +162,7 @@ Just like affine scalar-valued functions, affine vector-valued functions are oft
 **Linear function models**
 
 ### Linear function models
+
 Many functions or relations between variables that arise in natural science, engineering, and social sciences can be approximated as linear or affine functions. In these cases we refer to the linear function relating the two sets of variables as a model or an approximation, to remind us that the relation is only an approximation, and not exact.
 
 **Taylor approximation**
@@ -181,6 +181,7 @@ where the *m* × *n* matrix D*f*(*z*) is the *derivative* or *Jacobian* matrix o
 <span style="color:red">As in the scalar-valued case, Taylor approximation is sometimes written with a second argument as \hat{f}(*x*; *z*) to show the point z around which the approximation is made. Evidently the Taylor series approximation \hat{f} is an affine function of *x*. (It is often called a linear approximation of *f*, even though it is not, in general, a linear function.) </span>
 
 ### Regression model
+
 Taking the regression model:
 
 ![The regression model](/imgs/SLIAL/RegressionModel.png)
