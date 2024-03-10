@@ -218,6 +218,17 @@ When: 27.02.2024, 12:30
 
 ## Lecture 6 - Matrix inverses
 
+
+### Left and right inverses
+Recall that for a number a, its (multiplicative) inverse is the number x for which
+xa = 1, which we usually denote as `*x* = 1/*a*` or (less frequently) `*x* = *a*^−1`. The inverse *x* exists provided *a* is nonzero. For matrices the concept of inverse is more complicated than for scalars; in the general case, we need to distinguish between left and right inverses. We start with the left inverse.
+
+**Left inverse.** A matrix *X* that satisfies 
+*X A* = *I*
+is called a *left inverse* of A. The matrix *A* is said to be *left-invertible* if a left inverse exists. Note that if *A* has size *m × n*, a left inverse *X* will have size *n × m*,
+the same dimensions as *A^T*
+
+
 Literature: [VMLS], Chapter 11 + Slides
 
 Exercises:
