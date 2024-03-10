@@ -121,10 +121,109 @@ A language is regular if and only if some non deterministic finite automaton rec
 One direction of the “if and only if” condition states that a language is regular if some NFA recognizes it. Theorem 1.39 shows that any NFA can be converted into an equivalent DFA. Consequently, if an NFA recognizes some language, so does some DFA, and hence the language is regular. The other direction of the “if and only if” condition states that a language is regular only if some NFA recognizes it. That is, if a language is regular, some NFA must be recognizing it.
 Obviously, this condition is true because a regular language has a DFA recognizing it and any DFA is also an NFA
 
+## Lecture 3: Regular Expressions
+Topics: Regular expressions (formal definition and examples); equivalence with finite automata (with proof step-by-step).
+
+In arithmetic, we can use the operations `+` and `x` to build up expressions such as
+`(5+3)x4`.
+
+Similary we can use the regular operations to build up expressions describing languages, which are called **regular expressions**. An example is:
+
+`(0 \cup 1)0*`
+
+The value of the arithmetic expression is the number `32`. The value of a regular expression is a language. In this case, the value is the language consisting of all strings starting with a `0` or a `1` followed by any number of `0`s. We get this result by dissecting the expression into its parts. First, the symbols `0` and `1` are shorthand for the sets {0} and {1}. So `(0 \cup 1)` means `({0} \cup {1})`. The value of this part is the language `{0,1}`. The part `0*` means `{0}*`, and its value is the language consisting of all strings containing any number of `0`s Second, like the `x` symbol in algebra, the concatenation symbol ◦ is often implicit in regular expressions. Therefore `(0 \cup 1)0*` is actually short for `(0 \cup 1) ◦ 0*`. The concatenation attaches the strings from the two parts to obtain the value of the entire expression.
+
+Another example of a regular expression is `(0 \cup 1)*`
+
+It starts with the language `(0 \cup 1)` and applies the `*` operation. The value of this expression is the lnaguage consisting of all possible strings of `0`s and `1`s. If `\Sigma = {0,1}`, we can write Σ as shorthand for the regular expression `(0 \cup 1)`. More generally, if Σ is any alphabet, the regular expression Σ, describes the language consisting of all strings of length 1 over this alphabet, and `Σ*` describes the language consisting of all strings over that alphabet. Similarly, `Σ*1` is the language that contains all strings that end in a 1. The language `(0Σ∗) ∪ (Σ∗1)` consists of all strings that start with a `0` or end with a `1`.
+
+In arithmetic, we say that `x` has precedence over `+` to mean that when there is a choice, we do the `x` operationfirst. Thus in `2 + 3 x 4`,the `3 x 4` is done before the addition. To have the addition done first, we must add parentheses to obtain `(2 + 3) X 4`. In regular expressions, the star operation is done first, followed by concatenation, and finally union, unless parentheses change the usual order.
+
+Don’t confuse the regular expressions `ε` and `∅`.The expression `ε` represents the language containing a single string—namely, the empty string—whereas `∅` represents the language that doesn’t contain any strings.
+
+Seemingly, we are in danger of defining the notion of a regular expression in terms of itself. If true, we would have a **circular definition**, which would be invalid. However, `R_1` and `R_2` always are smaller than `R`. Thus we actually are defining regular expressions in terms of smaller regular expressions and thereby avoiding circularity. A definition of this type is called an **inductive definition**.
+<span style="color:red">Parentheses in an expression may be omitted. If they are, evaluation is done in the precedence order: star, then concatenation, then union.</span>
+For convenience, we let ``R^+`` be shorthand for `RR^∗`. In other words, whereas `R^∗` has all strings that are 0 or more concatenations of strings from R, the language `R^+` has all strings that are 1 or more concatenations of strings from `R`. So `R^+ \cup ε =R^∗`. In addition, we let `R^k` be shorthand for the concatenation of *k* `R`’s with each other.
+When we want to distinguish between a regular expression `R` and the language that it describes, we write `L(R)` to be the language of `R`.
+
+ If we let *R* be any regular expression, we have the following identities. They
+ are good tests of whether you understand the definition.
+`R \cup ∅ = R`.
+Adding the empty language to any other language will not change it.
+
+`R ◦ ε = R`.
+Joining the empty string to any string will not change it.
+ However, exchanging *∅* and *ε* in the preceding identities may cause the equalities to fail.
+
+`R \cup ε` may not equal *R*.
+For example, if `R = 0`, then `L(R) = {0}` but `L(R \cup ε) = {0, ε}`.
+
+`R ◦ ∅` may not equal *R*.
+For example, if `R = 0`, then `L(R) = {0}` but `L(R ◦ ∅) = ∅`.
+Regular expressions are useful tools in the design of compilers for programming languages. Elemental objects in a programming language, called ***tokens***, such as the variable names and constants, may be described with regular expressions. For example, a numerical constant that may include a fractional part and/or a sign may be described as a member of the language
+`(+∪ - ∪ε)(D^+∪D^+.D^∗∪D^∗.D^+)`
+where `D = {0,1,2,3,4,5,6,7,8,9}` is the alphabet of decimal digits. Examples of generated strings are: `72, 3.14159, +7.,and -.01`.
+Once the syntax of a programming language has been described with a regular expression in terms of its tokens, automatic systems can generate the ***lexical analyzer***,the part of a compiler that initially processes the input program.
+
+### Equivalence with finite automata
+This last part can be found in **Introduction to the Theory of Computation (Chapter 1 (Section 1.3): pages 66-76);**
+
+
 ## Lecture 4: Pumping Lemma for Regular Languages
+Topics:  Limitations of finite automata and nonregular languages; the pumping lemma for regular languages (proof in details); game interpretation; using the pumping lemma (examples + tricks).
+
 ###  NONREGULAR LANGUAGES
 To understand the power of finite automata, you must also understand their limitations. In this section, we show how to prove that certain languages cannot be recognized by any finite automaton. 
 Let’s take the language *B* = {0^*n* 1^*n* | *n* ≥ 0}. If we attempt to find a DFA that recognizes *B*, we discover that the machine seems to need to remember how many 0s have been seen so far as it reads the input. Because the number of 0s isn’t limited, the machine will have to keep track of an unlimited number of possibilities. But it cannot do so with any finite number of states.
 Next, we present a method for proving that languages such as B are not regular. Doesn’t the argument already given prove nonregularity because the number of 0s is unlimited?It does not. Just because the language appears to require unbounded memory doesn’t mean that it is necessarily so. It does happen to be true for the language *B* but other languages seem to require an unlimited number of possibilities, yet actually they are regular. For example, consider two languages over the alphabet Σ={0,1}:
 *C* ={*w* | *w* has an equal number of 0s and 1s}, and
 *D* ={*w* | *w* has an equal number of occurrences of 01 and 10 as substrings}
+
+Introduction to the Theory of Computation (Chapter 1 (Section 1.4): pages 77-82);
+
+## Lecture 5: Context-free Grammars
+Topics:  Context-free grammars (informally); formal definition; designing context-free grammars; ambiguity; Chomsky normal form.
+Literature: 
+Introduction to the Theory of Computation (Chapter 2 (Section 2.1): pages 102-111);
+
+## Lecture 6: Pushdown Automata
+Highlighted
+Topics:  Pushdown automata (informally); formal definition; examples of pushdown automata; equivalence with context-free grammars.
+Literature: 
+Introduction to the Theory of Computation (Chapter 2 (Section 2.2): pages 111-125);
+
+## Lecture 7: Pumping Lemma for Context-free Languages
+Topics:  Non-context-free languages; the pumping lemma for context-free languages (proof step-by-step); using the pumping lemma (examples); about (non) closure properties for CFLs.
+Literature: 
+Introduction to the Theory of Computation (Chapter 2 (Section 2.3): pages 125-129);
+
+## Lecture 8: Basic principles of Operational Semantics
+Topics: Abstract syntax (motivation + examples); transition systems; operational semantics (big-step vs small-step); derivation rules and trees; proving properties (a structural approach).
+Literature: 
+Transitions and Trees (Chapter 1: pages 3-15; Chapter 3: pages 27-42);
+
+## Lecture 9: Basic Imperative Statements
+Topics: Program states; a big-step semantics for Bims; a small-step semantics for Bims; non-termination of programs; equivalence of big- and small-step semantics for Bims.
+Literature: 
+Transitions and Trees (Chapter 4: pages 43-61);
+
+## Lecture 10: Type Systems
+Topics: Motivations; typed declarations and expressions; type environments and judgments; a type system for Bims; type safety; limitations of type systems.
+Literature: 
+Transitions and Trees (Chapter 13 (Section 1-3.2): pages 185-199);
+Luca Cardelli. Type systems. Handbook of Computer Science and Engineering. 1997.  (optional reading)
+
+## Lecture 11: Control Structures
+Topics: Loop constructs (Repeat-loops and For-loops); Semantic equivalence; Abnormal termination; Nondeterminism; Concurrency.
+Literature: 
+Transitions and Trees (Chapter 5: pages 65-78)
+
+## Lecture 12: Blocks and Procedures
+Topics: Bims with variable scopes; the environment-store model; updating the big-step semantics; Bip (Bims with procedure declarations and procedure calls); scope rules; big-step semantics of Bip (for each scope rule)
+Literature: 
+Transitions and Trees (Chapter 6: pages 79-93)
+
+## Lecture 13: Parameter Passing Mechanism
+Topics: Procedures with parameters; Call-by-reference; Call-by-value; Call-by-name (informally and formal big-step semantics); Capture-avoiding substituiton
+Literature: 
+Transitions and Trees (Chapter 7: pages 94-112)
