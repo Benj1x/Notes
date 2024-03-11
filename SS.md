@@ -1,6 +1,9 @@
 # Syntax and Semantics
+
 ## Lecture 0: Introduction and Preliminaries
+
 ###  Mathematical notions and terminology
+
 This section, has a lot in common with DTG in regards to notation, but, we will still go through it
 **Sets**
 A set is a group of objects represented as a unit. Sets may contain any type of object, including numbers, symbols, and even other sets. The objects in a set arecalled its elements or members. Sets may be described formally in several ways.
@@ -28,6 +31,7 @@ The next two Venn diagrams depict the union and intersection of sets *A* and *B*
 ![Diagrams for (a) *A* ∪ *B* and (b) *A* ∩ *B*](/imgs/SS/UnionIntersectionOfAAndB.png)
 
 #### Sequences and tuples
+
 A sequence of objects is a list of these objects in some order. We usually designate a sequence by writing the list within parentheses. For example, the sequence 7, 21, 57 would be written
 (7, 21, 57)
 The order doesn’t matter in a set, but in a sequence it does. Hence (7,21,57) is not the same as (57,7,21). Similarly, repetition does matter in a sequence, but it doesn’t matter in a set. Thus (7,7,21,57) is different from both of the other sequences, whereas the set {7,21,57} is identical to the set {7,7,21,57}. 
@@ -40,8 +44,8 @@ If *A* and *B* are two sets, the ***Cartesian product*** or ***cross product*** 
 ![Example 0.6 - Cartesian product](/imgs/SS/Example0.6.png)
 (this one i do not understand)
 
-
 #### Functions and relations
+
 A function is also called a mapping, and, if *f(a)=b*, we say that *f* maps *a* to *b*.
 The set of possible inputs to the function is called its ***domain***. The outputs of a function come from a set called its ***range***.The notation for saying that *f* is
 a function with domain *D* and range *R* is
@@ -64,10 +68,12 @@ tion, we customarily use infix notation. For example, “less than” is a relat
  R(a1,...,ak) means that R(a1,...,ak)=TRUE.
 
 ## Lecture 2: Nondeterministic Finite Automata
+
 Topics: Nondeterminism (informally); nondeterministic finite automata (formal definition and examples); equivalence of DFAs and NFAs;  closure under regular operations.
 Introduction to the Theory of Computation (Chapter 1 (Section 1.2): pages 47-63);
 
 ### Nondeterminism
+
 So far in our discussion, every step of a computation follows in a unique way from the preceding step. When the machine is in a given state and reads the next input symbol, we know what the next state will be—it is determined. We call this **deterministic** computation. In a **nondeterministic** machine, several choices may exist for the next state at any point.
 Nondeterminism is a generalization of determinism, so every deterministic finite automaton is automatically a nondeterministic finite automaton. As Figure 1.27 shows, nondeterministic finite automata may have additional features.
 
@@ -100,11 +106,13 @@ By continuing to experiment in this way, you will see that N1 accepts all string
 Nondeterministic finite automata are useful in several respects. As we will show, every NFA can be converted into an equivalent DFA, and constructing NFAs is sometimes easier than directly constructing DFAs. An NFA may be much smaller than its deterministic counterpart, or its functioning may be easier to understand. Nondeterminism in finite automata is also a good introduction to nondeterminism in more powerful computational models because finite automata are especially easy to understand. Now we turn to several examples of NFAs.
 
 ####  FORMAL DEFINITION OF A NONDETERMINISTIC FINITE AUTOMATON
+
 The formal definition of a nondeterministic finite automaton is similar to that of a deterministic finite automaton. Both have states, an input alphabet, a transition function, a start state, and a collection of accept states. However, they differ in one essential way: in the type of transition function. In a DFA, the transition function takes a state and an input symbol and produces the next state. In an NFA, the transition function takes a state and an input symbol or the empty string and produces the set of possible next states. In order to write the formal definition, we need to set up some additional notation. For any set Q we write P(Q) to be the collection of all subsets of Q. HereP(Q) is called the power set of Q. For any alphabet Σ we write Σ_ε to be Σ∪{ε}. Now we can write the formal description of the type of the transition function in an NFA as δ: Q × Σε−→ P (Q).
 
 ![A nondeterministic finite automaton definition](/imgs/SS/NondeterministicFiniteAutomatonDefinition.png)
 
 ### EQUIVALENCE OF NFAS AND DFAS
+
 Deterministic and nondeterministic finite automata recognize the same class of languages. Such equivalence is both surprising and useful. It is surprising because NFAs appear to have more power than DFAs, so we might expect that NFAs recognize more languages. It is useful because describing an NFA for a given language sometimes is much easier than describing a DFA for that language.
 Say that two machines are equivalent if they recognize the same language. Every nondeterministic finite automaton has an equivalent deterministic finite automaton.
 
@@ -116,12 +124,14 @@ Say that two machines are equivalent if they recognize the same language. Every 
 Theorem 1.39 states that every NFA can be converted into an equivalent DFA. Thus nondeterministic finite automata give an alternative way of characterizing the regular languages. We state this fact as a corollary of Theorem 1.39.
 
 ### Corollary
+
 A language is regular if and only if some non deterministic finite automaton recognizes it.
 
 One direction of the “if and only if” condition states that a language is regular if some NFA recognizes it. Theorem 1.39 shows that any NFA can be converted into an equivalent DFA. Consequently, if an NFA recognizes some language, so does some DFA, and hence the language is regular. The other direction of the “if and only if” condition states that a language is regular only if some NFA recognizes it. That is, if a language is regular, some NFA must be recognizing it.
 Obviously, this condition is true because a regular language has a DFA recognizing it and any DFA is also an NFA
 
 ## Lecture 3: Regular Expressions
+
 Topics: Regular expressions (formal definition and examples); equivalence with finite automata (with proof step-by-step).
 
 In arithmetic, we can use the operations `+` and `x` to build up expressions such as
@@ -146,7 +156,7 @@ Seemingly, we are in danger of defining the notion of a regular expression in te
 For convenience, we let ``R^+`` be shorthand for `RR^∗`. In other words, whereas `R^∗` has all strings that are 0 or more concatenations of strings from R, the language `R^+` has all strings that are 1 or more concatenations of strings from `R`. So `R^+ \cup ε =R^∗`. In addition, we let `R^k` be shorthand for the concatenation of *k* `R`’s with each other.
 When we want to distinguish between a regular expression `R` and the language that it describes, we write `L(R)` to be the language of `R`.
 
- If we let *R* be any regular expression, we have the following identities. They
+If we let *R* be any regular expression, we have the following identities. They
  are good tests of whether you understand the definition.
 `R \cup ∅ = R`.
 Adding the empty language to any other language will not change it.
@@ -166,64 +176,80 @@ where `D = {0,1,2,3,4,5,6,7,8,9}` is the alphabet of decimal digits. Examples of
 Once the syntax of a programming language has been described with a regular expression in terms of its tokens, automatic systems can generate the ***lexical analyzer***,the part of a compiler that initially processes the input program.
 
 ### Equivalence with finite automata
+
 This last part can be found in **Introduction to the Theory of Computation (Chapter 1 (Section 1.3): pages 66-76);**
 
-
 ## Lecture 4: Pumping Lemma for Regular Languages
+
 Topics:  Limitations of finite automata and nonregular languages; the pumping lemma for regular languages (proof in details); game interpretation; using the pumping lemma (examples + tricks).
 
-###  NONREGULAR LANGUAGES
+###  Nonregular Languages
+
 To understand the power of finite automata, you must also understand their limitations. In this section, we show how to prove that certain languages cannot be recognized by any finite automaton. 
 Let’s take the language *B* = {0^*n* 1^*n* | *n* ≥ 0}. If we attempt to find a DFA that recognizes *B*, we discover that the machine seems to need to remember how many 0s have been seen so far as it reads the input. Because the number of 0s isn’t limited, the machine will have to keep track of an unlimited number of possibilities. But it cannot do so with any finite number of states.
 Next, we present a method for proving that languages such as B are not regular. Doesn’t the argument already given prove nonregularity because the number of 0s is unlimited?It does not. Just because the language appears to require unbounded memory doesn’t mean that it is necessarily so. It does happen to be true for the language *B* but other languages seem to require an unlimited number of possibilities, yet actually they are regular. For example, consider two languages over the alphabet Σ={0,1}:
-*C* ={*w* | *w* has an equal number of 0s and 1s}, and
-*D* ={*w* | *w* has an equal number of occurrences of 01 and 10 as substrings}
+`*C* ={*w* | *w* has an equal number of 0s and 1s}`, and
+`*D* ={*w* | *w* has an equal number of occurrences of 01 and 10 as substrings}`
+
+At first glance, a recognizing machine appears to need to count in each case, and therefore neither language appears to be regular. As expected, C is not regular, but surprisingly D is regular! Thus our intuition can sometimes lead us astray, which is why we need mathematical proofs for certainty. In this section, we show how to prove that certain languages are not regular.
+
+### The pumping lemma for regular languages
+Our technique for proving nonregularity stems from a theorem about regular languages, traditionally called the ***pumping lemma***. This theorem states that all regular languages have a special property. If we can show that a language does not have this property, we are guaranteed that it is not regular. The property states that all strings in the language can be “pumped” if they are at least as long as a certain special value, called the ***pumping length***. That means each such string contains a section that can be repeated any number of times with the resulting string remaining in the language.
 
 Introduction to the Theory of Computation (Chapter 1 (Section 1.4): pages 77-82);
 
 ## Lecture 5: Context-free Grammars
+
 Topics:  Context-free grammars (informally); formal definition; designing context-free grammars; ambiguity; Chomsky normal form.
 Literature: 
 Introduction to the Theory of Computation (Chapter 2 (Section 2.1): pages 102-111);
 
 ## Lecture 6: Pushdown Automata
+
 Highlighted
 Topics:  Pushdown automata (informally); formal definition; examples of pushdown automata; equivalence with context-free grammars.
 Literature: 
 Introduction to the Theory of Computation (Chapter 2 (Section 2.2): pages 111-125);
 
 ## Lecture 7: Pumping Lemma for Context-free Languages
+
 Topics:  Non-context-free languages; the pumping lemma for context-free languages (proof step-by-step); using the pumping lemma (examples); about (non) closure properties for CFLs.
 Literature: 
 Introduction to the Theory of Computation (Chapter 2 (Section 2.3): pages 125-129);
 
 ## Lecture 8: Basic principles of Operational Semantics
+
 Topics: Abstract syntax (motivation + examples); transition systems; operational semantics (big-step vs small-step); derivation rules and trees; proving properties (a structural approach).
 Literature: 
 Transitions and Trees (Chapter 1: pages 3-15; Chapter 3: pages 27-42);
 
 ## Lecture 9: Basic Imperative Statements
+
 Topics: Program states; a big-step semantics for Bims; a small-step semantics for Bims; non-termination of programs; equivalence of big- and small-step semantics for Bims.
 Literature: 
 Transitions and Trees (Chapter 4: pages 43-61);
 
 ## Lecture 10: Type Systems
+
 Topics: Motivations; typed declarations and expressions; type environments and judgments; a type system for Bims; type safety; limitations of type systems.
 Literature: 
 Transitions and Trees (Chapter 13 (Section 1-3.2): pages 185-199);
 Luca Cardelli. Type systems. Handbook of Computer Science and Engineering. 1997.  (optional reading)
 
 ## Lecture 11: Control Structures
+
 Topics: Loop constructs (Repeat-loops and For-loops); Semantic equivalence; Abnormal termination; Nondeterminism; Concurrency.
 Literature: 
 Transitions and Trees (Chapter 5: pages 65-78)
 
 ## Lecture 12: Blocks and Procedures
+
 Topics: Bims with variable scopes; the environment-store model; updating the big-step semantics; Bip (Bims with procedure declarations and procedure calls); scope rules; big-step semantics of Bip (for each scope rule)
 Literature: 
 Transitions and Trees (Chapter 6: pages 79-93)
 
 ## Lecture 13: Parameter Passing Mechanism
+
 Topics: Procedures with parameters; Call-by-reference; Call-by-value; Call-by-name (informally and formal big-step semantics); Capture-avoiding substituiton
 Literature: 
 Transitions and Trees (Chapter 7: pages 94-112)
