@@ -133,6 +133,7 @@ CLRS-3 Ch4 - Sec. 4.6
 CLRS-4 Ch4 - Sec. 4.6
 
 ## Lecture 05 - Sorting
+
 Lecture Outline
 Heapsort  
 Quicksort
@@ -144,6 +145,7 @@ Heapsort also introduces another algorithm design technique: using a data struct
 The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. Our heap data structure is not garbage-collected storage, and whenever we refer to heaps in this book, we shall mean a data structure rather than an aspect of garbage collection
 
 ### Heaps
+
 The (binary) heap data structure is an array object that we can view as a nearly complete binary tree, as shown in Figure 6.1. Each node of the tree corresponds to an element of the array. The tree is completely filled on all levels except possibly the lowest, which is filled from the left up to a point. An array *A* that represents a heap is an object with two attributes: *A.length*, which (as usual) gives the number of elements in the array, and *A.heap-size*, which represents how many elements in the heap are stored within
 array *A*. That is, although A[1..A.length] may contain numbers, only the elements in A[1..A.*heap-size*], where 0 <= *A.heap-size* <= *A.length*, are valid elements of the heap. The root of the tree is A[1], and given the index *i* of a node, we can easily compute the indices of its parent, left child, and right child: 
 ![Figure 6.1 A max-heap viewed as (a) a binary tree and (b) an array. The number within the circle at each node in the tree is the value stored at that node. The number above a node is the corresponding index in the array. Above and below the array are lines showing parent-child relationships; parents are always to the left of their children. The tree has height three; the node at index 4 (with value 8) has height one.](/imgs/ALG/MaxHeap.png)
@@ -164,6 +166,7 @@ Viewing a heap as a tree, we define the **height** of a node in a heap to be the
 * The `MAX-HEAP-INSERT`, `HEAP-EXTRACT-MAX`, `HEAP-INCREASE-KEY`, and `HEAP-MAXIMUM` procedures, which run in *O*(lg n) time, allow the heap data structure to implement a priority queue.
 
 ### Maintaining the heap property
+
 In order to maintain the max-heap property, we call the procedure MAX-HEAPIFY. Its inputs are an array *A* and an index *i* into the array. When it is called, MAX-HEAPIFY assumes that the binary trees rooted at LEFT(*i*) and RIGHT(*i*) are max-heaps, but that A[*i*] might be smaller than its children, thus violating the max-heap property. MAX-HEAPIFY lets the value at A[*i*] “float down” in the max-heap so that the subtree rooted at index *i* obeys the max-heap property.
 
 ``
@@ -197,14 +200,15 @@ CLRS-3 (same for CLRS-4) Ch6 until 6.4 (included), Ch7 sections 7.1 and 7.2, Ch8
 Optional Readings: 
 CLRS-3 (same for CLRS-4) Section 8.1
 
-
 ## Lecture 06 - Elementary Data Structures
+
 Lecture Outline
 Stacks and Queues
 Linked Lists
 Rooted Trees
 
 ### Stacks and queues
+
 Stacks and queues are dynamic sets in which the element removed from the set by the `DELETE` operation is prespecified. In a ***stack***, the element deleted from the set is the one most recently inserted: the stack implements a ***last-in, first-out*** or **LIFO**, policy. Similarly, in a ***queue***, the element deleted is always the one that has been in the set for the longest time: the queue implements a ***first-in, first-out*** or ***FIFO*** policy. There are several efficient ways to implement stacks and queues on a computer. In this section we show how to use a simple array to implement each
 
 **Stacks**
@@ -213,12 +217,26 @@ As Figure 10.1 shows, we can implement a stack of at most *n* elements with an a
 When *S.top* = 0, the stack contains no elements and is empty. We can test to see whether the stack is empty by query operation `STACK-EMPTY`. If we attempt to pop an empty stack,we say the stack ***underflows***, which is normally an error. If *S.top* exceeds *n*, the stack ***overflows***. (In our pseudo code implementation, we don’t worry about stack overflow.)
 We can implement each of the stack operations with just a few lines of code:
 
+`STACK-EMPTY(S)`
+ `if S.top == 0`
+    `return TRUE`
+ `else return FALSE`
 
+`PUSH(S, x)`
+ `S.top = S.top + 1`
+ `S[S.top] = x`
+
+`POP(S)`
+ `if STACK-EMPTY(S)`
+    `error “underflow”`
+ `else S.top = S.top - 1`
+`   return S[S.top + 1]`
 
 Readings: 
 CLRS-3 Sections 10.1, 10.2, and 10.4
 
 ## Proof by induction - ALG
+
 When providing a proof (by induction) in relation to an algorithm the steps in plain english are:
 The **Base case:** (Basis step:) give a case we know is true.
 The **Inductive step:** Write down an assumption (hypothisis). Then describe how the algorithm works (in plain english, nothing fancy), after doing so introduce an example. Now continue to go through all the different cases of what the algorithm might encounter, and what will happen when it does. If the algorithm is dependent on a subroutine, like radix-sort is, point out what might happen, if the subroutine fails (like if the subroutine isn't stable, like radix-sort would require).
