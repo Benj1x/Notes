@@ -133,7 +133,12 @@ CLRS-3 Ch4 - Sec. 4.6
 CLRS-4 Ch4 - Sec. 4.6
 
 ## Lecture 05 - Sorting
-
+Lecture Outline
+Heapsort  
+Quicksort
+Counting Sort
+Radix Sort
+Readings:
 In this lecture, we introduce another sorting algorithm: heapsort. Like merge sort, but unlike insertion sort, heapsort’s running time is O(n lg n) Like insertion sort, but unlike merge sort, heapsort sorts in place: only a constant number of array elements are stored outside the input array at any time. Thus, heapsort combines the better attributes of the two sorting algorithms we have already discussed.
 Heapsort also introduces another algorithm design technique: using a data structure, in this case one we call a “heap,” to manage information. Not only is the heap data structure useful for heapsort, but it also makes an efficient priority queue. The heap data structure will reappear in algorithms in later chapters.
 The term “heap” was originally coined in the context of heapsort, but it has since come to refer to “garbage-collected storage,” such as the programming languages Java and Lisp provide. Our heap data structure is not garbage-collected storage, and whenever we refer to heaps in this book, we shall mean a data structure rather than an aspect of garbage collection
@@ -174,11 +179,18 @@ MAX-HEAPIFY(A, i)
     exchange A[i] with *A*[largest]
     MAX-HEAPIFY(*A*, *largest*)``
 
-Lecture Outline
-Heapsort  
-Quicksort
-Counting Sort
-Radix Sort
+![The action of MAX-HEAPIFY(A, 2), where *A.heap-size* = 10. **(a)** The initial configuration, with *A*[2] at node *i* = 2 violating the max-heap property since it is not larger than both children. The max-heap property is restored for node 2 in **(b)** by exchanging *A*[2] with *A*[4], which destroys the max-heap property for node 4. The recursive call MAX-HEAPIFY(*A*, 4) now has *i* = 4. After swapping A[4] with A[9], as shown in **(c)**, node 4 is fixed up, and the recursive call MAX-HEAPIFY(A, 9) yields no further change to the data structure.](/imgs/ALG/MaxHeapifyIllustration.png)
+
+The figure above illustrates the action of MAX-HEAPIFY. At each step, the largest of the elements A[i], A[LEFT(i)], and A[RIGHT(i)] is determined, and its index is
+stored in largest. If A[i] is largest, then the subtree rooted at node i is already a max-heap and the procedure terminates. Otherwise, one of the two children has the largest element, and *A[i]* is swapped with *A[largest]*, which causes node *i* and its children to children to satisfy the max-heap property. The node indexed by largest, however, now has the original value A[i], and thus the subtree rooted at largest might violate the max-heap property. Consequently, we call MAX-HEAPIFY recursively on that subtree.
+The running time of MAX-HEAPIFY on a subtree of size *n rooted at a given node *i* is the \theta(1) time to fix up the relationships among the elements A[i], A[LEFT(i)], and A[RIGHT(i)], plus the time to run MAX-HEAPIFY on a subtree rooted at one of the children of node *i* (assuming that the recursive call occurs). The children’s subtrees each have size at most 2*n*/3 — the worst case occurs when the bottom level of the tree is exactly half full—and therefore we can describe the running time of MAX-HEAPIFY by the recurrence
+
+T(n)<= T(2*n*/3)+\theta(1)
+
+The solution to this recurrence, by case 2 of the master theorem (Theorem 4.1), is T .n/ D O.lg n/. Alternatively, we can characterize the running time of MAX-HEAPIFY on a node of height h as O.h/
+
+<span style="color:red">Max-Heapify is basically just sorting the tree from low to high, where the loweste value is the lowest element in the tree, from the figure above, the value 16 would be index 1, and the value 1 would be index 10.</span>
+
 Readings:
 CLRS-3 (same for CLRS-4) Ch6 until 6.4 (included), Ch7 sections 7.1 and 7.2, Ch8 sections 8.2 and 8.3
 
@@ -205,3 +217,13 @@ We can implement each of the stack operations with just a few lines of code:
 
 Readings: 
 CLRS-3 Sections 10.1, 10.2, and 10.4
+
+## Proof by induction - ALG
+When providing a proof (by induction) in relation to an algorithm the steps in plain english are:
+The **Base case:** (Basis step:) give a case we know is true.
+The **Inductive step:** Write down an assumption (hypothisis). Then describe how the algorithm works (in plain english, nothing fancy), after doing so introduce an example. Now continue to go through all the different cases of what the algorithm might encounter, and what will happen when it does. If the algorithm is dependent on a subroutine, like radix-sort is, point out what might happen, if the subroutine fails (like if the subroutine isn't stable, like radix-sort would require).
+
+<span style="color:red">Since the description here, might be a bit.. counfusing, here are two examples of proof by induction for two different algorithms. Notice the patterns/similarities
+![Proof by induction done on a sorting algorithm, in this case, radix-sort](/imgs/ALG/ProofByInductionRadix.png)
+
+![Proof by induction done on a binary tree algorithm](imgs/ALG/ProofByInductionBinaryTree.png)
