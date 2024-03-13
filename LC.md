@@ -91,3 +91,72 @@ An NFA constructed this way for the regular expression (**a**|**b**)∗**ac** is
 ![Fig. 1.4 Constructing NFA fragments from regular expressions](/imgs/LC/ConstructingNFAFragmentsRegex.png)
 
 ![Fig. 1.5 NFA for the regular expression (**a**|**b**)∗**ac**](/imgs/LC/NFAForRegex.png)
+
+
+## Lecture 6 -
+The learning goals are
+To be able to give a precise explanation of the notions of binding and bound occurrences and free variables
+To be able to give a precise explanation of the notions of static and dynamic scope rules
+To be able to reason about program behaviour under notions of static and dynamic scope rules
+To be able to give a precise account of the notion of a binding model and how environments relate to symbol tables
+To be able to explain the important operations om symbol tables
+To be able to describe and carry out the main steps of an interpreter
+
+After lexing and parsing, we have the abstract syntax tree of a program as a data structure in memory. But a program needs to be executed, and we have not yet dealt with that issue. 
+The simplest way to execute a program is interpretation. Interpretation is done by a program called an interpreter, which takes the abstract syntax tree of a program and executes it by inspecting the syntax tree to see what needs to be done. This is similar to how a human evaluates a mathematical expression: We insert the values of variables in the expression and evaluate it bit by bit, starting with the innermost parentheses and moving out until we have the result of the expression. We can then repeat the process with other values for the variables. 
+There are some differences, however. Where a human being will copy the text of the formula with variables replaced by values, and then write a sequence of more and more reduced copies of a formula until it is reduced to a single value, an interpreter will keep the formula (or, rather, the abstract syntax tree of an expression) unchanged and use a symbol table to keep track of the values of variables. Instead of reducing a formula, the interpreter is a function that takes an abstract syntax tree and a symbol table as arguments and returns the value of the expression represented by the abstract syntax tree. The function can call itself recursively on parts of the abstract syntax tree to find the values of subexpressions, and when it evaluates a variable, it can look its value up in the symbol table. 
+This process can be extended to also handle statements and declarations, but the basic idea is the same: A function takes the abstract syntax tree of the program and, possibly, some extra information about the context (such as a symbol table or the input to the program) and returns the output of the program. Some input and output may be done as side effects by the interpreter.
+We will in this chapter assume that the symbol tables are persistent, so no explicit action is required to restore the symbol table for the outer scope when exiting an inner scope. In the main text of the chapter, we don’t need to preserve symbol tables for inner scopes once these are exited (so a stack-like behaviour is fine), but in one of the exercises we will need symbol tables to persist after their scope is exited.
+
+### The Structure of an Interpreter 
+An interpreter will typically consist of one function per syntactic category. Each function will take as arguments an abstract syntax tree from the syntactic category 
+and, possibly, extra arguments such as symbol tables. Each function will return one or more results, which can be the value of an expression, an updated symbol table, 
+or nothing at all (relying on side effects to, e.g., symbol tables). These functions can be implemented in any programming language for which we already have an implementation. This implementation can also be an interpreter, or it can be a compiler that compiles to some other language. Eventually, we will need to either have an interpreter written in machine language or a compiler that compiles to machine language. For the moment, we just write interpretation functions in a notation reminiscent of a high-level programming language and assume an implementation of this exists. Additionally, we want to avoid being specific about how abstract syntax is represented, so we will use a notation that looks like concrete syntax to represent abstract syntax.
+
+### A Small Example Language 
+We will use a small (somewhat contrived) language to show the principles of interpretation. The language is a first-order functional language with recursive definitions. 
+The syntax is given in Grammar 4.1. The shown grammar is clearly ambiguous, but we assume that any ambiguities have been resolved during parsing, so we have an unambiguous abstract syntax tree. 
+In the example language, a program is a list of function declarations. The functions are all mutually recursive, and no function may be declared more than once. Each function declares its result type and the types and names of its arguments. Types are `int` (integer) and `bool` (Boolean). There may not be repetitions in the list of parameters for a function. Functions and variables have separate name spaces. The body of a function is an expression, which may be an integer constant, a variable name, a sum-expression, a comparison, a conditional, a function call or an expression with a local declaration. Comparison is defined both on booleans (where ***false*** is considered smaller than ***true***) and integers, but addition is defined only on integers.
+
+A program must contain a function called main, which has one integer argument and which returns an integer. Execution of the program is by calling this function 
+with the input (which must be an integer). The result of this function call (also an integer) is the output of the program.
+![Example language for interpretation](imgs/LC/ExampleLanguageInterpretation.png)
+
+### An Interpreter for the Example Language 
+An interpreter for this language must take the abstract syntax tree of the program and an integer (the input to the program) and return another integer (the output of the program). Since values can be both integers or booleans, the interpreter uses a value type that contains both integers and booleans (and enough information to tell them apart). We will not go into detail about how such a type can be defined but simply assume that there are operations for testing if a value is a boolean or an integer and operating on values known to be integers or booleans. If we during interpretation find that we are about to, say, add a boolean to an integer, we stop the interpretation with an error message. We do this by letting the interpreter call a function called error(). 
+We will start by showing how we can evaluate (interpret) expressions, and then extend this to handle the whole program.
+
+**Evaluating Expressions**
+When we evaluate expressions, we need, in addition to the abstract syntax tree of the expression, also a symbol table `vtable` that binds variables to their values. Addi
+tionally, we need to be able to handle function calls, so we also need a symbol table `ftable` that binds function names to the abstract syntax trees of their declarations. The 
+result of evaluating an expression is the value of the expression. 
+For terminals (variable names and numeric constants) with attributes, we assume that there are predefined functions for extracting these attributes. Hence, **id** has an 
+associated function `getname`, that extracts the name of the identifier. Similarly, **num** has a function `getvalue`, that returns the value of the number. 
+Figure 4.2 shows a function *Eval_Exp*, that takes an expression *Exp* and symbol tables `vtable` and `ftable`, and returns a value, which may be either an integer or a boolean. Also shown is a function *Eval_Exps*, that evaluates a list of expressions to a list of values. We also use a function `Call_Fun` that handles function calls. We will define this later.
+The main part of *Eval_Exp* is a case-expression (in some languages called ``switch`` or ``match``) that identifies which kind of expression the top node of the abstract 
+syntax tree represents. The patterns are shown as concrete syntax, but you should think of it as pattern matching on the abstract syntax. The column to the right of 
+the patterns shows the actions needed to evaluate the expressions. These actions can refer to parts of the pattern on the left. An action is a sequence of definitions of local 
+variables followed by an expression (in the interpreter) that evaluates to the result of the expression that was given (in abstract syntax) as argument to *Eval_Exp*. 
+We will briefly explain each of the cases handled by *Eval_Exp*
+
+ The value of a number is found as the .value attribute to the node in the abstract 
+syntax tree. 
+• The value of a variable is found by looking its name up in the symbol table for 
+variables. If the variable is not found in the symbol table, the lookup-function 
+returns the special value.unbound. When this happens, an error is reported and the 
+interpretation stops. Otherwise, it returns the value returned by lookup. 
+• At a plus-expression, both arguments are evaluated, then it is checked that they 
+are both integers. If they are, we return the sum of the two values. Otherwise, we 
+report an error (and stop). 
+• Comparison requires that the arguments have the same type. If that is the case, we 
+compare the values, otherwise we report an error. 
+• In a conditional expression, the condition must be a boolean. If it is, we check if it 
+is true. If so, we evaluate the then-branch, otherwise, we evaluate the else-branch. 
+If the condition is not a boolean, we report an error. 
+• At a function call, the function name is looked up in the function environment 
+to find its definition. If the function is not found in the environment, we report 
+an error. Otherwise, we evaluate the arguments by calling .EvalExps and then call 
+.CallFun to find the result of the call
+
+Thursday 14 March 2024 – Scopes; Interpretation
+The text is chapters 4 and 5 of Introduction to Compiler Design.
