@@ -231,9 +231,98 @@ We can implement each of the stack operations with just a few lines of code:
     `error “underflow”`
  `else S.top = S.top - 1`
 `   return S[S.top + 1]`
+Figure 10.1 shows the effects of the modifying operations PUSH and POP. Each of the three stack operations takes O(1) time.
 
+### Queues
+We call the `INSERT` operation on a queue `ENQUEUE`, and we call the `DELETE` operation `DEQUEUE`; like the stack operation `POP`, `DEQUEUE` takes no element argument. The FIFO property of a queue causes it to operate like a line of customers waiting to pay a cashier. The queue has a ***head*** and a ***tail***. When an element is enqueued, it takes its place at the tail of the queue, just as a newly arriving customer takes a place at the end of the line. The element dequeued is always the one at the head of the queue, like the customer at the head of the line who has waited the longest.
+Figure 10.2 shows one way to implement a queue of at most n 1 elements
+using an array Q[1..*n*]. The queue has an attribute *Q.head* that indexes, or points to, its head. The attribute *Q.tail* indexes the next location at which a newly arriving element will be inserted into the queue. The elements in the queue reside in locations *Q.head*, *Q.head* + 1, ..., *Q.tail* - 1, where we “wrap around” in the sense that location 1 immediately follows location *n* in a circular order. When Q.head = *Q.tail*, the queue is empty. Initially, we have *Q.head* = *Q.tail* = 1. If we attempt to dequeue an element from an empty queue, the queue underflows.
+
+When *Q.head* = *Q.tail* + 1, the queue is full, and if we attempt to enqueue an element, then the queue overflows.
+In our procedures `ENQUEUE` and `DEQUEUE`, we have omitted the error checking for underflow and overflow. The pseudocode assumes that *n* = *Q.length*.
+```python 
+ENQUEUE(Q, x)
+ Q[Q:tail] = x
+ if Q.tail == Q.length
+   Q:tail = 1
+ else Q.tail = Q.tail + 1
+```
+```python
+DEQUEUE(Q)
+ x = Q[Q.head]
+ if Q.head == Q.length
+   Q=head D 1
+ else Q.head = Q.head + 1
+   return x
+```
+![Figure 10.2 A queue implemented using an array Q[1...12]. Queue elements appear only in the lightly shaded positions. **(a)** The queue has 5 elements, in locations Q[7..11]. **(b)** The configuration of the queue after the calls ENQUEUE(Q, 17), ENQUEUE(Q, 3), and ENQUEUE(Q, 5). **(c)** The configuration of the queue after the call DEQUEUE(Q) returns the key value 15 formerly at the head of the queue. The new head has key 6.](/imgs/ALG/QueueImplementedInArray.png)
+Figure 10.2 shows the effects of the ENQUEUE and DEQUEUE operations. Each operation takes O(1) time.
+
+## Linked lists
+A ***linked list*** is a data structure in which the objects are arranged in a linear order. Unlike an array, however, in which the linear order is determined by the array indices, the order in a linked list is determined by a pointer in each object. Linked lists provide a simple, flexible representation for dynamic sets, supporting (though not necessarily efficiently) all the operations listed on page 230 of Introduction to Algorithms Third Edition.
+As shown in Figure 10.3, each element of a ***doubly linked list*** *L* is an object with an attribute `key` and two other pointer attributes: `next` and `prev`. The object may also contain other satellite data. Given an element *x* in the list, *x.next* points to its successor in the linked list, and *x.prev* points to its predecessor. If `x.prev = NIL`, the element *x* has no predecessor and is therefore the first element, or ***head***, of the list. If `x.next = NIL`, the element *x* has no successor and is therefore the last element, or ***tail***, of the list. An attribute `L.head` points to the first element of the list. If `L.head = NIL`, the list is empty.
+A list may have one of several forms. It may be either singly linked or doubly linked, it may be sorted or not, and it may be circular or not. If a list is ***singly linked***,weomitthepre pointer in each element. If a list is ***sorted***, the linear order of the list corresponds to the linear order of keys stored in elements of the list; the minimum element is then the head of the list, and the maximum element is the tail. If the list is ***unsorted***, the elements can appear in any order. In a ***circular*** list, the prev pointer of the head of the list points to the tail, and the next pointer of the tail of the list points to the head. We can think of a circular list as a ring of elements. In the remainder of this section, we assume that the lists with which we are working are unsorted and doubly linked.
+
+### Searching a linked list
+
+```python
+LIST-SEARCH.L;k/
+ 1 x DL:head
+ 2 while x ¤ NILand x:key ¤ k
+ 3
+ x D x:next
+ 4 return x
+```
+
+```python
+ LIST-INSERT.L;x/
+ 1 x:next D L:head
+ 2 ifL:head ¤ NIL
+ 3
+ L:head:pre D x
+ 4 L:head D x
+ 5 x:pre D NIL
+```
+
+```python
+  LIST-DELETE.L;x/
+ 1 ifx:pre ¤ NIL
+ 2
+ x:pre :next D x:next
+ 3 else L:head D x:next
+ 4 ifx:next ¤ NIL
+ 5
+ x:next:pre D x:prev
+```
+### Sentinels
+The code for `LIST-DELETE` would be simpler if we could ignore the boundary conditions at the head and tail of the list:
+```python
+LIST-DELETE0.L;x/
+ x.prev.next = x.next
+ x.next.prev = x.prev
+```
+A ***sentinel*** is a dummy object that allows us to simplify boundary conditions. For example, suppose that we provide with list *L* an object *L.nil* that represents NIL but has all the attributes of the other objects in the list. Wherever we have a reference to NIL in list code, we replace it by a reference to the sentinel *L.nil*. As shown in Figure 10.4, this change turns a regular doubly linked list into a ***circular, doubly linked list with a sentinel***, in which the sentinel *L.nil* lies between the head and tail. The attribute *L.nil.next* points to the head of the list, and *L.nil.prev* points to the tail. Similarly, both the `next` attribute of the tail and the `prev` attribute of the head point to *L.nil*. Since *L.nil.next* points to the head, we can eliminate the attribute *L.head* altogether, replacing references to it by references to *L.nil.nex*t. Figure 10.4(a) shows that an empty list consists of just the sentinel, and both *L.nil.next* and *L.nil.pre* point to *L.nil*.
+The code for `LIST-SEARCH` remains the same as before, but with the references to `NIL` and `L.head` changed as specified above:
+```python
+LIST-SEARCH'(L, k)
+   x = L.nil.next
+   while x != L.nil and x.key != k
+      x = x.next
+   return x
+```
+We use the two-line procedure LIST-DELETE' from before to delete an element from the list. The following procedure inserts an element into the list:
+
+```python
+ LIST-INSERT'(L, x)
+  x.next = L.nil.next
+  L.nil.next.pre = x
+  L.nil.next = x
+  x.pre = L.nil
+```
+Sentinels rarely reduce the asymptotic time bounds of data structure operations, but they can reduce constant factors. The gain from using sentinels within loops is usually a matter of clarity of code rather than speed; the linked list code, for example, becomes simpler when we use sentinels, but we save only O(1) time in the LIST-INSERT' and LIST-DELETE' procedures. In other situations, however, the use of sentinels helps to tighten the code in a loop, thus reducing the coefficient of, say, *n* or *n^2* in the running time.
+We should use sentinels judiciously. When there are many small lists, the extra storage used by their sentinels can represent significant wasted 
 Readings: 
-CLRS-3 Sections 10.1, 10.2, and 10.4
+CLRS-3 Sections and 10.4
 
 ## Proof by induction - ALG
 
