@@ -359,3 +359,7 @@ Exercises:
 ## Lecture 16 - Workshop 04
 
 When: 30.04.2024, 12:30.
+
+## Reduction
+Remember, in order to isolate a variable:
+![Isolating variable](/imgs/SLIAL/IsolatingAVariable.png)
