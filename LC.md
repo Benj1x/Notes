@@ -92,8 +92,8 @@ An NFA constructed this way for the regular expression (**a**|**b**)∗**ac** is
 
 ![Fig. 1.5 NFA for the regular expression (**a**|**b**)∗**ac**](/imgs/LC/NFAForRegex.png)
 
-
 ## Lecture 6 -
+
 The learning goals are
 To be able to give a precise explanation of the notions of binding and bound occurrences and free variables
 To be able to give a precise explanation of the notions of static and dynamic scope rules
@@ -108,12 +108,14 @@ There are some differences, however. Where a human being will copy the text of t
 This process can be extended to also handle statements and declarations, but the basic idea is the same: A function takes the abstract syntax tree of the program and, possibly, some extra information about the context (such as a symbol table or the input to the program) and returns the output of the program. Some input and output may be done as side effects by the interpreter.
 We will in this chapter assume that the symbol tables are persistent, so no explicit action is required to restore the symbol table for the outer scope when exiting an inner scope. In the main text of the chapter, we don’t need to preserve symbol tables for inner scopes once these are exited (so a stack-like behaviour is fine), but in one of the exercises we will need symbol tables to persist after their scope is exited.
 
-### The Structure of an Interpreter 
+### The Structure of an Interpreter
+
 An interpreter will typically consist of one function per syntactic category. Each function will take as arguments an abstract syntax tree from the syntactic category 
 and, possibly, extra arguments such as symbol tables. Each function will return one or more results, which can be the value of an expression, an updated symbol table, 
 or nothing at all (relying on side effects to, e.g., symbol tables). These functions can be implemented in any programming language for which we already have an implementation. This implementation can also be an interpreter, or it can be a compiler that compiles to some other language. Eventually, we will need to either have an interpreter written in machine language or a compiler that compiles to machine language. For the moment, we just write interpretation functions in a notation reminiscent of a high-level programming language and assume an implementation of this exists. Additionally, we want to avoid being specific about how abstract syntax is represented, so we will use a notation that looks like concrete syntax to represent abstract syntax.
 
-### A Small Example Language 
+### A Small Example Language
+
 We will use a small (somewhat contrived) language to show the principles of interpretation. The language is a first-order functional language with recursive definitions. 
 The syntax is given in Grammar 4.1. The shown grammar is clearly ambiguous, but we assume that any ambiguities have been resolved during parsing, so we have an unambiguous abstract syntax tree. 
 In the example language, a program is a list of function declarations. The functions are all mutually recursive, and no function may be declared more than once. Each function declares its result type and the types and names of its arguments. Types are `int` (integer) and `bool` (Boolean). There may not be repetitions in the list of parameters for a function. Functions and variables have separate name spaces. The body of a function is an expression, which may be an integer constant, a variable name, a sum-expression, a comparison, a conditional, a function call or an expression with a local declaration. Comparison is defined both on booleans (where ***false*** is considered smaller than ***true***) and integers, but addition is defined only on integers.
@@ -122,7 +124,8 @@ A program must contain a function called main, which has one integer argument an
 with the input (which must be an integer). The result of this function call (also an integer) is the output of the program.
 ![Example language for interpretation](imgs/LC/ExampleLanguageInterpretation.png)
 
-### An Interpreter for the Example Language 
+### An Interpreter for the Example Language
+
 An interpreter for this language must take the abstract syntax tree of the program and an integer (the input to the program) and return another integer (the output of the program). Since values can be both integers or booleans, the interpreter uses a value type that contains both integers and booleans (and enough information to tell them apart). We will not go into detail about how such a type can be defined but simply assume that there are operations for testing if a value is a boolean or an integer and operating on values known to be integers or booleans. If we during interpretation find that we are about to, say, add a boolean to an integer, we stop the interpretation with an error message. We do this by letting the interpreter call a function called error(). 
 We will start by showing how we can evaluate (interpret) expressions, and then extend this to handle the whole program.
 
@@ -139,24 +142,41 @@ the patterns shows the actions needed to evaluate the expressions. These actions
 variables followed by an expression (in the interpreter) that evaluates to the result of the expression that was given (in abstract syntax) as argument to *Eval_Exp*. 
 We will briefly explain each of the cases handled by *Eval_Exp*
 
- The value of a number is found as the .value attribute to the node in the abstract 
-syntax tree. 
-• The value of a variable is found by looking its name up in the symbol table for 
-variables. If the variable is not found in the symbol table, the lookup-function 
-returns the special value.unbound. When this happens, an error is reported and the 
-interpretation stops. Otherwise, it returns the value returned by lookup. 
-• At a plus-expression, both arguments are evaluated, then it is checked that they 
-are both integers. If they are, we return the sum of the two values. Otherwise, we 
-report an error (and stop). 
-• Comparison requires that the arguments have the same type. If that is the case, we 
-compare the values, otherwise we report an error. 
-• In a conditional expression, the condition must be a boolean. If it is, we check if it 
-is true. If so, we evaluate the then-branch, otherwise, we evaluate the else-branch. 
-If the condition is not a boolean, we report an error. 
-• At a function call, the function name is looked up in the function environment 
-to find its definition. If the function is not found in the environment, we report 
-an error. Otherwise, we evaluate the arguments by calling .EvalExps and then call 
-.CallFun to find the result of the call
+- The value of a number is found as the .value attribute to the node in the abstract syntax tree. 
+- The value of a variable is found by looking its name up in the symbol table for variables. If the variable is not found in the symbol table, the lookup-function returns the special value.unbound. When this happens, an error is reported and the interpretation stops. Otherwise, it returns the value returned by lookup. 
+- At a plus-expression, both arguments are evaluated, then it is checked that they are both integers. If they are, we return the sum of the two values. Otherwise, we report an error (and stop). 
+- Comparison requires that the arguments have the same type. If that is the cEvaluatingExpressionsase, we compare the values, otherwise we report an error. 
+- In a conditional expression, the condition must be a boolean. If it is, we check if it is true. If so, we evaluate the then-branch, otherwise, we evaluate the else-branch. If the condition is not a boolean, we report an error. 
+- At a function call, the function name is looked up in the function environment to find its definition. If the function is not found in the environment, we report an error. Otherwise, we evaluate the arguments by calling .EvalExps and then call *Call_Fun* to find the result of the call
+
+![Fig. 4.2 Evaluating expressions](imgs/LC/EvaluatingExpressions.png)
+
+- A `let`-expression declares a new variable with an initial value defined by an expression. The expression is evaluated and the symbol table for variables is extended using the function *bind* to bind the variable to the value. The extended table is used when evaluating the body-expression, which defines the value of the whole expression. Note that we do not explicitly restore the symbol table afterexiting the scope of the `let`-expression. The old symbol table is implicitly pre-served. 
+*Eval_Exps* builds a list of the values of the expressions in the expression list. The notation is taken from SML and F#: A list is written in square brackets, and the infix operator .:: adds an element to the front of a list. This operator can also be used in patterns to match non-empty lists and bind variables to the head and tail of this list.
+
+### Interpreting Function Calls
+
+A function declaration explicitly declares the types of the arguments. When a function is called, we must check that the number of arguments is the same as the declared
+number, and that the values of the arguments match the declared types.
+If this is the case, we build a symbol table that binds the parameter variables to the values of the arguments and use this in evaluating the body of the function. The value of the body must match the declared result type of the function.
+.Call Fun is also given a symbol table for functions, which is passed to the *Eval_Exp*
+when evaluating the body.
+*Call_Fun* is shown in Fig. 4.3, (below) along with the functions for *TypeId* and *TypeIds*, which it uses. The function *Get_TypeId* just returns a pair of the declared name and type, and *Bind_TypeIds* checks the declared type against a value and, if these match, builds a symbol table that binds the name to the value (and reports an error if they do not match). *Binds_TypeIds* also checks if all parameters have different names by seeing if the current name is already bound. *emptytable* is an empty symbol table. Looking any name up in the empty symbol table returns *unbound*. The underscore used in the last rule for *Bind_TypeIds* is a wildcard pattern that matches anything, so this rule is used when the number of arguments do not match the number of declared parameters.
+
+![Evaluating a function call](/imgs/LC/EvaluatingFunctionCall.png)
+
+### Interpreting a Program
+
+Running a program is done by calling the `main` function with a single argument that is the input to the program. So we build the symbol table for functions, lookup `main` in this and call .CallFun with the resulting definition and an argument list containing just the input.
+Hence, `Run_Program` , which runs the whole program, calls a function .`Build_ftable` that builds the symbol table for functions. This, in turn, uses a function `Get_fname` that finds the name of a function. All these functions are shown in Fig. 4.4.
+This completes the interpreter for our small example language.
+While we have illustrated interpretation mainly by a single example, the methods carry over to other languages: We build one or more function for each syntactic category. These may, in addition to the abstract syntax tree, also take other parameters such as symbol tables, and they return values that are used in other parts of the interpreter (or represent part of the output).
+
+### Advantages and Disadvantages of Interpretation
+
+Once you have a abstract syntax tree, interpretation is often the simplest way of executing a program. However, it is also a relatively slow way to do so. When we perform an operation in the interpreted program, the interpreter must first inspect the abstract syntax tree to see what operation it needs to perform, then it must check that the types of the arguments to the operation match the requirements of the operation, and only then can it perform the operation. Additionally, each value must include sufficient information to identify its type, so after doing, say, an addition, we must add type information to the resulting number.
+
+![Interpreting a program](/imgs/LC/InterpretingProgram.png)
 
 Thursday 14 March 2024 – Scopes; Interpretation
 The text is chapters 4 and 5 of Introduction to Compiler Design.

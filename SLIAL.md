@@ -193,7 +193,7 @@ Now suppose we have a set of *N* objects (also called *samples* or *examples*), 
 
 These numbers usually correspond to predictions of the value of the outputs or responses. If in addition to the example feature vectors *x*^(*i*) we are also given the actual value of the associated response variables, *y*^(1), ..., *y*^(*N*), then our *prediction errors* or *residuals* are
 
-![Regression model prediction errors (residuals) ](/imgs/SLIAL/RegressionModelResiduals.png)
+![Regression model prediction errors (residuals)](/imgs/SLIAL/RegressionModelResiduals.png)
 
 Literature: [VMLS], Chapter 8 + slides. You may find a much more detailed explanation of row reduction with examples in Sections 1.1-1.2 of [Lay]="Linear Algebra and Its Applications" by Lay, Lay, McDonald (attached). Note: I only discuss the (non-unique) echelon form in my slides, after which we run a backward substitution algorithm, whereas Lay also talks about the reduced echelon form. Basically we do not explicitly perform "Step 5" of the reduction algorithm on p. 17 in Lay's book.
 
