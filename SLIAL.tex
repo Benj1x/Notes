@@ -1,11 +1,31 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[11pt,oneside,a4paper,openright]{article}
+\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{soul}
 \usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage[nottoc]{tocbibind}
+\usepackage[danish,english]{babel}
+\usepackage{hyperref}
+\hypersetup{%
+	pdfpagelabels=true,%
+	plainpages=false,%
+	pdfauthor={Author(s)},%
+	pdftitle={Title},%
+	pdfsubject={Subject},%
+	bookmarksnumbered=true,%
+	colorlinks=false,%
+	citecolor=black,%
+	filecolor=black,%
+	linkcolor=black,%
+	urlcolor=black,%
+	pdfstartview=FitH%
+
+}
 
 \title{Probability Theory and Linear Algebra}
-\author{Benjamin "Benj1"}
+\author{Benjamin}
 \begin{document}
 \maketitle
 \section*{Lecture 1 - Introduction, vectors, linearity} 
@@ -13,85 +33,83 @@
 
 %\textcolor{red}{Text colored with}
 \hl{Vector is an ordered, finite list of numbers. Vectors are usually written as vertical arrays, surrounded by square or curved brackets:}
-\section*{test}
-\newline 
-![Written vector example](/imgs/SLIAL/WrittenVector.png)
 
-\newline 
 \hl{They can also be written as numbers separated by commas and surrounded by parentheses. In this notation style, the vector above is written as: }
 
-\newline 
-%\begin{equation*}
-	(−1.1, 0.0, 3.6, −7.2)
-%\end{equation*}
+\begin{equation}
+	(-1.1, 0.0, 3.6, -7.2)
+\end{equation}
 
-\newline 
 The elements (or entries, coefficients, components) of a vector are the values in the array. The size (also called dimension or length) of the vector is the number of
-elements it contains. The vector above, for example, has size four; its third entry is 3.6. A vector of size *n* is called an *n-vector*. A 1-vector is considered to be the
-same as a number, i.e., we do not distinguish between the 1-vector [ 1.3 ] and the number 1.3.
+elements it contains. The vector above, for example, has size four; its third entry is 3.6. A vector of size $n$ is called an \emph{n-vector}. A 1-vector is considered to be the
+same as a number, i.e., we do not distinguish between the 1-vector $[ 1.3 ]$ and the number 1.3.
 \newline 
-We often use symbols to denote vectors. If we denote an *n-vector* using the symbol *a*, the *i*th element of the vector *a* is denoted *a_i*, where the subscript *i* is an integer index that runs from 1 to *n*, the size of the vector.
-Two vectors *a* and *b* are *equal*, which we denote *a* = *b*, if they have the same size, and each of the corresponding entries is the same. If *a* and *b* are *n*-vectors, then *a* = *b* means *a*_1 = *b*_1, . . . , *a_n* = *b_n*.
-
+We often use symbols to denote vectors. If we denote an \emph{n-vector} using the symbol $a$, the $i$th element of the vector $a$ is denoted $a_i$, where the subscript $i$ is an integer index that runs from 1 to $n$, the size of the vector.
+Two vectors $a \text{and} b$ are $equal$, which we denote $a = b$, if they have the same size, and each of the corresponding entries is the same. If $a \text{ and } b \text{ are } n$-vectors, then $a = b$ means $a_1 = b_1, . . . , a_n = b_n$.
 \newline 
-%\hl{The numbers or values of the elements in a vector are called scalars}. We will focus on the case that arises in most applications, where the scalars are real numbers. In this case we refer to vectors as real vectors. (Occasionally other types of scalars arise, for example, complex numbers, in which case we refer to the vector as a complex vector.) \hl{The set of all real numbers is written as **R**, and the set of all real *n*-vectors is denoted **R**^*n*}, so *a* ∈ **R**^*n* is another way to say that *a* is an *n*-vector with real entries. Here we use set notation: *a* ∈ **R**^*n* means that *a* is an element of the set **R**^*n*; see appendix A.
-
+\hl{The numbers or values of the elements in a vector are called scalars}. We will focus on the case that arises in most applications, where the scalars are real numbers. In this case we refer to vectors as real vectors. (Occasionally other types of scalars arise, for example, complex numbers, in which case we refer to the vector as a complex vector.) \hl{The set of all real numbers is written as \textbf{\textit{R}}, and the set of all real $n$-vectors is denoted $\textbf{R}^n$}, so $a \epsilon \textbf{R}^n$ is another way to say that $a$ is an $n$-vector with real entries. Here we use set notation: $a \epsilon \textbf{R}^n$ means that $a$ is an element of the set $\textbf{R}^n$; see appendix A.and
 \newline 
-**Block or stacked vectors.** It is sometimes useful to define vectors by *concatenating* or *stacking* two or more vectors, as in
+\textbf{Block or stacked vectors.} It is sometimes useful to define vectors by \emph{concatenating} or \emph{stacking} two or more vectors, as in
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{imgs/SLIAL/StackedVectors.png}
-    \caption{Block/Stacked bector example}
-    \label{Block/Stacked bector example}
-\end{figure}
+where $a\text{, } b\text{, } c\text{, } \text{and } d$ are vectors. If $b$ is an $m$-vector, $c$ is an $n$-vector, and $d$ is a $p$-vector, this defines the ($m + n + p$)-vector
+\hl{The numbers or values of the elements in a vector are called scalars}. We will focus on the case that arises in most applications, where the scalars are real numbers. In this case we refer to vectors as real vectors. (Occasionally other types of scalars arise, for example, complex numbers, in which case we refer to the vector as a complex vector.) \hl{The set of all real numbers is written as \textbf{R}, and the set of all real $n$-vectors is denoted $\textbf{R}^n$}, so $a \epsilon \textbf{R}^n $ is another way to say that $a$ is an $n$-vector with real entries. Here we use set notation: $a \epsilon \textbf{R}^n \text{means that} a$ is an element of the set $\textbf{R}^n$; see appendix A.
+\begin{equation}
+	a = (b_1, b_2, . . . , b_m, c_1, c_2, . . . , c_n, d_1, d_2, . . . , d_p)
+\end{equation}.
+
+\hl{The stacked vector $a$ is also written as $a = (b\, c\, d)$.}
+Stacked vectors can include scalars (numbers). For example if $a$ is a 3-vector,
+$(1, a)$ is the 4-vector $(1, a_1, a_2, a_3)$.
+
+\textbf{Subvectors.} In the equation above, we say that $b \, c\, \text{and} d$ are \emph{subvectors} or \emph{slices} of $a$, with sizes $m\, n\, \text{and} p$, respectively. \emph{Colon notation} is used to denote subvectors. If $a$ is a vector, then the subvector $a_r:s$ is a vector of size $s - r + 1$, with entries $a_r, . . . , a_s$:
+
+\begin{equation}
+    a_r:s = (a_r, . . . , a_s)  
+\end{equation}
 
 
+As a more concrete example, if \hl{\emph{z} is the 4-vector $(1, -1, 2, 0)$, the slice $z_2:3 \text{is} z_2:3 = (-1, 2).$} Colon notation is not completely standard, but is gaining traction.
 
-![text](StackedVectors.png)
+\hl{In programming, arrays of length $n$ are indexed from $i = 0$ to $i=n-1$. In standard mathematical notation, $n$-vectors are indexed from $i = 1$ to $i = n$, so in this subject/class, vectors will be indexed from $i = 1$ to $i = n$}
 
-where *a*, *b*, *c*, and *d* are vectors. If *b* is an *m*-vector, *c* is an *n*-vector, and *d* is a
-*p*-vector, this defines the (*m* + *n* + *p*)-vector
-%\hl{The numbers or values of the elements in a vector are called scalars}. We will focus on the case that arises in most applications, where the scalars are real numbers. In this case we refer to vectors as real vectors. (Occasionally other types of scalars arise, for example, complex numbers, in which case we refer to the vector as a complex vector.) \hl{The set of all real numbers is written as **R**, and the set of all real *n*-vectors is denoted **R**^*n*}, so *a* ∈ **R**^*n* is another way to say that *a* is an *n*-vector with real entries. Here we use set notation: *a* ∈ **R**^*n* means that *a* is an element of the set **R**^*n*; see appendix A.
-%\begin{equation*}
-	*a* = (*b*_1, *b*_2, . . . , *b_m*, *c*_1, *c*_2, . . . , *c_n*, *d*_1, *d*_2, . . . , *d_p*)
-%\end{equation*}.
-
-\hl{The stacked vector *a* is also written as *a* = (*b*, *c*, *d*).}
-Stacked vectors can include scalars (numbers). For example if *a* is a 3-vector,
-(1, *a*) is the 4-vector (1, *a*_1, *a*_2, *a*_3).
-
-**Subvectors.** In the equation above, we say that *b*, *c*, and *d* are *subvectors* or *slices* of *a*, with sizes *m*, *n*, and *p*, respectively. *Colon notation* is used to denote subvectors. If *a* is a vector, then the subvector *a_r:s* is a vector of size *s* − *r* + 1, with entries *a_r*, . . . , *a_s*:
-
-\newline 
-\newline 
-\begin{equation*}
-	*a_r*:*s* = (*a_r*, . . . , *a_s*)
-\end{equation*}.
-
-As a more concrete example, if \hl{*z* is the 4-vector (1, −1, 2, 0), the slice *z*_2:3 is *z*_2:3 = (−1, 2).} Colon notation is not completely standard, but is gaining traction.
-
-\hl{In programming, arrays of length *n* are indexed from i = 0 to i = *n* − 1. In standard mathematical notation, *n*-vectors are indexed from i = 1 to i = *n*, so in this subject/class, vectors will be indexed from i = 1 to i = *n*}
-
-**Zero vectors.** \hl{A *zero vector* is a vector with all elements equal to zero. Sometimes the zero vector of size *n* is written as 0_n, where the subscript denotes the size.But usually a zero vector is denoted just 0, the same symbol used to denote the number 0.</span> In this case you have to figure out the size of the zero vector from the context. As a simple example, if *a* is a 9-vector, and we are told that *a* = 0, the 0 vector on the right-hand side must be the one of size 9.
-Even though zero vectors of different sizes are different vectors, we use the same symbol 0 to denote them. In computer programming this is called *overloading*: 
+\textbf{Zero vectors.} \hl{A \emph{zero vector} is a vector with all elements equal to zero. Sometimes the zero vector of size $n$ is written as $0_n$, where the subscript denotes the size. But usually a zero vector is denoted just 0, the same symbol used to denote the number 0.} In this case you have to figure out the size of the zero vector from the context. As a simple example, if $a$ is a 9-vector, and we are told that $a = 0$, the 0 vector on the right-hand side must be the one of size 9.
+Even though zero vectors of different sizes are different vectors, we use the same symbol 0 to denote them. In computer programming this is called \emph{overloading}: 
 The symbol 0 is overloaded because it can mean different things depending on the context (e.g., the equation it appears in)
 
-**Unit vectors.** \hl{A (standard) *unit vector* is a vector with all elements equal to zero, except one element which is equal to one. The *i*th unit vector (of size *n*) is the unit vector with *i*th element one, and denoted *e_i*.</span> For example, the vectors
+\textbf{Unit vectors.} \hl{A (standard) \emph{unit vector} is a vector with all elements equal to zero, except one element which is equal to one. The $i$th unit vector (of size $n$) is the unit vector with $i$th element one, and denoted $e_i$.} For example, the vectors
 
-![A standard unit vector](/imgs/SLIAL/StandardUnitvector.png)
+\begin{equation}
+    e_1 =
+    \begin{bmatrix}
+        1 \\
+        0 \\
+        0 
+    \end{bmatrix},
+    e_2 =
+    \begin{bmatrix}
+        0 \\
+        1 \\
+        0 
+    \end{bmatrix},
+    e_3 =
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        1 
+    \end{bmatrix}    
+\end{equation}
 
-are the three unit vectors of size 3. The notation for unit vectors is an example of the ambiguity in notation noted above. \hl{Here, *e_i* denotes the *i*th unit vector, and not the *i*th element of a vector *e*.</span> Thus we can describe the *i*th unit n-vector *e_i* as
+are the three unit vectors of size 3. The notation for unit vectors is an example of the ambiguity in notation noted above. \hl{Here, $e_i$ denotes the $i$th unit vector, and not the $i$th element of a vector $e$.} Thus we can describe the $i$th unit n-vector $e_i$ as
 
-![*i*th Unit Vector description](/imgs/SLIAL/ithUnitVectorDesc.png)
+![$i$th Unit Vector description](/imgs/SLIAL/ithUnitVectorDesc.png)
 
-for *i,j* = 1, . . . , *n*. On the left-hand side *e_i* is an *n*-vector; (*e_i*)_*j* is a number, its *j*th entry. As with zero vectors, the size of *e_i* is usually determined from the context.
+for $i,j = 1, . . . , n$. On the left-hand side $e_i$ is an $n$-vector; ($e_i)_j$ is a number, its $j$th entry. As with zero vectors, the size of $e_i$ is usually determined from the context.
 
-**Ones vector.** We use \hl{the notation **1**_*n* for the *n*-vector with all its elements equal to one. We also write **1** if the size of the vector can be determined from the context. (Some use *e* to denote a vector of all ones, but we will not use this notation.) The vector **1** is sometimes called the *ones vector*.</span>
+\textbf{Ones vector.} We use \hl{the notation $1_n$ for the $n$-vector with all its elements equal to one. We also write \textbf{1} if the size of the vector can be determined from the context. (Some use $e$ to denote a vector of all ones, but we will not use this notation.) The vector \textbf{1} is sometimes called the \emph{ones vector}.}
 
-**Sparsity.** \hl{A vector is said to be *sparse* if many of its entries are zero; its *sparsity pattern* is the set of indices of nonzero entries. The number of the nonzero entries of an *n*-vector *x* is denoted **nnz**(*x*). Unit vectors are sparse, since they have only one nonzero entry. The zero vector is the sparsest possible vector, since it has no nonzero entries.</span> Sparse vectors arise in many applications.
+\textbf{Sparsity.}\hl{A vector is said to be \emph{sparse} if many of its entries are zero; its \emph{sparsity pattern} is the set of indices of nonzero entries. The number of the nonzero entries of an $n$-vector $x$ is denoted \textbf{nnz}$(x)$. Unit vectors are sparse, since they have only one nonzero entry. The zero vector is the sparsest possible vector, since it has no nonzero entries.} Sparse vectors arise in many applications.
 
-###
+\section*{title}
 
 Literature: [VMLS], Chapter 1, Section 2.1 + slides
 Exercises:
@@ -128,45 +146,175 @@ Orthognalization and Gram-Schmidt: 5.5-5.9
 (facit -> moodle)
 
 \section*{Lecture 3 - Matrices}
-\h1{A matrix is a rectangular array of numbers written between rectangular brackets, as in}
+\hl{A matrix is a rectangular array of numbers written between rectangular brackets, as in}
 
+\begin{equation}
 \begin{bmatrix}
     0 & 1 & -2.3 & 0.1\\
     1.3 & 4 & -0.1 & 0\\
     4.1 & -1 & 0 & 1.7
-\end{bmatrix}
+\end{bmatrix}    
+\end{equation}
 
 It is also common to use large parentheses instead of rectangular brackets, as in
 
+\begin{equation}
 \begin{pmatrix}
     0 & 1 & -2.3 & 0.1\\
     1.3 & 4 & -0.1 & 0\\
     4.1 & -1 & 0 & 1.7
-\end{pmatrix}
+\end{pmatrix}    
+\end{equation}
 
-\h1{An important attribute of a matrix is its \textit{size} or \textit{dimensions} i.e, the numbers
+\hl{An important attribute of a matrix is its \emph{size} or \emph{dimensions} i.e, the numbers
 of rows and columns.} The matrix above has 3 rows and 4 columns, so its size is 3 x 4.\newline
 A matrix of size $m x n$ is called an $m x n$ matrix.\newline
-The \textit{elements} (or \textit{entries} or \textit{coefficients}) of a matrix are the values in the array.\newline
-The $i,j$ element is the value of the \textit{i}th row and \textit{j}th column, denoted by double subscripts:
-the $i,j$ element of a matrix $A$ is denoted $A_ij$ (or $A_i,j$, when \textit{i} or \textit{j} is more than one digit or character).\newline
-The positive integers \textit{i} and \textit{j} are called \textit{indices}. \newline
+The \emph{elements} (or \emph{entries} or \emph{coefficients}) of a matrix are the values in the array.\newline
+The $i,j$ element is the value of the \emph{i}th row and \emph{j}th column, denoted by double subscripts:
+the $i,j$ element of a matrix $A$ is denoted $A_ij$ (or $A_i,j$, when \emph{i} or \emph{j} is more than one digit or character).\newline
+The positive integers \emph{i} and \emph{j} are called \emph{indices}. \newline
 If $A$ is an $m x n$ matrix, then the row index runs from 1 to $m$ and the column index $j$ runs from 1 to $n$.
 Row indices go from top to bottom, so row 1 is the top row, and row $m$ is the bottom row. Column indices go from left to right, so column
 1 is the left column, and column $n$ is the right column.\newline
 If the matrix above is $B$, then we have $B_13 = -2.3, B_32 = -1.$ the row index of the bottom left element (which has value 4.1) is 3;
 its column index is 1.\newline
-\h1{Two matrices are equal, if they have the same size, and if all the corresponding entries are equal.}\newline
+\hl{Two matrices are equal, if they have the same size, and if all the corresponding entries are equal.}\newline
 As with vectors, we normally deal with matrices with entries that are real numbers, which will be our assumption unless stated otherwise.
-\h1{The set of real $m x n matrices is denoted \textbf{R}^mxn$}. But matrices with complex entries, for example, do arise in some applications
+\hl{The set of real $m x n matrices is denoted \textbf{R}^mxn$}. But matrices with complex entries, for example, do arise in some applications
 \newline\newline
 \textbf{Matrix indexing.} As with vectors, we in math index from 1. In computer langauges, a matrix is typically stored as a 2D array, where we would index the matrix from 0 (unless you use a package that index from 1). 
 \newline\newline
-\textbf{Square, tall and wide matrices.} A \textiit{sqare} matrix has an equal number of rows and columns. A square matrix of size $n x n$ is said to be of \textit{order} $n$.
-A \textit{tall} matrix has more rrows than columns (size $m x n$ with $m > n$). A \textit{wide} matrix has more columns that rows (size $m x n$ with $n > m$).
+\textbf{Square, tall and wide matrices.} A \emph{square} matrix has an equal number of rows and columns. A square matrix of size $n x n$ is said to be of \emph{order} $n$.
+A \emph{tall} matrix has more rrows than columns (size $m x n$ with $m > n$). A \emph{wide} matrix has more columns that rows (size $m x n$ with $n > m$).
 \newline\newline
-\textbf{Column and row vectors.} An \textit{n}-vectors
+\textbf{Column and row vectors.} An \emph{n}-vectors can be interpreted as an n × 1 matrix; we do not distinguish between vectors and matrices with one column. 
+A matrix with only one row, i.e, with size $1 x n$, is called a \emph{row vector}; to givee its size, we can refer to it as an \emph{n-row-vector}. As an example
+\[[-2.1 -3 0]\] 
+is a 3-row-vector (or 1 × 3 matrix). To distinguish them from row vectors, vectors are sometimes called column vectors. A $1 × 1$ matrix is considered to be the same
+as a scalar.
+\newline\newline
+\textbf{Notational conventions.} Many people (including us) tend to use capital letters
+to denote matrices, and lower case letters for (column or row) vectors. But this
+convention is not standardized, so you should be prepared to figure out whether
+a symbol represents a matrix, column vector, row vector, or a scalar, from context.
+\newline\newline
+\textbf{Columns and rows of a matrix.} An $m x n$ A has \emph{n} columns, given by (the \emph{m}-vectors)
+\begin{equation}
+\begin{bmatrix}
+    A_1j \\
+    . \\
+    . \\
+    . \\
+    A_mj 
+\end{bmatrix}    
+\end{equation}
 
+for $j = 1, ..., n$. The same matrix has \emph{m} rows, given by the (\emph{n}-row-vectors)
+\[A_i1 ... A_in\],
+for $o = 1, ..., m$. \newline
+As a specific example, the $2 x 3$ matrix
+\begin{equation}
+\begin{pmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 
+\end{pmatrix}    
+\end{equation}
+
+has first row
+\[1 2 3\]
+(which is a r-row-vector or a $1 x 3$ matrix), and second column
+\begin{equation}
+\begin{bmatrix}
+    2 \\
+    5 
+    \end{bmatrix}    
+\end{equation}
+
+(which is a 2-vector or $2 x 1$ matrix), also written compactly as $(2,5)$.
+
+\textbf{Block matrices and submatrices.} It is useful to consider matrices whose entries are themselves matrices, as in
+\begin{equation}
+A = \begin{bmatrix}
+    B & C\\
+    D & E
+    \end{bmatrix},    
+\end{equation}
+
+where B, C, D and E are matrices. Such matrices are called \emph{block matrices}; the elements B, C, D, adn E are called
+\emph{blocks} or \emph{submratrices} of $A$. The submatrices can be reffered to by their block row and column indices; for example, C is the 
+1,2 block of $A$.
+Block matrices must have the right dimensions to fit together. Matrices in the
+same (block) row must have the same number of rows (\emph{i.e.}, the same ‘height’);
+matrices in the same (block) column must have the same number of columns (\emph{i.e.},
+the same ‘width’). In the example above, $B \text{and} C$ must have the same number of
+rows, and $C \text{and} E$ must have the same number of columns. Matrix blocks placed
+next to each other in the same row are said to be \emph{concatenated}; matrix blocks
+placed above each other are called \emph{stacked}.
+As an example, consider
+\begin{equation}
+    B=[0 2 3], C=[-1], D= \begin{bmatrix}
+        2 & 3 & 1\\
+        1 & 3 & 5
+        \end{bmatrix}, E= \begin{bmatrix}
+            4\\
+            4
+        \end{bmatrix},
+\end{equation}
+Then the block matrix $A$ above is given by
+\begin{equation}\label{6.1}
+    A= \begin{bmatrix}
+        0 & 2 & 3& -1\\
+        2 & 2 & 1& 4\\
+        1 & 3 & 5& 4
+        \end{bmatrix}
+\end{equation}
+We can also divide a larger matrix (or vector) into ‘blocks’. In this context the
+blocks are called \emph{submatrices} of the big matrix. As with vectors, we can use colon
+notation to denote submatrices. If $A \text{is an} m × n$ matrix, and $p\, q\, r\, s$ are integers
+with $1 <= p <= q <= <= m \text{and} 1<=r<=s<=n\, \text{then} A_p:q,r:s$ denotes the submatrix
+
+\begin{equation}
+    A_p:q,r:s=\begin{bmatrix}
+        A_pr&A_p,r+1&...A_pSs\\
+        A_p+1,r&A_p+1,r+1&...&A_p+1,s\\
+        .&.&.\\
+        .&.&.\\
+        .&.&.\\
+        A_qr&A_q,r+1&...&A_qs
+    \end{bmatrix}.
+\end{equation}
+This submatrix has size $(q-p+1)x(s-r+1)$ and is obtained by extracting from $A$ the elements
+in rows $p$ through $q$ and columns $r$ through $s$.
+\newline
+For the specific matrix $A$ in \href{6.1}, we have
+\begin{equation}
+    A_2:3,3:4 = \begin{bmatrix}
+        1 & 4\\
+        5 & 4
+    \end{bmatrix}.
+\end{equation}
+
+\textbf{Column and row representation of a matrix.} Using block matrix notation we can write an
+$m x n$ matrix $A$ as a block matrix with one block row and $n$ block columns,
+\begin{equation}
+    A=[a_1 a_2 ... a_n].
+\end{equation}
+where $a_j$ , which is an $m$-vector, is the $j$th column of $A$. Thus, an $m × n$ matrix
+can be viewed as its $n$ columns, concatenated.
+
+Similarly, an $mxn$ matrix $A$ can be written as a block matrix with one block column and m block rows:
+\begin{equation}
+    A=\begin{bmatrix}
+      b_1\\
+      b_2\\
+      .\\
+      .\\
+      .\\
+      b_m  
+    \end{bmatrix},
+\end{equation}
+where $b_i$ which is a row $n$-vector, is the $i$th row of $A$. In this notation, the matrix $A$
+is interpreted as its $m$ rows, stacked.
 Literature: [VMLS], Chapters 6,7 + Slides
 
 Exercises:
@@ -185,70 +333,73 @@ This lecture is about vector-valued linear and affine functions, and systems of 
 
 \subsection*{Linear and affine functions}
 
-**Vector-valued functions of vectors.** \hl{The notation *f* : R^n -> R^m means that *f* is a function that maps real *n*-vectors to real *m*-vectors.</span> The value of the function *f*, evaluated at an *n*-vector *x*, is an *m*-vector *f*(*x*) = (*f*_1(*x*), *f*_22(*x*),..., *f*_*m*(*x*)). Each of the components *f*_*i* of *f* is itself a scalar-valued function of *x*. As with scalar-valued functions, we sometimes write *f_i*(*x*) = *f_i*(*x*_1 *x*_2 *x_n*) to emphasize that *f* is a function of *n* scalar arguments. We use the same notation for each of the components of *f*, writing *f_i*(*x*) = *f_i*(*x*_1, *x*_2, ..., *x_n*) to emphasize that *f_i* is a function mapping the scalar arguments *x*_1, ..., *x_n* into a scalar.
+\textbf{Vector-valued functions of vectors.} \hl{The notation $f : R^n -> R^m$ means that $f$ is a function that maps real $n$-vectors to real $m$-vectors.} The value of the function $f$, evaluated at an $n$-vector $x$, is an $m$-vector $f(x) = (f_1(x), f_22(x),..., f_m(x))$. Each of the components $f_i$ of $f$ is itself a scalar-valued function of $x$. As with scalar-valued functions, we sometimes write $f_i(x) = f_i(x_1 x_2 x_n)$ to emphasize that $f$ is a function of $n$ scalar arguments. We use the same notation for each of the components of $f$, writing $f_i(x) = f_i(x_1, x_2, ..., x_n)$ to emphasize that $f_i$ is a function mapping the scalar arguments $x_1, ..., x_n$ into a scalar.
 
-**The matrix-vector product function.** \hl{Suppose *A* is an *m* X *n* matrix. We can define a function *f* : **R**^*n* -> **R**^*m* by *f*(*x*) = *Ax*. The inner product function *f* : **R**^*n* -> **R**, defined as *f*(*x*) = *a*^*T*_*x*, discussed in Lecture 1, is the special case with *m*=1.</span>
+\textbf{The matrix-vector product function.} \hl{Suppose $A$ is an $m x n$ matrix. We can define a function $f : \textbf{R}^n -> \textbf{R}^m$ by $f(x) = Ax$. The inner product function $f : \textbf{R}^n -> R$, defined as $f(x) = a^T_x$, discussed in Lecture 1, is the special case with $m=1$.}
 
-**Superposition and linearity.** The function *f*: *R^n* -> *R^m*, defined by *f*(*x*) = *Ax*, is *linear*, *i.e.*, it satisfies the superposition property:
+\textbf{Superposition and linearity.} The function $f: R^n -> R^m$, defined by $f(x) = Ax$, is $linear$, $i.e.$, it satisfies the superposition property:
 
 ![Superposition Property](/imgs/SLIAL/SuperpositionProperty.png)
 
-holds for all n-vectors x and y and all scalars \alpha and \beta . It is a good exercise to parse this simple looking equation, since it involves overloading of notation. On the left-hand side, the scalar-vector multiplications \alpha x and \beta y involve *n*-vectors, and the sum \alpha x+\beta y is the sum of two *n*-vectors. The function *f* maps *n*-vectors to *m*-vectors, so *f*(\alpha x+\beta y) is an *m*-vector. On the right-hand side, the scalar-vector multiplications and the sum are those for *m*-vectors. Finally, the equality sign is equality between two *m*-vectors.
+holds for all n-vectors x and y and all scalars $\alpha$ and $\beta$ . It is a good exercise to parse this simple looking equation, since it involves overloading of notation. On the left-hand side, the scalar-vector multiplications $\alpha x$ and $\beta y$ involve $n$-vectors, and the sum $\alpha x+\beta y$ is the sum of two $n$-vectors. The function $f$ maps $n$-vectors to $m$-vectors, so $f(\alpha x+\beta y)$ is an $m$-vector. On the right-hand side, the scalar-vector multiplications and the sum are those for $m$-vectors. Finally, the equality sign is equality between two $m$-vectors.
 
-\hl{We can verify that superposition holds for *f* using properties of matrix-vector and scalar-vector multiplication:</span>
+\hl{We can verify that superposition holds for $f$ using properties of matrix-vector and scalar-vector multiplication:}
 
-![Verify that superposition holds for *f*](/imgs/SLIAL/SuperpositionHolds.png)
+![Verify that superposition holds for $f$](/imgs/SLIAL/SuperpositionHolds.png)
 
-\hl{Thus we can associate with every matrix *A* a linear function *f*(*x*) = *Ax*.
-The converse is also true.</span> Suppose *f* is a function that maps *n*-vectors to *m*-vectors, and is linear, i.e., (8.1) holds for all *n*-vectors *x* and *y* and all scalars \alpha and \beta . Then there exists an *m* x *n* matrix A such that f(x) = Ax for all x. This can be shown in the same way as for scalar-valued functions in 2.1, by showing that if f is linear, then
+\hl{Thus we can associate with every matrix $A$ a linear function $f(x) = Ax$.
+The converse is also true.} Suppose $f$ is a function that maps $n$-vectors to $m$-vectors, and is linear, i.e., (8.1) holds for all $n$-vectors $x$ and $y$ and all scalars $\alpha$ and $\beta$ . Then there exists an $m x n$ matrix A such that $f(x) = Ax$ for all $x$. This can be shown in the same way as for scalar-valued functions in 2.1, by showing that if f is linear, then
 
 ![8.2](/imgs/SLIAL/8.2.png)
 
-where *e_k* is the *k*th unit vector of size *n*. The right-hand side can also be written as a matrix-vector product *Ax*, with
+where $e_k$ is the $k$th unit vector of size $n$. The right-hand side can also be written as a matrix-vector product $Ax$, with
 
 ![8.2.1](/imgs/SLIAL/8.2.1.png)
 
-**Examples of linear functions.**
+\textbf{Examples of linear functions.}
 
 ![Examples of linear functions](/imgs/SLIAL/ExamplesLinearFunctions.png)
 ![Examples of linear functions 2](/imgs/SLIAL/ExamplesLinearFunctions2.png)
 
-**Examples of functions that are not linear** here we list some examples of functions *f* that map *n*-vectors x to n-vectors f(x) that are not linear. In each case
+\textbf{Examples of functions that are not linear} here we list some examples of functions $f$ that map $n$-vectors x to $n$-vectors $f(x)$ that are not linear. In each case
 we show a superposition counterexample.
 
 ![Examples of nonlinear functions](/imgs/SLIAL/ExamplesNonlinearFunctions.png)
 
-**Affine functions.** \hl{A vector-valued function *f* : **R**^*n* → **R**^*m* is called affine if it can be expressed as *f*(*x*) = *Ax* + *b*, where *A* is an *m × n* matrix and *b* is an *m*-vector. It can be shown that a function *f* : **R**^*n* → **R**^*m* is affine if and only if</span>
+\textbf{Affine functions.} \hl{A vector-valued function $f : \textbf{R}^n → \textbf{R}^m$ is called affine if it can be expressed as $f(x) = Ax + b$, where $A$ is an $m × n$ matrix and $b$ is an $m$-vector. It can be shown that a function $f : \textbf{R}^n → \textbf{R}^m$ is affine if and only if}
+\begin{equation}
+f(\alpha x + \\beta y) = \alpha f(x) + \\beta f(y)    
+\end{equation}
 
-*f*(*α*x + *β*y) = *αf*(*x*) + *βf*(*y*)
 
-holds for all *n*-vectors *x*, *y*, and all scalars *α*, *β* that satisfy *α* + *β* = 1. In other words, superposition holds for affine combinations of vectors. (For linear functions, superposition holds for any linear combinations of vectors.) 
-The matrix *A* and the vector *b* in the representation of an affine function as *f*(*x*) = *Ax* + *b* are unique. These parameters can be obtained by evaluating *f* at the vectors 0, *e*_1, . . . , *e*_n, where *e_ k* is the *k*th unit vector in **R**^*n*. We have
+holds for all $n$-vectors $x\, y$, and all scalars $\\alpha, \\beta \text{that satisfy} \\alpha + \\beta = 1$. In other words, superposition holds for affine combinations of vectors. (For linear functions, superposition holds for any linear combinations of vectors.) 
+The matrix $A$ and the vector $b$ in the representation of an affine function as $f(x) = Ax + b$ are unique. These parameters can be obtained by evaluating $f$ at the vectors 0, $e_1, . . . , e_n$, where $e_k$ is the $k$th unit vector in $R^n$. We have
+\begin{equation}
+A = [f(e_1) - f(0) f(e_2) - f(0) ... f(e_n) - f(0)], b = f(0).    
+\end{equation}
 
-A = [*f*(*e*_1) − *f*(0) *f*(*e*_2) − *f*(0) ... *f*(*e_n*) − *f*(0)], *b* = *f*(0).
+Just like affine scalar-valued functions, affine vector-valued functions are often called linear, even though they are linear only when the vector $b$ is zero.
 
-Just like affine scalar-valued functions, affine vector-valued functions are often called linear, even though they are linear only when the vector *b* is zero.
-
-**Linear function models**
+\textbf{Linear function models}
 
 \subsection*{Linear function models}
 
 Many functions or relations between variables that arise in natural science, engineering, and social sciences can be approximated as linear or affine functions. In these cases we refer to the linear function relating the two sets of variables as a model or an approximation, to remind us that the relation is only an approximation, and not exact.
 
-**Taylor approximation**
-Suppose *f* : **R**^*n* → **R**^*m* is differentiable, i.e., has partial derivatives, and *z* is an *n*-vector. The first-order Taylor approximation of *f* near *z* is given by
+\textbf{Taylor approximation}
+Suppose $f : \textbf{R}^n → \textbf{R}^m$ is differentiable, i.e., has partial derivatives, and $z$ is an $n$-vector. The first-order Taylor approximation of $f$ near $z$ is given by
 
 ![First-order Taylor approximation](/imgs/SLIAL/FirstOrderTaylorApproximation.png)
 
-for *i* = 1, ..., *m*. (This is just the first-order Taylor approximation of each of the scalar-valued functions *f_i*, described in Lecture One.) For *x* near *z*, \hat{f}(*x*) is a very good approximation of *f*(*x*). We can express this approximation in compact notation, using matrix-vector multiplication, as
+for $i = 1, ..., m$. (This is just the first-order Taylor approximation of each of the scalar-valued functions $f_i$, described in Lecture One.) For $x$ near $z\, \hat{f}(x)$ is a very good approximation of $(x)$. We can express this approximation in compact notation, using matrix-vector multiplication, as
 
 ![Taylor approximation using compact notation](/imgs/SLIAL/TaylorApproximationCompactNotation.png)
 
-where the *m* × *n* matrix D*f*(*z*) is the *derivative* or *Jacobian* matrix of *f* at *z* (see §C.1). Its components are the partial derivatives of *f*,
+where the $m×n$ matrix $Df(z)$ is the derivative or $Jacobian$ matrix of $f$ at $z$ (see §C.1). Its components are the partial derivatives of $f$,
 
 ![Derivative or Jacobian matrix](/imgs/SLIAL/JacobianMatrix.png)
 
-\hl{As in the scalar-valued case, Taylor approximation is sometimes written with a second argument as \hat{f}(*x*; *z*) to show the point z around which the approximation is made. Evidently the Taylor series approximation \hat{f} is an affine function of *x*. (It is often called a linear approximation of *f*, even though it is not, in general, a linear function.) </span>
+\hl{As in the scalar-valued case, Taylor approximation is sometimes written with a second argument as $\hat{f}(x; z)$ to show the point z around which the approximation is made. Evidently the Taylor series approximation $\hat{f}$ is an affine function of $x$. (It is often called a linear approximation of $f$, even though it is not, in general, a linear function.)}
 
 \subsection*{Regression model}
 
@@ -256,12 +407,12 @@ Taking the regression model:
 
 ![The regression model](/imgs/SLIAL/RegressionModel.png)
 
-where \hl{the *n*-vector *x* is a feature vector for some object, *β* is an *n*-vector of weights, *v* is a constant (the offset), and \hat{y} is the (scalar) value of the regression model prediction.
-Now suppose we have a set of *N* objects (also called *samples* or *examples*), with feature vectors *x*^(1), ... , *x*^(N). The regression model predictions associated with the examples are given by</span>
+where \hl{the $n$-vector $x$ is a feature vector for some object, $\\beta$ is an $n$-vector of weights, $v$ is a constant (the offset), and $\hat{y}$ is the (scalar) value of the regression model prediction.
+Now suppose we have a set of $N$ objects (also called $samples$ or $examples$), with feature vectors $x^(1), ... , x^(N)$. The regression model predictions associated with the examples are given by}
 
 ![The regression model predictions associated with given examples](/imgs/SLIAL/RegressionModelPredictions.png)
 
-These numbers usually correspond to predictions of the value of the outputs or responses. If in addition to the example feature vectors *x*^(*i*) we are also given the actual value of the associated response variables, *y*^(1), ..., *y*^(*N*), then our *prediction errors* or *residuals* are
+These numbers usually correspond to predictions of the value of the outputs or responses. If in addition to the example feature vectors $x^(i)$ we are also given the actual value of the associated response variables, $y^(1), ..., y^(N)$, then our $prediction errors$ or $residuals$ are
 
 ![Regression model prediction errors (residuals)](/imgs/SLIAL/RegressionModelResiduals.png)
 
@@ -291,12 +442,12 @@ When: 27.02.2024, 12:30
 
 \subsection*{Left and right inverses}
 Recall that for a number a, its (multiplicative) inverse is the number x for which
-xa = 1, which we usually denote as `*x* = 1/*a*` or (less frequently) `*x* = *a*^−1`. The inverse *x* exists provided *a* is nonzero. For matrices the concept of inverse is more complicated than for scalars; in the general case, we need to distinguish between left and right inverses. We start with the left inverse.
+$xa = 1$, which we usually denote as $x = 1/a$ or (less frequently) $x = a^−1$. The inverse $x$ exists provided $a$ is nonzero. For matrices the concept of inverse is more complicated than for scalars; in the general case, we need to distinguish between left and right inverses. We start with the left inverse.
 
-**Left inverse.** A matrix *X* that satisfies 
-*X A* = *I*
-is called a *left inverse* of A. The matrix *A* is said to be *left-invertible* if a left inverse exists. Note that if *A* has size *m × n*, a left inverse *X* will have size *n × m*,
-the same dimensions as *A^T*
+\textbf{Left inverse.} A matrix $X$ that satisfies 
+$X A = I$
+is called a $left inverse$ of A. The matrix $A$ is said to be $left-invertible$ if a left inverse exists. Note that if $A$ has size $m × n$, a left inverse $X$ will have size $n × m$,
+the same dimensions as $A^T$
 
 
 Literature: [VMLS], Chapter 11 + Slides
@@ -357,8 +508,26 @@ Duality: for each problem you stated in the standard form in the previous catego
 Modelling: exercises 9.2.1-9.2.2, 9.2.15.
 
 \section*{Lecture 11 - Simplex algorithm}
+\subsection*{Basic feasible solutions and the Representation Theorem}
+In this section we introduce the concept of basic feasible solution and show the equivalence between extreme point and basic feasible solution. From this we can draw the conclusion that if there exists an optimal solution then there exists
+ an optimal solution among the basic feasible solutions. This fact is crucial in the simplex method which searches for an optimal solution among the basic feasible solutions.
+\newline
+Consider a linear program in standard form,
+\begin{equation}
+    \begin{align*}
+         \text{minimize } z=&c^T x,\text{\newline} \\
+         \text{subject to } Ax=&b,\\
+         x>=&0^n    
+    \end{align*}
+    \label{8.6}
+\end{equation}
+where $\textbf{A} \epsilon R^m\times n$ with rank $\textbf{A}=rank(\textbf{A},\textbf{b})=m$ (otherwise, we can always delete rows),
+$n>m$, and $\textbf{b} \geq \textbf{0}^m$. A point $\hat{x}$ is a \emph{basic solution} of \href{8.6}{8.6} if \newline
+\begin{itemize}
+    \item the equality constraints are satisfied at $\hat{x}$, that is, $A\hat{x}=b$; and
+    \item the columns of \emph{\textbf{A}} corresponding to the non-zero components of $\hat{x}$ are linearly Independent.
+\end{itemize}
 
-When: 26.03.2024, 12:30. This is a self-study with help.
 Literature: [AEP]: Section 8.2.2 up to Theorem 8.7 (you do not have to read the proof)+Chapter 9.
 
 Exercises:
